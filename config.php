@@ -28,15 +28,15 @@ function utworzTabele()
 	$rozkaz = "CREATE TABLE Pracownicy (" .
 	"idPracownika INT AUTO_INCREMENT PRIMARY KEY ," .
     "login VARCHAR(50) NOT NULL, " .
+    "imie VARCHAR(50) NOT NULL, " .
     "nazwisko VARCHAR(50), " .
-    "plec VARCHAR(50), " .
     "haslo VARCHAR(50) NOT NULL, " .
     "email VARCHAR(50) NOT NULL, " .
     "typUzytkownika INT NOT NULL )";
 	mysqli_query($polaczenie, $rozkaz)
     or exit("Błąd w zapytaniu: ".$rozkaz);
     
-	$rozkaz = "CREATE TABLE Klienci(" .
+	$rozkaz = "CREATE TABLE Klienci (" .
 	"idKlienta INT AUTO_INCREMENT PRIMARY KEY," .
     "login VARCHAR(50) NOT NULL, " .
     "haslo VARCHAR(50) NOT NULL," .
@@ -55,7 +55,7 @@ function utworzTabele()
 	mysqli_query($polaczenie, $rozkaz)
     or exit("Błąd w zapytaniu: ".$rozkaz);
     
-	$rozkaz = "CREATE TABLE Zlecenia(" .
+	$rozkaz = "CREATE TABLE Zlecenia (" .
 	"idZlecenia INT AUTO_INCREMENT PRIMARY KEY," .
     "idPracownika INT, " .
     "idKlienta INT, " .
