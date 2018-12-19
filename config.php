@@ -76,6 +76,6 @@ function utworzTabele()
     mysqli_query($polaczenie, $rozkaz)
     or exit("Błąd w zapytaniu: ".$rozkaz);
 
-    session_start();
+   // session_start();
 }
 ?>
