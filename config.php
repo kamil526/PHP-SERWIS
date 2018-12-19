@@ -34,11 +34,11 @@ function utworzTabele()
 	$rozkaz = "CREATE TABLE Pracownicy (" .
 	"idPracownika INT AUTO_INCREMENT PRIMARY KEY ," .
     "login VARCHAR(50) NOT NULL, " .
-    "imie VARCHAR(50) NOT NULL, " .
-    "nazwisko VARCHAR(50), " .
     "haslo VARCHAR(50) NOT NULL, " .
-    "email VARCHAR(50) NOT NULL, " .
-    "typUzytkownika INT NOT NULL )";
+    "imie VARCHAR(50), " .
+    "nazwisko VARCHAR(50), " .
+    "email VARCHAR(50), " .
+    "typUzytkownika INT )";
 	mysqli_query($polaczenie, $rozkaz)
     or exit("Błąd w zapytaniu: ".$rozkaz);
     
@@ -50,11 +50,11 @@ function utworzTabele()
     "nazwisko VARCHAR(50), " .
     "nazwaFirmy VARCHAR(50), " .
     "nip VARCHAR(50), " .
-    "email VARCHAR(50) NOT NULL, " .
+    "email VARCHAR(50), " .
     "ulica VARCHAR(50), " .
     "nrDomu VARCHAR(50), " .
-    "miasto VARCHAR(50) NOT NULL, " .
-    "kodPocztowy VARCHAR(50) NOT NULL, " .
+    "miasto VARCHAR(50), " .
+    "kodPocztowy VARCHAR(50), " .
     "telefon VARCHAR(50), " .
     "nazwaBanku VARCHAR(50), " .
     "kontoBankowe VARCHAR(50) )";
@@ -76,6 +76,12 @@ function utworzTabele()
     mysqli_query($polaczenie, $rozkaz)
     or exit("Błąd w zapytaniu: ".$rozkaz);
 
-   // session_start();
+    session_start();
+
+    // jeśli nie ma jeszcze sesji "logged" i "user_id" to wypełniamy je domyślnymi danymi
+    if(!isset($_SESSION['logged'])) {
+        $_SESSION['logged'] = false;
+        $_SESSION['idKlienta'] = -1;
+    }
 }
 ?>
