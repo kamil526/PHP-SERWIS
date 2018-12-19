@@ -21,6 +21,12 @@ function zamknijPoloczenie()
     mysqli_close($polaczenie);
 }
 
+function hashHaslo($password) {
+    // kodujemy hasło (losowe znaki można zmienić lub całkowicie usunąć
+    return sha1(md5($password).'#!%Rgd64');
+}
+
+// tworzenie tabel
 function utworzTabele() 
 {
     global $polaczenie;
@@ -69,5 +75,7 @@ function utworzTabele()
     "FOREIGN KEY (idKlienta) REFERENCES Klienci(idKlienta) )";
     mysqli_query($polaczenie, $rozkaz)
     or exit("Błąd w zapytaniu: ".$rozkaz);
+
+    session_start();
 }
 ?>
