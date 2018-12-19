@@ -27,6 +27,7 @@ if(!$_SESSION['logged']) {
  
     // wyświetlamy komunikat na zalogowanie się
     echo '<form method="post" action="loginKlient.php">
+    <center>
         <p>
             Login:<br>
             <input type="text" value="'.$_POST['name'].'" name="name">
@@ -38,6 +39,9 @@ if(!$_SESSION['logged']) {
         <p>
             <input type="submit" value="Zaloguj">
         </p>
+        <br>
+        <p> [<a href="register.php">Nie posiadasz konta? Zarejestruj się!</a>]</p>
+        </center>
     </form>';
 } else {
         echo '<p>Jesteś już zalogowany.</p>
