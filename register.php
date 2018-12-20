@@ -23,9 +23,7 @@
             $nip = $_POST['nip'] ?? '';
             $nazwaFirmy = $_POST['nazwaFirmy'] ?? '';
             $nazwaBanku = $_POST['nazwaBanku'] ?? '';
-            $kontoBankowe = $_POST['kontoBankowe'] ?? '';
-            
-    
+
             // sprawdzamy czy wszystkie pola zostały wypełnione
             if(empty($login) || empty($password) || empty($password2)) {
                 echo '<p>Musisz wypełnić wszystkie obowiązkowe pola.</p>';
@@ -43,9 +41,10 @@
                     // jeśli nie istnieje to kodujemy haslo...
                     $password = hashHaslo($_POST['password']);
                     // i wykonujemy zapytanie na dodanie usera
-                    $sql="INSERT INTO Klienci (login, haslo, imie, nazwisko, email, telefon ,ulica, nrDomu, kodPocztowy, miasto)
-                        VALUES ('$login', '$password', '$imie', '$nazwisko', '$email', '$telefon', '$ulica'
-                                    ,'$nrDomu', '$kodPocztowy', '$miasto')";
+                    $sql="INSERT INTO Klienci (login, haslo, imie, nazwisko, email, telefon, ulica
+                                                , nrDomu, kodPocztowy, miasto, nip, nazwaFirmy, nazwaBanku)
+                        VALUES ('$login', '$password', '$imie', '$nazwisko', '$email','$telefon', '$ulica'
+                                , '$nrDomu', '$kodPocztowy', '$miasto', '$nip', '$nazwaFirmy', '$nazwaBanku')";
                     mysqli_query($polaczenie, $sql);
                     echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php">zalogować</a>.</p>';
                 }
