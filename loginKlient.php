@@ -14,9 +14,9 @@
         // jeśli zostanie naciśnięty przycisk "Zaloguj"
         if(isset($_POST['login'])) {
             // filtrujemy dane...
-            $login = $_POST['login'];
+            $login = $_POST['login'] ?? '';
             //$_POST['password'] = $_POST['password'];
-            $password = hashHaslo($_POST['password']);
+            $password = hashHaslo($_POST['password']) ?? '';
             $sql="SELECT idKlienta FROM Klienci WHERE login = '$login' AND haslo = '$password' LIMIT 1";
             // sprawdzamy prostym zapytaniem sql czy podane dane są prawidłowe
             $result = mysqli_query($polaczenie, $sql);
@@ -37,11 +37,11 @@
         <center>
             <p>
                 Login:<br>
-                <input type="text" value="'.$login.'" name="login">
+                <input type="text" value="'.($login ?? '').'" name="login">
             </p>
             <p>
                 Hasło:<br>
-                <input type="password" value="'.$password.'" name="password">
+                <input type="password" value="'.($password ?? '').'" name="password">
             </p>
             <p>
                 <input type="submit" value="Zaloguj">
