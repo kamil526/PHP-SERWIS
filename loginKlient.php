@@ -1,3 +1,6 @@
+
+
+
 <?php
     include 'config.php';
     otworzPoloczenie();
@@ -33,41 +36,72 @@
         }
     
         // wyświetlamy komunikat na zalogowanie się
-        echo '<form method="post" action="loginKlient.php">
-        <center>
-            <p>
-                Login:<br>
-                <input type="text" value="'.($login ?? '').'" name="login">
-            </p>
-            <p>
-                Hasło:<br>
-                <input type="password" value="'.($password ?? '').'" name="password">
-            </p>
-            <p>
-                <input type="submit" value="Zaloguj">
-            </p>
-            <br>
-            <p> [<a href="register.php">Nie posiadasz konta? Zarejestruj się!</a>]</p>
-            </center>
-        </form>';
+        echo 
+        '
+            <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>
+                        Zaloguj się
+                    </title>
+                </head>
+                <body>
+                    <form method="post" action="loginKlient.php">
+                        <center>
+                            <br>
+                            <br>
+                            <br>
+                            <p>
+                                Login:<br>
+                                <input type="text" value="'.($login ?? '').'" name="login">
+                            </p>
+                            <p>
+                                Hasło:<br>
+                                <input type="password" value="'.($password ?? '').'" name="password">
+                            </p>
+                            <p>
+                                <input type="submit" value="Zaloguj">
+                            </p>
+                            <br>
+                            <p> 
+                                [<a href="register.php">Nie posiadasz konta? Zarejestruj się!</a>]
+                            </p>
+                        </center>
+                    </form>
+                </body>
+            </html>
+        '; 
     } else {
             echo 
-            '<form method="POST" action="logout.php">
-            
-                <center>
-                    <br>
-                    <br>
-                    <br>
-                    <p><b>'.$_SESSION['login'].'</b>, Jesteś już zalogowany, więc nie możesz się zalogować ponownie.
-                    </p>
-                    <p>
-                        [<a href="index.html">Powrót</a>]
-                    </p>
-                    <p>
-                        <input type="submit" value="Wyloguj" name="wyloguj">
-                    </p>
-                </center>
-            </form>';
+            '
+                <html>
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>
+                            Logowanie
+                        </title>
+                    </head>
+                    <body>
+                        <form method="POST" action="logout.php">
+                        
+                            <center>
+                                <br>
+                                <br>
+                                <br>
+                                <p>
+                                    <b>'.$_SESSION['login'].'</b>, Jesteś już zalogowany, więc nie możesz się zalogować ponownie.
+                                </p>
+                                <p>
+                                    [<a href="index.html">Powrót</a>]
+                                </p>
+                                <p>
+                                    <input type="submit" value="Wyloguj" name="wyloguj">
+                                </p>
+                            </center>
+                        </form>
+                    </body>
+                </html>
+            ';
         }
     zamknijPoloczenie();
 ?>
