@@ -8,22 +8,22 @@
         if(isset($_POST['login'])) {
             //pobieramy dane
             $login = $_POST['login'] ?? '';
-            $password = $_POST['password'];
-            $password2 = $_POST['password2'];
-            $imie = $_POST['imie'];
-            $nazwisko = $_POST['nazwisko'];
-            $email = $_POST['email'];
-            $telefon = $_POST['telefon'];
+            $password = $_POST['password'] ?? '';
+            $password2 = $_POST['password2'] ?? '';
+            $imie = $_POST['imie'] ?? '';
+            $nazwisko = $_POST['nazwisko'] ?? '';
+            $email = $_POST['email'] ?? '';
+            $telefon = $_POST['telefon'] ?? '';
              //dane adresowe
-            $ulica = $_POST['ulica'];
-            $nrDomu = $_POST['nrDomu'];
-            $kodPocztowy = $_POST['kodPocztowy'];
-            $miasto = $_POST['miasto'];
+            $ulica = $_POST['ulica'] ?? '';
+            $nrDomu = $_POST['nrDomu'] ?? '';
+            $kodPocztowy = $_POST['kodPocztowy'] ?? '';
+            $miasto = $_POST['miasto'] ?? '';
             //dane firmy
-            $nip = $_POST['nip'];
-            $nazwaFirmy = $_POST['nazwaFirmy'];
-            $nazwaBanku = $_POST['nazwaBanku'];
-            $kontoBankowe = $_POST['kontoBankowe'];
+            $nip = $_POST['nip'] ?? '';
+            $nazwaFirmy = $_POST['nazwaFirmy'] ?? '';
+            $nazwaBanku = $_POST['nazwaBanku'] ?? '';
+            $kontoBankowe = $_POST['kontoBankowe'] ?? '';
             
     
             // sprawdzamy czy wszystkie pola zostały wypełnione
@@ -43,7 +43,7 @@
                     // jeśli nie istnieje to kodujemy haslo...
                     $_POST['password'] = hashHaslo($_POST['password']);
                     // i wykonujemy zapytanie na dodanie usera
-                    $sql="INSERT INTO Klienci (login, haslo) VALUES ('$login', '{$password}')";
+                    $sql="INSERT INTO Klienci (login, haslo) VALUES ('$login', '$password')";
                     mysqli_query($polaczenie, $sql);
                     echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php">zalogować</a>.</p>';
                 }
