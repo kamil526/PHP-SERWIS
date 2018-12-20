@@ -14,10 +14,10 @@
         // jeśli zostanie naciśnięty przycisk "Zaloguj"
         if(isset($_POST['login'])) {
             // filtrujemy dane...
-            $_POST['login'] = $_POST['login'];
+            $login = $_POST['login'];
             //$_POST['password'] = $_POST['password'];
-            $_POST['password'] = hashHaslo($_POST['password']);
-            $sql="SELECT idKlienta FROM Klienci WHERE login = '{$_POST['login']}' AND haslo = '{$_POST['password']}' LIMIT 1";
+            $password = hashHaslo($_POST['password']);
+            $sql="SELECT idKlienta FROM Klienci WHERE login = '$login' AND haslo = '$password' LIMIT 1";
             // sprawdzamy prostym zapytaniem sql czy podane dane są prawidłowe
             $result = mysqli_query($polaczenie, $sql);
             if(mysqli_num_rows($result) > 0) {
@@ -25,7 +25,7 @@
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['logged'] = true;
                 $_SESSION['idKlienta'] = $row['idKlienta'];
-               // $_SESSION['login'] = $_POST['name'];
+                $_SESSION['login'] = $_POST['login'];
                 header('Location: index.html');
             } else {
                 echo '<p>Podany login i/lub hasło jest nieprawidłowe.</p>';
@@ -37,11 +37,11 @@
         <center>
             <p>
                 Login:<br>
-                <input type="text" value="'.$_POST['login'].'" name="login">
+                <input type="text" value="'.$login.'" name="login">
             </p>
             <p>
                 Hasło:<br>
-                <input type="password" value="'.$_POST['password'].'" name="password">
+                <input type="password" value="'.$password.'" name="password">
             </p>
             <p>
                 <input type="submit" value="Zaloguj">
@@ -58,8 +58,7 @@
                     <br>
                     <br>
                     <br>
-                    <p>
-                        Jesteś już zalogowany, więc nie możesz się zalogować ponownie."
+                    <p><b>'.$_SESSION['login'].'</b>, Jesteś już zalogowany, więc nie możesz się zalogować ponownie.
                     </p>
                     <p>
                         [<a href="index.html">Powrót</a>]
