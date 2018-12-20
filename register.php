@@ -41,9 +41,11 @@
                     echo '<p>Już istnieje użytkownik z takim loginem.</p>';
                 } else {
                     // jeśli nie istnieje to kodujemy haslo...
-                    $_POST['password'] = hashHaslo($_POST['password']);
+                    $password = hashHaslo($_POST['password']);
                     // i wykonujemy zapytanie na dodanie usera
-                    $sql="INSERT INTO Klienci (login, haslo) VALUES ('$login', '$password')";
+                    $sql="INSERT INTO Klienci (login, haslo, imie, nazwisko, email, telefon ,ulica, nrDomu, kodPocztowy, miasto)
+                        VALUES ('$login', '$password', '$imie', '$nazwisko', '$email', '$telefon', '$ulica'
+                                    ,'$nrDomu', '$kodPocztowy', '$miasto')";
                     mysqli_query($polaczenie, $sql);
                     echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php">zalogować</a>.</p>';
                 }
@@ -52,59 +54,79 @@
     
         // wyświetlamy formularz
         echo '<form method="post" action="register.php">
-            <p>
-                Login:<br>
-                <input type="text" value="'.$login.'" name="login" >
-            </p>
+            <center>
+                <p>
+                    Login:<br>
+                    <input type="text" value="'.($login ?? '').'" name="login" >
+                </p>
 
-            <p>
-                Hasło:<br>
-                <input type="password" value="'.$password.'" name="password">
-            </p>
-            <p>
-                Powtórz hasło:<br>
-                <input type="password" value="'.$password2.'" name="password2">
-            </p>
-
-
-            <p>
-                Imie:<br>
-                <input type="text" value="'.$imie.'" name="imie">
-            </p>
-            <p>
-                Nazwisko:<br>
-                <input type="text" value="'.$nazwisko.'" name="nazwisko">
-            </p>
-            <p>
-                Email:<br>
-                <input type="text" value="'.$email.'" name="email">
-            </p>
-            <p>
-                Telefon:<br>
-                <input type="text" value="'.$telefon.'" name="telefon">
-            </p>
-            <p>
-                Nowe:<br>
-                <input type="text" value="'.$nowe.'" name="nowe">
-            </p>
-            <p>
-                Nowe:<br>
-                <input type="text" value="'.$nowe.'" name="nowe">
-            </p>
-            <p>
-                Nowe:<br>
-                <input type="text" value="'.$nowe.'" name="nowe">
-            </p>
+                <p>
+                    Hasło:<br>
+                    <input type="password" value="'.($password ?? '').'" name="password">
+                </p>
+                <p>
+                    Powtórz hasło:<br>
+                    <input type="password" value="'.($password2 ?? '').'" name="password2">
+                </p>
 
 
-            <p>
-                <input type="submit" value="Zarejestruj" name="zarejestruj">
-            </p>
+                <p>
+                    Imie:<br>
+                    <input type="text" value="'.($imie ?? '').'" name="imie">
+                </p>
+                <p>
+                    Nazwisko:<br>
+                    <input type="text" value="'.($nazwisko ?? '').'" name="nazwisko">
+                </p>
+                <p>
+                    Email:<br>
+                    <input type="text" value="'.($email ?? '').'" name="email">
+                </p>
+                <p>
+                    Telefon:<br>
+                    <input type="text" value="'.($telefon ?? '').'" name="telefon">
+                </p>
+                <p>
+                    Ulica:<br>
+                    <input type="text" value="'.($ulica ?? '').'" name="ulica">
+                </p>
+                <p>
+                    Nr. domu:<br>
+                    <input type="text" value="'.($nrDomu ?? '').'" name="nrDomu">
+                </p>
+                <p>
+                    Kod pocztowy:<br>
+                    <input type="text" value="'.($kodPocztowy ?? '').'" name="kodPocztowy">
+                </p>
+
+                <p>
+                    Miasto:<br>
+                    <input type="text" value="'.($miasto ?? '').'" name="miasto">
+                </p>
+
+                <p>
+                    NIP:<br>
+                    <input type="text" value="'.($nip ?? '').'" name="nip">
+                </p>
+
+                <p>
+                    Nazwa firmy:<br>
+                    <input type="text" value="'.($nazwaFirmy ?? '').'" name="nazwaFirmy">
+                </p>
+
+                <p>
+                    Nazwa banku:<br>
+                    <input type="text" value="'.($nazwaBanku ?? '').'" name="nazwaBanku">
+                </p>
+                <p>
+                    <input type="submit" value="Zarejestruj" name="zarejestruj">
+                </p>
+            </center>
         </form>';
     } else {
         echo '<p>Jesteś już zalogowany, więc nie możesz stworzyć nowego konta.</p>
             <p>[<a href="index.html">Powrót</a>]</p>';
     }
-    
+
     zamknijPoloczenie();
 ?>
