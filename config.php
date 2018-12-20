@@ -76,12 +76,5 @@ function utworzTabele()
     mysqli_query($polaczenie, $rozkaz)
     or exit("Błąd w zapytaniu: ".$rozkaz);
 
-    session_start();
-
-    // jeśli nie ma jeszcze sesji "logged" i "user_id" to wypełniamy je domyślnymi danymi
-    if(!isset($_SESSION['logged'])) {
-        $_SESSION['logged'] = false;
-        $_SESSION['idKlienta'] = -1;
-    }
 }
 ?>
