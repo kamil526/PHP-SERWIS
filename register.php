@@ -6,7 +6,7 @@
     if(!($_SESSION['logged'] ?? '')) {
         // jeśli zostanie naciśnięty przycisk "Zarejestruj"
         if(isset($_POST['login'])) {
-            //pobieramy dane
+            //pobieramy dane z pól
             $login = $_POST['login'] ?? '';
             $password = $_POST['password'] ?? '';
             $password2 = $_POST['password2'] ?? '';
@@ -68,7 +68,6 @@
                     <input type="password" value="'.($password2 ?? '').'" name="password2">
                 </p>
 
-
                 <p>
                     Imie:<br>
                     <input type="text" value="'.($imie ?? '').'" name="imie">
@@ -123,8 +122,11 @@
             </center>
         </form>';
     } else {
-        echo '<p>Jesteś już zalogowany, więc nie możesz stworzyć nowego konta.</p>
-            <p>[<a href="index.html">Powrót</a>]</p>';
+        echo 
+        '
+            <p>Jesteś już zalogowany, więc nie możesz stworzyć nowego konta.</p>
+            <p>[<a href="index.html">Powrót</a>]</p>
+        ';
     }
 
     zamknijPoloczenie();
