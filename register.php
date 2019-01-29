@@ -149,7 +149,7 @@
         echo 
             '
                 <p>Jesteś już zalogowany, więc nie możesz stworzyć nowego konta.</p>
-                <p>[<a href="index.html">Powrót</a>]</p>
+                <p>[<a href="index.php">Powrót</a>]</p>
             ';
         }
 
