@@ -1,4 +1,5 @@
 <?php
+    session_start(); 
     include 'config.php';
     otworzPoloczenie();
     
@@ -52,7 +53,27 @@
         }
     
         // wyświetlamy formularz
-        echo '<form method="post" action="register.php">
+        echo '
+        
+        <!doctype html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="Druk offsetowy, druk cyfrowy, introligatornia">
+            <meta name="author" content="Michał Sierotowicz, Kamil Poręba">
+            <link rel="icon" href="startpage/img/faviconkw.ico">
+            <title>eSerwis - Samochodowy </title>
+            <!-- Bootstrap core CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <!-- Custom CSS -->
+            <link rel="stylesheet" href="startpage/css/styles.css">
+            <link rel="stylesheet" href="startpage/css/bootstrap.css">
+        </head>
+
+        <body>
+            <header>
+        <form method="post" action="register.php">
             <center>
                 <p>
                     Login:<br>
@@ -120,14 +141,17 @@
                     <input type="submit" value="Zarejestruj" name="zarejestruj">
                 </p>
             </center>
-        </form>';
+        </form>
+        </body>
+        </html>
+        ';
     } else {
         echo 
-        '
-            <p>Jesteś już zalogowany, więc nie możesz stworzyć nowego konta.</p>
-            <p>[<a href="index.html">Powrót</a>]</p>
-        ';
-    }
+            '
+                <p>Jesteś już zalogowany, więc nie możesz stworzyć nowego konta.</p>
+                <p>[<a href="index.html">Powrót</a>]</p>
+            ';
+        }
 
     zamknijPoloczenie();
 ?>
