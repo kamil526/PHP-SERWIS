@@ -15,7 +15,7 @@
         $nazwisko = $_POST['nazwisko'] ?? '';
         $email = $_POST['email'] ?? '';
         $telefon = $_POST['telefon'] ?? '';
-            //dane adresowe
+        //dane adresowe
         $ulica = $_POST['ulica'] ?? '';
         $nrDomu = $_POST['nrDomu'] ?? '';
         $kodPocztowy = $_POST['kodPocztowy'] ?? '';
