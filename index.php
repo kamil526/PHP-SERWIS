@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    include 'config.php';
+    otworzPoloczenie();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -40,12 +46,33 @@
           </ul>  
 
           <ul class="navbar-nav mr-auto font-weight-bold">
-            <li class="nav-item">
-                <a class="nav-link" href="loginKlient.php">Panel Klienta</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="startpage/data/construction.html">Panel Użytkownika</a>
-            </li>
+
+          <?php
+                if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)){
+                echo
+                '
+                
+                    <li class="nav-item">
+                        <a class="nav-link">Witaj, '. $_SESSION['login']. '</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php"> Wyloguj</a>
+                    </li>
+              
+                ';
+                }else{
+                    echo
+                    '
+                    <li class="nav-item">
+                    <a class="nav-link" href="loginKlient.php">Panel Klienta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="startpage/data/construction.html">Panel Użytkownika</a>
+                    </li>
+                    ';
+                }   
+            ?>
           </ul>
         </div>
       </nav>
