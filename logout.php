@@ -4,4 +4,5 @@
     session_start();
     session_unset();
     echo 'Zostałeś wylogowany!';
+    header('Location: index.php');
 ?>
