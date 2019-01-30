@@ -23,11 +23,13 @@ body {
 .featurette {
   margin: 5rem;
 }
+.sidebar {
+  margin: 5rem;
+}
 
 .featurette-divider {
   margin: 3rem;
 }
-
 .featurette-heading {
     font-size: 50px;
   }
