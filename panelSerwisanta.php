@@ -92,40 +92,32 @@
                         <div class="row featurette">
                             <div class="col-md-5">
                                 <form>
-                                   
+                                <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Data złożenia:</label>
+                                        <input type="date" name="bday" max="3000-12-31" 
+                                                min="2019-01-01" class="form-control">    
+                                    </div>
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Marka</label>
-                                        <select name="marka" id="marka">
-                                        <option value="">-</option>
-                                        <option value="1">Ford</option>
-                                        <option value="2">Peugeot</option>
-                                        <option value="3">Volvo</option>
+                                        <label for="exampleFormControlSelect1">Klient</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+ 
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Model</label>
-                                        <select name="model" id="category">
-                                        <option value="">-</option>
-                                        <option value="10" >Focus</option>
-                                        <option value="11" >Kuga</option>
-                                        <option value="12" >Mondeo</option>
-                                        <option value="20" >407</option>
-                                        <option value="21" >508</option>
-                                        <option value="22" >Partner</option>
-                                        <option value="30" >V40</option>
-                                        <option value="31" >XC-60</option>
-                                        <option value="32" >V60</option>
+                                        <label for="exampleFormControlSelect2">Example multiple select</label>
+                                        <select multiple class="form-control" id="exampleFormControlSelect2">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
                                         </select>
                                     </div>
-
-
-
-
                                     <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Opis usterki</label>
+                                        <label for="exampleFormControlTextarea1">Example textarea</label>
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                     </div>
-
                                 </form>
                             </div>
 
@@ -203,28 +195,6 @@
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;
             }
-    </script>
-    <script>
-        var category = document.getElementById('category');
-        document.getElementById('marka').onchange = function() {
-        var optionSelected = this.options[this.selectedIndex];
-        if (optionSelected.textContent != '-') {
-            if (optionSelected.dataset.val === '1') {
-            category.value = 'FORD';
-            }
-            else if (optionSelected.dataset.val === '2')  {
-            category.value='MFM101';
-        }
-            else if (optionSelected.dataset.val === '3')  {
-            category.value='ABC';
-        }
-            else {
-            category.value = 'PM130';
-            }
-        } else {
-            category.value = '';
-        }
-        }
-    </script>
+    </script>  
 </body>
 </html>
