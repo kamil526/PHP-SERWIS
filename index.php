@@ -41,7 +41,7 @@
               <a class="nav-link" href="startpage/data/construction.html">Oferta i cennik</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link" href="panelKlienta.php">Rezerwacja</a>
+                    <a class="nav-link" href="panelKlienta.php">Wycena</a>
             </li>
           </ul>  
 
@@ -136,7 +136,7 @@
             <div class="col-lg-4">
                 <img class="rounded-circle" src="startpage/img/naprawy.jpg" alt="Introligatornia" width="200" height="200">
                 <h2 class=" text-success">Naprawy</h2>
-                <p>Nasi doświadczeni pracownicy wykonają dla Państwa dowo</p>
+                <p>Nasi doświadczeni pracownicy wykonają dla Państwa dowolną naprawę z zakresu mechaniki oraz elektromechaniki pojazdowej.</p>
                 <p>
                     <a class="btn btn-secondary" href="startpage/data/construction.html" role="button">Dowiedz się więcej &raquo;</a>
                 </p>
