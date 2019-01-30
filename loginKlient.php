@@ -26,28 +26,32 @@
         <link rel="stylesheet" href="startpage/css/bootstrap.css">
     </head>
     <body>
-        <form method="post" action="loginKlient.php">
-            <center>
-                <br>
-                <br>
-                <br>
-                <p>
-                    Login:<br>
-                    <input type="text" name="login">
-                </p>
-                <p>
-                    Hasło:<br>
-                    <input type="password" name="password">
-                </p>
-                <p>
-                    <input type="submit" value="Zaloguj się">
-                </p>
-                <br>
-                <p> 
-                    [<a href="register.php">Nie posiadasz konta? Zarejestruj się!</a>]
-                </p>
-            </center>
-        </form>
+    <section class="page">
+        <div class="container">
+            <div class="row featurette">
+                
+                <div class="col-md-4 offset-md-4">
+                    <form method="post" action="loginKlient.php">
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Login</label>
+                            <input type="text" class="form-control" name="login" aria-describedby="emailHelp" placeholder="login">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Hasło</label>
+                            <input type="password" class="form-control" name="password" placeholder="hasło">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Zaloguj się</button>
+                        <p> 
+                            [<a href="register.php">Nie posiadasz konta? Zarejestruj się!</a>]
+                        </p>
+                    </form>
+                </div>
+             
+                
+            </div>
+        </div>
+    </section>
     </body>
 </html>
 

@@ -5,7 +5,7 @@
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,7 +41,7 @@
               <a class="nav-link" href="startpage/data/construction.html">Oferta i cennik</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link" href="startpage/data/construction.html">Rezerwacja</a>
+                    <a class="nav-link" href="panelKlienta.php">Rezerwacja</a>
             </li>
           </ul>  
 
