@@ -58,12 +58,13 @@
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <meta name="description" content="Druk offsetowy, druk cyfrowy, introligatornia">
+            <meta name="description" content="Serwis samochodowy, naprawy samochodowe, wymiana oleju">
             <meta name="author" content="Michał Sierotowicz, Kamil Poręba">
             <link rel="icon" href="startpage/img/faviconkw.ico">
             <title>eSerwis - Rejestracja </title>
             <!-- Bootstrap core CSS -->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
             <!-- Custom CSS -->
             <link rel="stylesheet" href="startpage/css/styles.css">
             <link rel="stylesheet" href="startpage/css/bootstrap.css">
@@ -71,73 +72,144 @@
 
         <body> 
             <form method="post" action="register.php">
-                <center>
-                    <p>
-                        Login:<br>
-                        <input type="text" name="login" >
-                    </p>
+            <div class="container">
+                <div class="row">
 
-                    <p>
-                        Hasło:<br>
-                        <input type="password" name="password">
-                    </p>
-                    <p>
-                        Powtórz hasło:<br>
-                        <input type="password" name="password2">
-                    </p>
+                    <div class="col">
+                        <h3>Dane konta:</h3><br>
 
-                    <p>
-                        Imie:<br>
-                        <input type="text" name="imie">
-                    </p>
-                    <p>
-                        Nazwisko:<br>
-                        <input type="text" name="nazwisko">
-                    </p>
-                    <p>
-                        Email:<br>
-                        <input type="text" name="email">
-                    </p>
-                    <p>
-                        Telefon:<br>
-                        <input type="text" name="telefon">
-                    </p>
-                    <p>
-                        Ulica:<br>
-                        <input type="text" name="ulica">
-                    </p>
-                    <p>
-                        Nr. domu:<br>
-                        <input type="text" name="nrDomu">
-                    </p>
-                    <p>
-                        Kod pocztowy:<br>
-                        <input type="text" name="kodPocztowy">
-                    </p>
+                        <label class="w3-text-green"><b>Login:</b></label>
+                        <input type="text" class="form-control" name="login" placeholder="pole wymagane">
 
-                    <p>
-                        Miasto:<br>
-                        <input type="text" name="miasto">
-                    </p>
+                        <label class="w3-text-green"><b>Hasło:</b></label>
+                        <input type="password" class="form-control" name="password" placeholder="pole wymagane">
 
-                    <p>
-                        NIP:<br>
-                        <input type="text" name="nip">
-                    </p>
+                        <label class="w3-text-green"><b>Powtórz hasło:</b></label>
+                        <input type="password" class="form-control" name="password2" placeholder="pole wymagane">
+                        
+                    </div>
+                    <div class="col">
+                        <h3>Dane adresowe:</h3><br>
 
-                    <p>
-                        Nazwa firmy:<br>
-                        <input type="text" name="nazwaFirmy">
-                    </p>
+                        <label class="w3-text-green"><b>Imię:</b></label>
+                        <input type="text" class="form-control" name="imie">
 
-                    <p>
-                        Nazwa banku:<br>
-                        <input type="text" name="nazwaBanku">
-                    </p>
-                    <p>
-                        <input type="submit" value="Zarejestruj" name="zarejestruj">
-                    </p>
-                </center>
+                        <label class="w3-text-green"><b>Nazwisko:</b></label>
+                        <input type="text" class="form-control" name="nazwisko">
+
+                        <label class="w3-text-green"><b>Adres E-mail:</b></label>
+                        <input type="text" class="form-control" name="email">
+
+                        <label class="w3-text-green"><b>Telefon:</b></label>
+                        <input type="text" class="form-control" name="telefon">
+
+                        <label class="w3-text-green"><b>Ulica:</b></label>
+                        <input type="text" class="form-control" name="ulica">
+                        
+                        <label class="w3-text-green"><b>Numer domu:</b></label>
+                        <input type="text" class="form-control" name="nrDomu">
+                        
+                        <label class="w3-text-green"><b>Kod pocztowy:</b></label>
+                        <input type="text" class="form-control" name="kodPocztowy">
+                        
+                        <label class="w3-text-green"><b>Miasto:</b></label>
+                        <input type="text" class="form-control" name="miasto">
+
+                        <br><br><br>
+
+                        <center>
+                        <input class="w3-btn w3-green" type="submit" value="Zarejestruj" name="zarejestruj">
+                        </center>
+                        
+                    </div>
+                    <div class="col">
+                     <h3>Dane firmy:</h3><br>
+                        
+                        <label class="w3-text-green"><b>Nazwa firmy:</b></label>
+                        <input type="text" class="form-control" name="nazwaFirmy">
+
+                        <label class="w3-text-green"><b>NIP:</b></label>
+                        <input type="text" class="form-control" name="nip">
+                        
+                    </div>
+                </div>
+            </div>
+                <!-- <center>
+                <table>
+                    <tr>
+                        <td>Login: 
+                        <td><input type="text" name="login" >
+                    </tr>
+                    <br>
+
+                    <tr>
+                        <td>Hasło: 
+                        <td><input type="password" name="password">
+                    </tr>
+
+                    <tr>
+                        <td>Powtórz hasło: 
+                        <td><input type="password" name="password2">
+                    </tr>
+
+                    <tr>
+                        <td>Imie:  
+                        <td><input type="text" name="imie">
+                    </tr>
+
+                    <tr>
+                        <td>Nazwisko: 
+                        <td><input type="text" name="nazwisko">
+                    </tr>
+
+                    <tr>
+                        <td>Email: 
+                        <td><input type="text" name="email">
+                    </tr>
+
+                    <tr>
+                        <td>Telefon: 
+                        <td><input type="text" name="telefon">
+                    </tr>
+                    <tr>
+                        <td>Ulica: 
+                        <td><input type="text" name="ulica">
+                    </tr>
+                    <tr>
+                        <td>Nr. domu: 
+                        <td><input type="text" name="nrDomu">
+                    </tr>
+
+                    <tr>
+                        <td>Kod pocztowy: 
+                        <td><input type="text" name="kodPocztowy">
+                    </tr>
+
+                    <tr>
+                        <td>Miasto: 
+                        <td><input type="text" name="miasto">
+                    </tr>
+
+                    <tr>
+                        <td>NIP: 
+                        <td><input type="text" name="nip">
+                    </tr>
+
+                    <tr>
+                        <td>Nazwa firmy: 
+                        <td><input type="text" name="nazwaFirmy">
+                    </tr>
+
+                    <tr>
+                        <td>Nazwa banku: 
+                        <td><input type="text" name="nazwaBanku">
+                    </tr>
+
+                    <tr>
+                        <td><td><br><input type="submit" value="Zarejestruj" name="zarejestruj">
+                    </tr>
+                    </table>
+                </center> -->
             </form>
         </body>
     </html> 
