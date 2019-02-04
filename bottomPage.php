@@ -6,7 +6,7 @@
 <hr class="featurette-divider">    
 
     <!-- FOOTER -->
-<footer class="container" >
+<footer class="container"  >
     <div class="row">
     <p> &copy; 2018 e-Serwis &middot; <a href="startpage/data/construction.html" class="text-success">Regulamin</a></p>
 </footer>

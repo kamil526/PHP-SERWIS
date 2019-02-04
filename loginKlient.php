@@ -17,10 +17,12 @@
 ?>
 
 <div class="container">
-    <div class="row featurette">
-        
+    <div class="row featurette" vertical="center">
         <div class="col-md-4 offset-md-4">
             <form method="post" action="loginKlient.php">
+                <div class="form-group">
+                    <h2>Zaloguj się</h2>
+                </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Login</label>
                     <input type="text" class="form-control" name="login" aria-describedby="emailHelp" placeholder="login">
