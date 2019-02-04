@@ -97,12 +97,6 @@
                     
                     <label class="w3-text-green"><b>Miasto:</b></label>
                     <input type="text" class="form-control" name="miasto">
-
-                    <br><br><br>
-
-                    <center>
-                    <input class="w3-btn w3-green" type="submit" value="Zarejestruj" name="zarejestruj">
-                    </center>
                     
                 </div>
                 <div class="col-md-4">
@@ -114,6 +108,13 @@
                     <label class="w3-text-green"><b>NIP:</b></label>
                     <input type="text" class="form-control" name="nip">
                     
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                <center>
+                    <input class="w3-btn w3-green" type="submit" value="Zarejestruj" name="zarejestruj">
+                </center>
                 </div>
             </div>
         </div>
