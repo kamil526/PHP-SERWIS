@@ -22,16 +22,16 @@
             <form method="post" action="loginKlient.php">
                 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Login</label>
+                    <label class="w3-text-green"><b>Login</b></label>
                     <input type="text" class="form-control" name="login" aria-describedby="emailHelp" placeholder="login">
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Hasło</label>
+                    <label class="w3-text-green"><b>Hasło</b></label>
                     <input type="password" class="form-control" name="password" placeholder="hasło">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Zaloguj się</button>
+                <button type="submit" class="w3-btn w3-green">Zaloguj się</button>
 
                 <p> 
                     [<a href="register.php">Nie posiadasz konta? Zarejestruj się!</a>]
