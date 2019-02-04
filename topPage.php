@@ -77,7 +77,5 @@
       </div>
     </nav>
   </header>
-  <br>
-  <br>
-  <br>
-    
+  <hr class="featurette-divider"> 
+  <hr>

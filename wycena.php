@@ -1,7 +1,6 @@
 <?php
     include 'topPage.php';
 ?>
-<main>
     <section class="page">
         <div class="container">
             <div class="row featurette">
@@ -62,7 +61,6 @@
                 </div>
             </div>
     </section>          
-</main>
 <?php
     include 'bottomPage.php';
 ?>  

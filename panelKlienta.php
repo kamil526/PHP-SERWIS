@@ -15,63 +15,43 @@
                 </div>
                 
                 <div class="col-md-9">
+                
 
                     <div class="row featurette">
                         <div class="col-md-5">
-                            <form>
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Marka</label>
-                                    <select name="marka" id="marka">
-                                    <option value="">-</option>
-                                    <option value="1">Ford</option>
-                                    <option value="2">Peugeot</option>
-                                    <option value="3">Volvo</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Model</label>
-                                    <select name="model" id="category">
-                                    <option value="">-</option>
-                                    <option value="10" >Focus</option>
-                                    <option value="11" >Kuga</option>
-                                    <option value="12" >Mondeo</option>
-                                    <option value="20" >407</option>
-                                    <option value="21" >508</option>
-                                    <option value="22" >Partner</option>
-                                    <option value="30" >V40</option>
-                                    <option value="31" >XC-60</option>
-                                    <option value="32" >V60</option>
-                                    </select>
-                                </div>
-
-
-
-
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Opis usterki</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-
-                            </form>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Marka:</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Marka pojazdu">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Model:</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Model pojazdu">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Opis usterki</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" 
+                                    placeholder="Podaj szczegóówy opis usterki, na jej podstawie dokonamy wstępnej wyceny naprawy" rows="8">
+                                </textarea>
+                            </div>
                         </div>
 
                         <div class="col-md-5">
                             <form>
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Opis zlecenia:</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Etap realizacji:</label>
+                                    <label for="exampleFormControlSelect1">Rodzaj wizyty:</label>
                                     <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>Przyjęto zlecenie</option>
-                                    <option>W trakcie realizacji</option>
-                                    <option>Zrealizowano</option>>
+                                    <option>Reklamacja</option>
+                                    <option>Gwarancja</option>
+                                    <option>Naprawa</option>>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Data zakończenia:</label>
+                                    <label for="exampleFormControlSelect1">Data przekazania do naprawy:</label>
                                     <input type="date" name="bday" max="3000-12-31" 
                                             min="2019-01-01" class="form-control">    
                                 </div>
