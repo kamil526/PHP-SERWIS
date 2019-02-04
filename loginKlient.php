@@ -69,5 +69,5 @@
 
 <?php
     include 'bottomPage.php';  
-    zamknijPoloczenie();
+    //zamknijPoloczenie();
 ?>
