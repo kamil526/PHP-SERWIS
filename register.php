@@ -51,12 +51,14 @@
         }
     }  
 ?>
+
+<section class="page">
     <div class="container">
         <form method="post" action="register.php">
         <div class="container">
-            <div class="row">
+            <div class="row featurette">
 
-                <div class="col">
+                <div class="col-md-4">
                     <h3>Dane konta:</h3><br>
 
                     <label class="w3-text-green"><b>Login:</b></label>
@@ -69,7 +71,7 @@
                     <input type="password" class="form-control" name="password2" placeholder="pole wymagane">
                     
                 </div>
-                <div class="col">
+                <div class="col-md-4">
                     <h3>Dane adresowe:</h3><br>
 
                     <label class="w3-text-green"><b>Imię:</b></label>
@@ -103,7 +105,7 @@
                     </center>
                     
                 </div>
-                <div class="col">
+                <div class="col-md-4">
                     <h3>Dane firmy:</h3><br>
                     
                     <label class="w3-text-green"><b>Nazwa firmy:</b></label>
@@ -117,6 +119,7 @@
         </div>
         </form>
     </div>
+</section>  
 <?php
     include 'bottomPage.php';
     zamknijPoloczenie();   
