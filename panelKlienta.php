@@ -1,6 +1,5 @@
 <?php
-    include 'topPage.php'; 
-    include 'config.php';
+    include 'topPage.php';
     otworzPoloczenie();
 ?>
 
