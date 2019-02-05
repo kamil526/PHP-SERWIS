@@ -3,18 +3,6 @@
     otworzPoloczenie();
 ?>
 
-<?php
-    //jezeli uzytkownik jest zalogowany, przekieruj go na index.php
-    if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)){
-        header('Location: index.php');
-        //nie wykonuj kodu poniżej
-        exit();
-    }else{
-            // jeśli nie ma jeszcze sesji "logged" i "idKlienta" to wypełniamy je domyślnymi danymi
-            $_SESSION['logged'] = false;
-            $_SESSION['idKlienta'] = -1;
-        }
-?>
 
     <section class="page">
         <div class="container">
