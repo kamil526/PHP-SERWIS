@@ -17,8 +17,11 @@
 ?>
 
 <div class="container">
+
     <div class="row featurette">
+    
         <div class="col-md-4 offset-md-4">
+            
             <form method="post" action="loginKlient.php">
                 
                 <div class="form-group">
@@ -39,7 +42,9 @@
 
             </form>
         </div>
+   
     </div>
+
 </div>
 
 <?php
