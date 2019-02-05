@@ -6,11 +6,9 @@
 <div class="row">
     <div class="col-sm-2">
         <div class=" w3-bar-block w3-large" > 
-            <a href="panelPracownika.php" class="w3-bar-item w3-button w3-hover-green">Zlecenia</a>
-            <a href="panelPracownikaWyceny.php" class="w3-bar-item w3-button w3-hover-green">Wyceny</a>
-            <br>
-            <br>
-            <a href="registerPracownik.php" class="w3-bar-item w3-button w3-hover-green">Dodaj pracownika</a>
+            <button type="button" class="w3-btn w3-hover-green" data-toggle="modal" data-target="#exampleModalLong">Nowe zlecenie</button>
+            <br><br><br>
+            <form><input type="button" value="Dodaj pracownika" onclick="window.location.href='registerPracownik.php'" class="w3-btn w3-hover-green" /></form>
         </div>
     </div>
 
@@ -43,10 +41,12 @@
                                             <th scope="col">ID Zlecenia</th>
                                             <th scope="col">ID Klienta</th>
                                             <th scope="col">Data dodania</th>
+                                            <th scope="col">Data przekazania</th>
                                             <th scope="col">Data zakończenia</th>
                                             <th scope="col">Status zlecenia</th>
                                             <th scope="col">Rodzaj</th>
-                                            <th scope="col">Opis</th>
+                                            <th scope="col">Opis zlecenia</th>
+
                                             <th scope="col">Wartość</th>
                                             <th scope="col"></th>
                                         </tr>
@@ -59,6 +59,7 @@
                                     echo "<td>".$query['idKlienta']."</td>";
                                     echo "<td>".$query['dataDodania']."</td>";
                                     echo "<td>".$query['dataZakonczenia']."</td>";
+                                    echo "<td>".$query['dataPrzekazania']."</td>";
                                     echo "<td>".$query['statusZlecenia']."</td>";
                                     echo "<td>".$query['rodzajZlecenia']."</td>";
                                     echo "<td>".$query['opisZlecenia']."</td>";
@@ -77,7 +78,31 @@
         </div>
     </div>
 </div>
-                                        
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Nowe zlecenie</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="w3-btn" data-dismiss="modal">Close</button>
+        <button type="button" class="w3-btn w3-green">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 <?php
+    include 'bottomPage.php';
     zamknijPoloczenie(); 
 ?>
