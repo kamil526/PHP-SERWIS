@@ -6,7 +6,7 @@
 <?php
     //jezeli uzytkownik jest zalogowany, przekieruj go na index.php
     if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)){
-        header('Location: index.php');
+        header('Location: panelSerwisanta.php');
         //nie wykonuj kodu poniżej
 		exit();
 	}else{

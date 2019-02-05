@@ -6,7 +6,7 @@
 <?php
     //jezeli uzytkownik jest zalogowany, przekieruj go na index.php
     if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)){
-        header('Location: index.php');
+        header('Location: panelKlienta.php');
         //nie wykonuj kodu poniżej
 		exit();
 	}else{
@@ -63,7 +63,7 @@
             $_SESSION['logged'] = true;
             $_SESSION['idKlienta'] = $row['idKlienta'];
             $_SESSION['login'] = $_POST['login'];
-            header('Location: index.php');
+            header('Location: panelKlienta.php');
         } else {
                 echo '<p>Podany login i/lub hasło jest nieprawidłowe.</p>';
             }
