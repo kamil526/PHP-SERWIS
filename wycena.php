@@ -95,10 +95,21 @@
 ?>
 
 <?php
+	if(isset($_POST['deleteWycena'])) {
+        global $polaczenie;
+        $idZlecenia = $_POST['idZlecenia'];
+        $rozkaz = "delete from Zlecenia where idZlecenia=$idZlecenia;";
+        mysqli_query($polaczenie, $rozkaz)
+        or exit("Błąd w zapytaniu: ".$rozkaz);
+    }
+?>
+
+<?php
 $idKlienta =$_SESSION['idKlienta'] ?? '';
 $sql="SELECT idZlecenia, dataDodania, statusZlecenia, wartoscZlecenia FROM Zlecenia WHERE idKlienta=$idKlienta";
     $result = mysqli_query($polaczenie, $sql);
 echo '<div class="container">
+<form class="col-md-12" method="post" action="wycena.php" >
 <div class="row featurette">
     <table class="table">
     <thead class="thead-light">
@@ -113,23 +124,26 @@ echo '<div class="container">
     </thead>
     <tbody>';
 
-while($query=mysqli_fetch_array($result))
-{
-echo '<tr><th scope="row">'.$query['idZlecenia']."</th>";
-echo "<td>".$query['dataDodania']."</td>";
-echo "<td>".$query['statusZlecenia']."</td>";
-echo "<td>".$query['wartoscZlecenia']."</td>";
-echo '<td>               
-        <button type="submit" class="w3-btn w3-green"name="edytuj">Edytuj</button>      
-        <button type="submit" class="w3-btn w3-green"name="usun">Usuń</button>
-    </td>';
+while($query=mysqli_fetch_array($result)){
+    echo "<tr> <th scope='row' name='idZlecenia' id='idZlecenia'>".$query['idZlecenia']."</th>";
+    echo "<td>".$query['dataDodania']."</td>";
+    echo "<td>".$query['statusZlecenia']."</td>";
+    echo "<td>".$query['wartoscZlecenia']."</td>";
+    
+    echo "<td><a href='deleteWycena.php?idZlecenia=".$query['idZlecenia']."' >Usuń </a></td>";
 }
+
 ?>
+
+
         </tr>
     </tbody>
     </table>
 </div>
+</form>
 </div>
+
+
 
 <?php
     include 'bottomPage.php';
