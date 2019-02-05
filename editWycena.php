@@ -1,33 +1,42 @@
 <?php
     include 'topPage.php';
     otworzPoloczenie();
+
+    if(isset($_GET['idZlecenia'])){
+        $idZlecenia=$_GET['idZlecenia'];
+        if(isset($_POST['submit']))
+    }
+
+    $firstname=$_POST['firstname'];
+    $firstname=$_POST['firstname'];
+    $firstname=$_POST['firstname'];
+    $firstname=$_POST['firstname'];
+    $firstname=$_POST['firstname'];
+
+    $sqlUpdate="UPDATE Zlecenia set dataDodania=,, 
+    opisZlecenia= ";
+
 ?>
-
-<div class="container">
-    <div class="row featurette">
-
-        <div class="col-md-2">
-            <button class="btn btn-light" type="submit">Nowe Zlecenie</button>
-            <button class="btn btn-light" type="submit">Wszystkie Zlecenia</button>
-            <button class="btn btn-light" type="submit">Moje dane</button>
-        </div>
-
         <form class="col-md-10" method="post" action="wycena.php" >
             <div class="row featurette">
 
                 <div class="col-md-5">
                     <div class="form-group">
                         <label class="w3-text-green"><b>Marka:</b></label>
-                        <input type="text" class="form-control" name="markaPojazdu" placeholder="Marka pojazdu">
+                        <input type="text" class="form-control" name="marka" placeholder="Marka pojazdu"
+                        value="<?php echo $query['marka']; ?>
                     </div>
                     <div class="form-group">
                         <label class="w3-text-green"><b>Model:</b></label>
-                        <input type="text" class="form-control" name="modelPojazdu" placeholder="Model pojazdu">
+                        <input type="text" class="form-control" name="model" placeholder="Model pojazdu"
+                        value="<?php echo $query['model']; ?>
                     </div>
                     <div class="form-group">
                         <label class="w3-text-green"><b>Opis usterki:</b></label>
                         <textarea class="form-control" name="opisUsterki" 
-                        placeholder="Tutaj szczegółowo usterkę pojazdu, na jej podstawie, oszacujemy koszt naprawy" rows="8"></textarea>
+                            placeholder="Tutaj szczegółowo usterkę pojazdu, na jej podstawie, oszacujemy koszt naprawy" rows="8"
+                            value="<?php echo $query['opisUsterki']; ?>
+                        </textarea>
                     </div>
                 </div>
 
@@ -35,13 +44,14 @@
                     <div class="form-group">
                         <label class="w3-text-green"><b>Opis zlecenia:</b></label>
                         <textarea class="form-control" name="opisZlecenia" 
-                        placeholder="Tutaj opisz na czym ma polgać zlecenie" rows="6"></textarea>
+                        placeholder="Tutaj opisz na czym ma polgać zlecenie" rows="6"
+                        value="<?php echo $query['opisZlecenia']; ?></textarea>
                     </div>
 
                     <div class="form-group">
                         <label class="w3-text-green"><b>Data przekazania pojazdu:</b></label>
-                        <input type="date" name="dataPrzekazaniaPojazdu" max="3000-12-31" 
-                                min="2019-01-01" class="form-control">    
+                        <input type="date" name="dataPrzekazaniaPojazdu"
+                        value="<?php echo $query['dataPrzekazaniaPojazdu']; ?>    
                     </div>
                 </div>
 
@@ -74,19 +84,18 @@
 
     if(isset($_POST['zapisz'])&&(isset($_SESSION['logged'])) && ($_SESSION['logged']==true)) {
         //pobieramy dane z pól
-        $markaPojazdu = $_POST['markaPojazdu'] ?? '';
-        $modelPojazdu = $_POST['modelPojazdu'] ?? '';
+        $marka = $_POST['marka'] ?? '';
+        $model = $_POST['model'] ?? '';
         $opisUsterki = $_POST['opisUsterki'] ?? '';
         $opisZlecenia = $_POST['opisZlecenia'] ?? '';
         $dataPrzekazaniaPojazdu = $_POST['dataPrzekazaniaPojazdu'] ?? '';
         // sprawdzamy czy wszystkie pola zostały wypełnione
-        if(empty($markaPojazdu) || empty($modelPojazdu) || empty($opisUsterki) || empty($opisZlecenia) 
-        || empty($dataPrzekazaniaPojazdu)) {
+        if(empty($marka) || empty($model) || empty($opisUsterki) || empty($opisZlecenia) || empty($dataPrzekazaniaPojazdu)) {
             echo '<p><center>Musisz wypełnić wszystkie obowiązkowe pola</center>.</p>';
         } else{
-                $sql="INSERT INTO Zlecenia (dataDodania, idKlienta, idPracownika, opisZlecenia, opisUsterki, 
-                    statusZlecenia, wartoscZlecenia, markaPojazdu, modelPojazdu )
-                        VALUES (now(), $idKlienta, 3, '$opisZlecenia','$opisUsterki', 1, 0, '$markaPojazdu', '$modelPojazdu')";
+                $sql="INSERT INTO Zlecenia (dataDodania, idKlienta, idPracownika, 
+                        opisZlecenia, statusZlecenia, wartoscZlecenia)
+                        VALUES (now(), $idKlienta, 1, '$opisZlecenia', 1, 0)";
                 mysqli_query($polaczenie, $sql);
                 
                 echo '<p><center>Zlecenie zostało dodane</center></p>';
