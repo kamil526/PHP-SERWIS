@@ -60,10 +60,10 @@
             }
     }
 
-    zamknijPoloczenie();
+    //zamknijPoloczenie();
 ?>
 
 <?php
     include 'bottomPage.php';  
-    zamknijPoloczenie();
+   // zamknijPoloczenie();
 ?>
