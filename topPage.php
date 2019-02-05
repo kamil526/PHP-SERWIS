@@ -25,11 +25,11 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgba(255, 255, 255, 0.9);">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="index.php">
           <img src="startpage/img/logo.png" height="70" class="d-inline-block align-top" alt="logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" 
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    aria-expanded="false" aria-label="Toggle navigation"> 
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -71,7 +71,7 @@
                   <a class="nav-link" href="loginKlient.php">Panel Klienta</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="startpage/data/construction.html">Panel Użytkownika</a>
+                      <a class="nav-link" href="loginPracownik.php">Panel Użytkownika</a>
                   </li>
                   ';
               }   

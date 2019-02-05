@@ -69,7 +69,7 @@
 
                     <label class="w3-text-green"><b>Powtórz hasło:</b></label>
                     <input type="password" class="form-control" name="password2" placeholder="pole wymagane">
-                    
+                    <br>
                 </div>
                 <div class="col-md-4">
                     <h3>Dane adresowe:</h3><br>
