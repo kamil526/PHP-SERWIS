@@ -130,7 +130,7 @@ while($query=mysqli_fetch_array($result)){
     echo "<td>".$query['statusZlecenia']."</td>";
     echo "<td>".$query['wartoscZlecenia']."</td>";
     
-    echo "<td><a href='deleteWycena.php?idZlecenia=".$query['idZlecenia']."' >Usuń </a></td>";
+    echo "<td><a href='deleteWycena.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td>";
 }
 
 ?>
