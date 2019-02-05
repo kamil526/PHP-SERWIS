@@ -71,7 +71,7 @@
                   <a class="nav-link" href="loginKlient.php">Panel Klienta</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="loginPracownik.php">Panel Użytkownika</a>
+                      <a class="nav-link" href="loginPracownik.php">Panel Pracownika</a>
                   </li>
                   ';
               }   
