@@ -28,7 +28,7 @@
                 $password = hashHaslo($_POST['password']);
                 // i wykonujemy zapytanie na dodanie usera
                 $sql="INSERT INTO Pracownicy (login, haslo, imie, nazwisko, email, typUzytkownika)
-                    VALUES ('$login', '$password', '$imie', '$nazwisko', '$email', 0)";
+                    VALUES ('$login', '$password', '$imie', '$nazwisko', '$email', 1)";
                 mysqli_query($polaczenie, $sql);
                 echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginPracownik.php">zalogować</a>.</p>';
             }
