@@ -16,12 +16,12 @@
 
     <div class="col">
         <div class="w3-container col-md">
-            <h1 class="w3-green" style="padding:10px;">Zlecenia</h1>
+            <h1 class="w3-green" style="padding:10px;">Wyceny</h1>
             
                 <div class="container">
 
                     <?php
-                        if(isset($_POST['deleteZlecenie'])) 
+                        if(isset($_POST['deleteWycena'])) 
                         {
                             global $polaczenie;
                             $idZlecenia = $_POST['idZlecenia'];
