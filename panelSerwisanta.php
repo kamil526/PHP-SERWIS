@@ -12,10 +12,10 @@
 
 <div class="w3-main" style="margin-left:200px">
 
-<!-- <div >
+<div >
   <div class="w3-container">
     <h1 class="w3-green">Zlecenia</h1>
-    <div class="row">
+    <!-- <div class="row">
         <table>
             <thead>
                 <tr>
@@ -34,7 +34,7 @@
             </tbody>
         </table>
     </div> -->
-
+    
     <?php
     
     if($result = $polaczenie->query("SELECT * FROM Zlecenia"))
