@@ -97,10 +97,10 @@
             </div>
 
 
-            <div class="modal fade bd-example2-modal-lg" tabindex="-1" role="dialog" 
+    <div class="modal fade bd-example2-modal-lg" tabindex="-1" role="dialog" 
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <?php
-        $idZlecenia = $_POST['idZlecenia'] ?? '';
+        $idZlecenia = $query['idZlecenia'];
         if(isset($_POST['zapisz'])){
             //pobieramy dane z pól
             $markaPojazdu = $_POST['markaPojazdu'] ?? '';
@@ -138,7 +138,7 @@
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>idZlecenia:</b></label>
                                 <input type="text" class="form-control" name="idZlecenia"
-                                value="<?php echo $idZlecenia; ?>" required data-validation>
+                                value="<?php echo $idZlecenia; ?>" readonly>
                             </div>
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Marka pojazdu:</b></label>

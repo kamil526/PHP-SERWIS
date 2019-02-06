@@ -133,7 +133,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="w3-btn" data-dismiss="modal">Close</button>
-                        <input class="w3-btn w3-green" type="submit" value="zapiszKlient" name="zapiszKlient" form="modal-form">
+                        <input class="w3-btn w3-green" type="submit" value="Zapisz" name="zapiszKlient" form="modal-form">
                     </div>
                 </form>
             </div>
