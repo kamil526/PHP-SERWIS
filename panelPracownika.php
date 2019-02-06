@@ -118,7 +118,7 @@
                                     echo "<td>".$query['opisZlecenia']."</td>";
                                     echo "<td>".$query['wartoscZlecenia']."</td>";
                                     
-                                    echo "<td><a href='deleteWycena.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td>";
+                                    echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td>";
                                 }
 
                     ?>
