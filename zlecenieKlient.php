@@ -1,5 +1,6 @@
 <?php
     include 'topPage.php';
+    otworzPoloczenie();
 ?>
 
 <div class="container">
@@ -108,5 +109,4 @@
 
 <?php
     include 'bottomPage.php';
-    
 ?>  
