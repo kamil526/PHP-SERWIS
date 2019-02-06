@@ -37,7 +37,7 @@
 
 
                 <?php
-                    if(isset($_POST['deleteWycena'])) {
+                    if(isset($_POST['deleteZlecenie'])) {
                         global $polaczenie;
                         $idZlecenia = $_POST['idZlecenia'];
                         $rozkaz = "delete from Zlecenia where idZlecenia=$idZlecenia;";
@@ -72,7 +72,7 @@
                     echo "<td>".$query['statusZlecenia']."</td>";
                     echo "<td>".$query['wartoscZlecenia']."</td>";
                     
-                    echo "<td><a href='deleteWycena.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td>";
+                    echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td>";
                 }
 
                 ?>
