@@ -4,11 +4,23 @@
 ?>
 
 
+<!-- Polaczenie z bazy i wyciagniecie danych klientow -->
+<?php
+    $selectKlient = "SELECT idKlienta, imie, nazwisko FROM Klienci";
+    $resultKlient = mysqli_query($polaczenie, $selectKlient);
+
+    $optionsKlient = "";
+
+    while($row = mysqli_fetch_array($resultKlient))
+    {
+        $optionsKlient .= '<option value = "'.$row['idKlienta'].'">'.$row['imie'].' '.$row['nazwisko'].'</option>';
+    }
+?>
+
 <?php
         if(isset($_POST['zapisz']))
         {
             $idPracownika=$_SESSION['idPracownika'] ?? '';
-            //$idKlienta = $_POST['idKlienta'] ?? '';
             $dataDodania = $_POST['dataDodania'] ?? '';
             $dataPrzekazania = $_POST['dataPrzekazania'] ?? '';
             $dataZakonczenia = $_POST['dataZakonczenia'] ?? '';
@@ -20,37 +32,27 @@
             $markaPojazdu = $_POST['markaPojazdu'] ?? '';
             $modelPojazdu = $_POST['modelPojazdu'] ?? '';
             $wartoscZlecenia = $_POST['wartoscZlecenia'] ?? '';
+            $idKlienta = $_POST['idKlienta'] ?? '';
+            
 
 
-            $sql="INSERT INTO Zlecenia (idPracownika, dataDodania, dataPrzekazania, dataZakonczenia, 
+            $sql="INSERT INTO Zlecenia (idPracownika, idKlienta, dataDodania, dataPrzekazania, dataZakonczenia, 
             statusZlecenia, rodzajZlecenia, opisZlecenia, opisUsterki, komentarzPracownika, 
             markaPojazdu, modelPojazdu, wartoscZlecenia)
-            VALUES ('$idPracownika', '$dataDodania', '$dataPrzekazania', '$dataZakonczenia', '$statusZlecenia','$rodzajZlecenia', '$opisZlecenia'
+            VALUES ('$idPracownika', '$idKlienta', '$dataDodania', '$dataPrzekazania', '$dataZakonczenia', '$statusZlecenia','$rodzajZlecenia', '$opisZlecenia'
             , '$opisUsterki', '$komentarzPracownika', '$markaPojazdu', '$modelPojazdu', '$wartoscZlecenia')";
             mysqli_query($polaczenie, $sql);
 
-/*             if (mysqli_query($polaczenie, $sql)) {
+/*              if (mysqli_query($polaczenie, $sql)) {
                 echo "New record created successfully";
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
-            } */
+            }   */
         }
     
 ?>
 
-<!-- Polaczenie z bazy i wyciagniecie danych klientow -->
-<?php
-    $selectKlient = "SELECT * FROM Klienci";
-    $resultKlient = mysqli_query($polaczenie, $selectKlient);
 
-    $optionsKlient = "";
-
-    while($row = mysqli_fetch_array($resultKlient))
-    {
-        $optionsKlient = $optionsKlient."<option>$row[3] $row[4] / $row[5] </option>";
-    }
-
-?>
 
 
 
@@ -81,8 +83,8 @@
                     ?>
                     <?php
                             
-                        $sql="SELECT * FROM Zlecenia";
-                        $result = mysqli_query($polaczenie, $sql);
+                        $sql2="SELECT * FROM Zlecenia INNER JOIN Klienci ON Zlecenia.idKlienta=Klienci.IdKlienta";
+                        $result = mysqli_query($polaczenie, $sql2);
                         echo 
                         '<form method="post" action="panelPracownika.php" >
                             <div class="row featurette">
@@ -90,7 +92,7 @@
                                     <thead class="thead-light">
                                         <tr>
                                             <th scope="col">ID Zlecenia</th>
-                                            <th scope="col">ID Klienta</th>
+                                            <th scope="col">Klient</th>
                                             <th scope="col">Data dodania</th>
                                             <th scope="col">Data przekazania</th>
                                             <th scope="col">Data zakończenia</th>
@@ -107,7 +109,7 @@
                                 while($query=mysqli_fetch_array($result))
                                 {
                                     echo "<tr> <th scope='row' name='idZlecenia' id='idZlecenia'>".$query['idZlecenia']."</th>";
-                                    echo "<td>".$query['idKlienta']."</td>";
+                                    echo "<td>".$query['imie']." ".$query['nazwisko']."</td>";
                                     echo "<td>".$query['dataDodania']."</td>";
                                     echo "<td>".$query['dataZakonczenia']."</td>";
                                     echo "<td>".$query['dataPrzekazania']."</td>";
@@ -148,15 +150,15 @@
                 <div class="row">
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data dodania:</b></label>
-                        <input type="date" name="dataDodania"  value="<?php echo date('Y-m-d'); ?>" class="form-control"> 
+                        <input type="date" name="dataDodania"  value="<?php echo date('Y-m-d');?>" class="form-control"> 
                     </div>
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data przekazania:</b></label>
-                        <input type="date" name="dataPrzekazania"  min="<?php echo date('Y-m-d'); ?>" class="form-control"> 
+                        <input type="date" name="dataPrzekazania"  value="<?php echo date('Y-m-d');?>" class="form-control"> 
                     </div>
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data zakończenia:</b></label>
-                        <input type="date" name="dataZakonczenia" min="<?php echo date('Y-m-d'); ?>" class="form-control"> 
+                        <input type="date" name="dataZakonczenia" value="<?php echo date('Y-m-d');?>" class="form-control"> 
                     </div>
                 </div>
                 <br>
@@ -182,7 +184,7 @@
                             <option value=""></<option>
                             <option value="Wycena">Wycena</<option>
                             <option value="Oczekujące">Oczekujące</<option>
-                            <option value="W trakcie">W trakcie</<option>
+                            <option value="W trakcie">Rozpoczęte</<option>
                             <option value="Zakończone">Zakończone</<option>
                         </select>
                     </div> 
@@ -200,8 +202,9 @@
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Klient:</b></label><br>
                         <!-- <input type="text" class="form-control" name="idKlienta"> -->
-                        
-                        <select class="form-control">
+                    
+
+                        <select class="form-control" name="idKlienta" class="form-control">
                             <?php echo $optionsKlient;?>
                         </select>
 
