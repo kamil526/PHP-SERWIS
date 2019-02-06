@@ -30,7 +30,10 @@
                 $sql="INSERT INTO Pracownicy (login, haslo, imie, nazwisko, email, typUzytkownika)
                     VALUES ('$login', '$password', '$imie', '$nazwisko', '$email', 1)";
                 mysqli_query($polaczenie, $sql);
-                echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginPracownik.php">zalogować</a>.</p>';
+                //echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginPracownik.php">zalogować</a>.</p>';
+                echo '<div class="alert alert-success" role="alert">
+                        Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginPracownik.php" class="alert-link">zalogować</a>.
+                     </div>';
             }
         }
     }  
