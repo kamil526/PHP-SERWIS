@@ -1,9 +1,14 @@
 <?php
     include('config.php');
     otworzPoloczenie();
+    session_start();
+
     $idZlecenia=$_GET['idZlecenia'];
     $sql="delete from Zlecenia  WHERE idZlecenia=$idZlecenia";
     mysqli_query($polaczenie, $sql);
 
-    header('location: zleceniaKlient.php');
+    if ($_SESSION['typUsera']==1){
+        header('location: zleceniaKlient.php');
+    }else header('location: panelPracownika.php');
+    //header('location: zleceniaKlient.php');
 ?>
