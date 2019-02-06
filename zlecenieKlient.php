@@ -18,10 +18,7 @@
                 class="w3-btn w3-green" />
             </form>
             <br>
-            <form>
-                <input type="button" name="zmianaDanych" data-toggle="modal" data-target=".bd-example-modal-lg" value="Moje Dane" 
-                class="w3-btn w3-green"/>
-            </form>
+            <button type="button" class="w3-btn w3-green" data-toggle="modal" data-target=".bd-example-modal-lg">Moje dane</button>
         </div>
 
         <form class="col-md-10" method="post" action="zlecenieKlient.php" >
@@ -108,5 +105,6 @@
 ?>
 
 <?php
+    include 'editKlient.php';
     include 'bottomPage.php';
 ?>  
