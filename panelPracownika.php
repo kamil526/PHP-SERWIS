@@ -3,6 +3,35 @@
     otworzPoloczenie();
 ?>
 
+
+<?php
+
+    if(isset($_POST['dataDodania']))
+    {
+        $idKlienta = $_POST['idKlienta'] ?? '';
+        $dataDodania = $_POST['dataDodania'] ?? '';
+        $dataPrzekazania = $_POST['dataPrzekazania'] ?? '';
+        $dataZakonczenia = $_POST['dataZakonczenia'] ?? '';
+        $statusZlecenia = $_POST['statusZlecenia'] ?? '';
+        $rodzajZlecenia = $_POST['rodzajZlecenia'] ?? '';
+        $opisZlecenia = $_POST['opisZlecenia'] ?? '';
+        $opisUsterki = $_POST['opisUsterki'] ?? '';
+        $komentarzPracownika = $_POST['komentarzPracownika'] ?? '';
+        $markaPojazdu = $_POST['markaPojazdu'] ?? '';
+        $modelPojazdu = $_POST['modelPojazdu'] ?? '';
+        $wartoscZlecenia = $_POST['wartoscZlecenia'] ?? '';
+
+        $sql="INSERT INTO Zlecenia (idKlienta, dataDodania, dataPrzekazania, dataZakonczenia, 
+        statusZlecenia, rodzajZlecenia, opisZlecenia, opisUsterki, komentarzPracownika, 
+        markaPojazdu, modelPojazdu, wartoscZlecenia)
+        VALUES ('$idKlienta', '$dataDodania', '$dataPrzekazania', '$dataZakonczenia', '$statusZlecenia','$rodzajZlecenia', '$opisZlecenia'
+        , '$opisUsterki', '$komentarzPracownika', '$markaPojazdu', '$modelPojazdu', '$wartoscZlecenia')";
+        mysqli_query($polaczenie, $sql);
+
+    }
+?>
+
+
 <div class="row">
     <div class="col-sm-2">
         <div class=" w3-bar-block w3-large" > 
@@ -91,6 +120,7 @@
             </div>
             <div class="modal-body">
             <!-- Zawartosc modala -->
+            <form method="post" action="panelPracownika.php">
             <div class="container-fluid">
 
                 <div class="row">
@@ -124,6 +154,10 @@
                 </div>
                 <br>
                 <div class="row">
+                <div class="col-md-4">   
+                        <label class="w3-text-green"><b>Status zlecenia:</b></label>
+                        <input type="text" class="form-control" name="statusZlecenia">
+                    </div> 
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Marka:</b></label>
                         <input type="text" class="form-control" name="markaPojazdu" placeholder="Marka pojazdu">
@@ -154,11 +188,12 @@
 
 
             </div>
+            </form>
 
             </div>
             <div class="modal-footer">
                 <button type="button" class="w3-btn" data-dismiss="modal">Close</button>
-                <button type="button" class="w3-btn w3-green">Save changes</button>
+                <input type="submit" class="w3-btn w3-green" value="Zapisz" name="zapisz">
             </div>
         </div>
     </div>
