@@ -26,12 +26,14 @@
                 
                 <div class="form-group">
                     <label class="w3-text-green"><b>Login</b></label>
-                    <input type="text" class="form-control" name="login" aria-describedby="emailHelp" placeholder="login">
+                    <input type="text" class="form-control" name="login" placeholder="login"
+                     required data-validation>
                 </div>
 
                 <div class="form-group">
                     <label class="w3-text-green"><b>Hasło</b></label>
-                    <input type="password" class="form-control" name="password" placeholder="hasło">
+                    <input type="password" class="form-control" name="password" placeholder="hasło"
+                     required data-validation>
                 </div>
 
                 <button type="submit" class="w3-btn w3-green">Zaloguj się</button>
@@ -41,11 +43,7 @@
                 </p>
 
             </form>
-        </div>
-   
-    </div>
-
-</div>
+        
 
 <?php
     // jeśli zostanie naciśnięty przycisk "Zaloguj"
@@ -65,12 +63,17 @@
             $_SESSION['login'] = $_POST['login'];
             header('Location: panelKlienta.php');
         } else {
-                echo '<p>Podany login i/lub hasło jest nieprawidłowe.</p>';
+                echo '<br> <div class="alert alert-danger" role="alert">
+                        Hasło lub login jest niepoprawne!
+                    </div>';
             }
     }
 
     zamknijPoloczenie();
 ?>
+    </div>
+   </div>
+</div>
 
 <?php
     include 'bottomPage.php';  
