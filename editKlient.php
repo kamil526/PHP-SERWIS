@@ -2,7 +2,7 @@
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 
     <?php
-        if(isset($_POST['zapisz'])){
+        if(isset($_POST['zapiszKlient'])){
             //pobieramy dane z pól
             $imie=$_POST['imie'] ?? '';
             $password = $_POST['password'] ?? '';
@@ -133,7 +133,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="w3-btn" data-dismiss="modal">Close</button>
-                        <input class="w3-btn w3-green" type="submit" value="Zapisz" name="zapisz" form="modal-form">
+                        <input class="w3-btn w3-green" type="submit" value="zapiszKlient" name="zapiszKlient" form="modal-form">
                     </div>
                 </form>
             </div>
