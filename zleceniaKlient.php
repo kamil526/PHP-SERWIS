@@ -96,11 +96,12 @@
                     </div>
             </div>
 
+    <!--   TUTAJ MODAL DLA EDYCJI ZLECENIA  -->
 
     <div class="modal fade bd-example2-modal-lg" tabindex="-1" role="dialog" 
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <?php
-        $idZlecenia = $query['idZlecenia'];
+        $idZlecenia = $_POST['idZlecenia'] ?? '';
         if(isset($_POST['zapisz'])){
             //pobieramy dane z pól
             $markaPojazdu = $_POST['markaPojazdu'] ?? '';
