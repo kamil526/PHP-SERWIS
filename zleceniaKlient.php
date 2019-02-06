@@ -57,10 +57,10 @@
                 class="w3-btn w3-green" />
             </form>
             <br>
-            <form>
+            
                 <input type="submit" name="zmianaDanych" data-toggle="modal" data-target=".bd-example-modal-lg" value="Moje Dane" 
                 class="w3-btn w3-green"/>
-            </form>
+            
         </div>
 
         <form class="col-md-10" method="post" action="zlecenieKlient.php" >
@@ -139,7 +139,7 @@
 
                 <div class="modal-body">
                     <!-- Zawartosc modala -->
-                    <form method="post" action="menuKlient.php">
+                    <form method="post" action="zleceniaKlient.php">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-4">

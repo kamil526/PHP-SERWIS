@@ -21,10 +21,10 @@
             $modelPojazdu = $_POST['modelPojazdu'] ?? '';
             $wartoscZlecenia = $_POST['wartoscZlecenia'] ?? '';
 
+
             $sql="INSERT INTO Zlecenia (idPracownika, dataDodania, dataPrzekazania, dataZakonczenia, 
             statusZlecenia, rodzajZlecenia, opisZlecenia, opisUsterki, komentarzPracownika, 
             markaPojazdu, modelPojazdu, wartoscZlecenia)
-        
             VALUES ('$idPracownika', '$dataDodania', '$dataPrzekazania', '$dataZakonczenia', '$statusZlecenia','$rodzajZlecenia', '$opisZlecenia'
             , '$opisUsterki', '$komentarzPracownika', '$markaPojazdu', '$modelPojazdu', '$wartoscZlecenia')";
             mysqli_query($polaczenie, $sql);
@@ -133,15 +133,15 @@
                 <div class="row">
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data dodania:</b></label>
-                        <input type="date" name="dataDodania" max="3000-12-31" min="2019-01-01" class="form-control"> 
+                        <input type="date" name="dataDodania"  value="<?php echo date('Y-m-d'); ?>" class="form-control"> 
                     </div>
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data przekazania:</b></label>
-                        <input type="date" name="dataPrzekazania" max="3000-12-31" min="2019-01-01" class="form-control"> 
+                        <input type="date" name="dataPrzekazania"  min="<?php echo date('Y-m-d'); ?>" class="form-control"> 
                     </div>
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data zakończenia:</b></label>
-                        <input type="date" name="dataZakonczenia" max="3000-12-31" min="2019-01-01" class="form-control"> 
+                        <input type="date" name="dataZakonczenia" min="<?php echo date('Y-m-d'); ?>" class="form-control"> 
                     </div>
                 </div>
                 <br>
@@ -163,7 +163,13 @@
                 <div class="row">
                 <div class="col-md-4">   
                         <label class="w3-text-green"><b>Status zlecenia:</b></label>
-                        <input type="text" class="form-control" name="statusZlecenia">
+                        <select class="form-control" name="statusZlecenia" list="exampleList">
+                            <option value=""></<option>
+                            <option value="Wycena">Wycena</<option>
+                            <option value="Oczekujące">Oczekujące</<option>
+                            <option value="W trakcie">W trakcie</<option>
+                            <option value="Zakończone">Zakończone</<option>
+                        </select>
                     </div> 
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Marka:</b></label>
