@@ -38,6 +38,21 @@
     
 ?>
 
+<!-- Polaczenie z bazy i wyciagniecie danych klientow -->
+<?php
+    $selectKlient = "SELECT * FROM Klienci";
+    $resultKlient = mysqli_query($polaczenie, $selectKlient);
+
+    $optionsKlient = "";
+
+    while($row = mysqli_fetch_array($resultKlient))
+    {
+        $optionsKlient = $optionsKlient."<option>$row[3] $row[4] / $row[5] </option>";
+    }
+
+?>
+
+
 
 <div class="row">
     <div class="col-sm-2">
@@ -183,15 +198,11 @@
                 <br>
                 <div class="row">
                     <div class="col-md-4">   
-                        <label class="w3-text-green"><b>Klient:</b></label>
+                        <label class="w3-text-green"><b>Klient:</b></label><br>
                         <!-- <input type="text" class="form-control" name="idKlienta"> -->
-                        <?php 
-                        $selectKlienci = "SELECT * FROM Klienci";
-                        $resultKlienci = mysqli_query($polaczenie, $selectKlienci);
-                        ?>
-                        <select>
-                                <?php while($row1 = mysqli_fetch_array($resultKlienci)):;?>
-                                <option><?php echo $row1[1];?></option>
+                        
+                        <select class="form-control">
+                            <?php echo $optionsKlient;?>
                         </select>
 
                     </div> 
