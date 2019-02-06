@@ -46,6 +46,7 @@
                     VALUES ('$login', '$password', '$imie', '$nazwisko', '$email','$telefon', '$ulica'
                             , '$nrDomu', '$kodPocztowy', '$miasto', '$nip', '$nazwaFirmy', '$nazwaBanku')";
                 mysqli_query($polaczenie, $sql);
+                zamknijPoloczenie();
                 //echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php">zalogować</a>.</p>';
                 echo '<div class="alert alert-success" "col-md-12" role="alert">
                         <center>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php" class="alert-link">zalogować</a>.</center>
@@ -57,7 +58,7 @@
 
 <section class="page">
     <div class="container">
-        <form method="post" action="register.php">
+        <form method="post" action="registerKlient.php">
         <div class="container">
             <div class="row featurette">
 
@@ -129,5 +130,4 @@
 </section>  
 <?php
     include 'bottomPage.php';
-    zamknijPoloczenie();   
 ?>

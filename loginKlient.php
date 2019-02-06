@@ -6,7 +6,7 @@
 <?php
     //jezeli uzytkownik jest zalogowany, przekieruj go na index.php
     if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)){
-        header('Location: panelKlienta.php');
+        header('Location: zleceniaKlient.php');
         //nie wykonuj kodu poniżej
 		exit();
 	}else{
@@ -39,7 +39,7 @@
                 <button type="submit" class="w3-btn w3-green">Zaloguj się</button>
 
                 <p> 
-                    [<a href="register.php">Nie posiadasz konta? Zarejestruj się!</a>]
+                    [<a href="registerKlient.php">Nie posiadasz konta? Zarejestruj się!</a>]
                 </p>
 
             </form>
@@ -61,6 +61,7 @@
             $_SESSION['logged'] = true;
             $_SESSION['idKlienta'] = $row['idKlienta'];
             $_SESSION['login'] = $_POST['login'];
+            zamknijPoloczenie();
             header('Location: zlecenieKlient.php');
         } else {
                 echo '<br> <div class="alert alert-danger" role="alert">
@@ -69,7 +70,7 @@
             }
     }
 
-    zamknijPoloczenie();
+    //
 ?>
     </div>
    </div>
@@ -77,5 +78,4 @@
 
 <?php
     include 'bottomPage.php';  
-    //zamknijPoloczenie();
 ?>
