@@ -67,12 +67,15 @@
                     <tbody>';
 
                 while($query=mysqli_fetch_array($result)){
+                    echo "<form name='submit' action='editZlecenieModal.php' method='POST'>";
                     echo "<tr> <th scope='row' name='idZlecenia' id='idZlecenia'>".$query['idZlecenia']."</th>";
                     echo "<td>".$query['dataDodania']."</td>";
                     echo "<td>".$query['statusZlecenia']."</td>";
                     echo "<td>".$query['wartoscZlecenia']."</td>";
+                    ECHO "<td><button type='submit' class='w3-btn w3-green' data-toggle='modal' data-target='.bd-example2-modal-lg'>Edytuj</button></td>";
+                    echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td></form>";
+
                     
-                    echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td>";
                 }
 
                 ?>
@@ -92,9 +95,9 @@
 
                     </div>
             </div>
-
 <?php
+    include 'editZlecenieModal.php';
     include 'editKlient.php';
     include 'bottomPage.php';
-    
+
 ?>  
