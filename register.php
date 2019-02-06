@@ -46,7 +46,10 @@
                     VALUES ('$login', '$password', '$imie', '$nazwisko', '$email','$telefon', '$ulica'
                             , '$nrDomu', '$kodPocztowy', '$miasto', '$nip', '$nazwaFirmy', '$nazwaBanku')";
                 mysqli_query($polaczenie, $sql);
-                echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php">zalogować</a>.</p>';
+                //echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php">zalogować</a>.</p>';
+                echo '<div class="alert alert-success" "col-md-12" role="alert">
+                        <center>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php" class="alert-link">zalogować</a>.</center>
+                     </div>';
             }
         }
     }  
@@ -81,7 +84,10 @@
                     <input type="text" class="form-control" name="nazwisko">
 
                     <label class="w3-text-green"><b>Adres E-mail:</b></label>
-                    <input type="text" class="form-control" name="email">
+                    <input type="text" class="form-control" name="email"
+                     data-validation-matches-match="@" 
+                     data-validation-matches-message=
+                         "Must match email address entered above" >
 
                     <label class="w3-text-green"><b>Telefon:</b></label>
                     <input type="text" class="form-control" name="telefon">
