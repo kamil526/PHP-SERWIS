@@ -61,7 +61,7 @@
             $_SESSION['logged'] = true;
             $_SESSION['idKlienta'] = $row['idKlienta'];
             $_SESSION['login'] = $_POST['login'];
-            header('Location: panelKlienta.php');
+            header('Location: zlecenieKlient.php');
         } else {
                 echo '<br> <div class="alert alert-danger" role="alert">
                         Hasło lub login jest niepoprawne!

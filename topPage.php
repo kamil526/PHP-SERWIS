@@ -43,9 +43,11 @@
           <li class="nav-item">
             <a class="nav-link" href="startpage/data/construction.html">Oferta i cennik</a>
           </li>
+          <!--
           <li class="nav-item">
-                  <a class="nav-link" href="wycena.php">Wycena</a>
+            <a class="nav-link" href="zlecenieKlient.php">Zlecenie</a>
           </li>
+          -->
         </ul>  
 
         <ul class="navbar-nav mr-auto font-weight-bold">
