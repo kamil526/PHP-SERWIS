@@ -5,30 +5,37 @@
 
 
 <?php
+        if(isset($_POST['zapisz']))
+        {
+            $idPracownika=$_SESSION['idPracownika'] ?? '';
+            //$idKlienta = $_POST['idKlienta'] ?? '';
+            $dataDodania = $_POST['dataDodania'] ?? '';
+            $dataPrzekazania = $_POST['dataPrzekazania'] ?? '';
+            $dataZakonczenia = $_POST['dataZakonczenia'] ?? '';
+            $statusZlecenia = $_POST['statusZlecenia'] ?? '';
+            $rodzajZlecenia = $_POST['rodzajZlecenia'] ?? '';
+            $opisZlecenia = $_POST['opisZlecenia'] ?? '';
+            $opisUsterki = $_POST['opisUsterki'] ?? '';
+            $komentarzPracownika = $_POST['komentarzPracownika'] ?? '';
+            $markaPojazdu = $_POST['markaPojazdu'] ?? '';
+            $modelPojazdu = $_POST['modelPojazdu'] ?? '';
+            $wartoscZlecenia = $_POST['wartoscZlecenia'] ?? '';
 
-    if(isset($_POST['dataDodania']))
-    {
-        $idKlienta = $_POST['idKlienta'] ?? '';
-        $dataDodania = $_POST['dataDodania'] ?? '';
-        $dataPrzekazania = $_POST['dataPrzekazania'] ?? '';
-        $dataZakonczenia = $_POST['dataZakonczenia'] ?? '';
-        $statusZlecenia = $_POST['statusZlecenia'] ?? '';
-        $rodzajZlecenia = $_POST['rodzajZlecenia'] ?? '';
-        $opisZlecenia = $_POST['opisZlecenia'] ?? '';
-        $opisUsterki = $_POST['opisUsterki'] ?? '';
-        $komentarzPracownika = $_POST['komentarzPracownika'] ?? '';
-        $markaPojazdu = $_POST['markaPojazdu'] ?? '';
-        $modelPojazdu = $_POST['modelPojazdu'] ?? '';
-        $wartoscZlecenia = $_POST['wartoscZlecenia'] ?? '';
+            $sql="INSERT INTO Zlecenia (idPracownika, dataDodania, dataPrzekazania, dataZakonczenia, 
+            statusZlecenia, rodzajZlecenia, opisZlecenia, opisUsterki, komentarzPracownika, 
+            markaPojazdu, modelPojazdu, wartoscZlecenia)
+        
+            VALUES ('$idPracownika', '$dataDodania', '$dataPrzekazania', '$dataZakonczenia', '$statusZlecenia','$rodzajZlecenia', '$opisZlecenia'
+            , '$opisUsterki', '$komentarzPracownika', '$markaPojazdu', '$modelPojazdu', '$wartoscZlecenia')";
+            mysqli_query($polaczenie, $sql);
 
-        $sql="INSERT INTO Zlecenia (idKlienta, dataDodania, dataPrzekazania, dataZakonczenia, 
-        statusZlecenia, rodzajZlecenia, opisZlecenia, opisUsterki, komentarzPracownika, 
-        markaPojazdu, modelPojazdu, wartoscZlecenia)
-        VALUES ('$idKlienta', '$dataDodania', '$dataPrzekazania', '$dataZakonczenia', '$statusZlecenia','$rodzajZlecenia', '$opisZlecenia'
-        , '$opisUsterki', '$komentarzPracownika', '$markaPojazdu', '$modelPojazdu', '$wartoscZlecenia')";
-        mysqli_query($polaczenie, $sql);
-
-    }
+/*             if (mysqli_query($polaczenie, $sql)) {
+                echo "New record created successfully";
+            } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
+            } */
+        }
+    
 ?>
 
 
@@ -120,7 +127,7 @@
             </div>
             <div class="modal-body">
             <!-- Zawartosc modala -->
-            <form method="post" action="panelPracownika.php">
+            <form method="post" action="panelPracownika.php" id="modal-form">
             <div class="container-fluid">
 
                 <div class="row">
@@ -190,10 +197,12 @@
             </div>
             </form>
 
+
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="w3-btn" data-dismiss="modal">Close</button>
-                <input type="submit" class="w3-btn w3-green" value="Zapisz" name="zapisz">
+                <button type="button" class="w3-btn" data-dismiss="modal">Anuluj</button>
+                <input class="w3-btn w3-green" type="submit" value="Zapisz" name="zapisz" form="modal-form">
             </div>
         </div>
     </div>
