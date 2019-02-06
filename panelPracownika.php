@@ -133,7 +133,7 @@
 </div>
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" 
-                                                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -201,13 +201,9 @@
                 <div class="row">
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Klient:</b></label><br>
-                        <!-- <input type="text" class="form-control" name="idKlienta"> -->
-                    
-
                         <select class="form-control" name="idKlienta" class="form-control">
                             <?php echo $optionsKlient;?>
                         </select>
-
                     </div> 
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Wartość zlecenia:</b></label>

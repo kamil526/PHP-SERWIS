@@ -66,7 +66,8 @@
                     </thead>
                     <tbody>';
 
-                while($query=mysqli_fetch_array($result)){
+                while($query=mysqli_fetch_array($result))
+                {
                     echo "<form name='submit' action='editZlecenieModal.php' method='POST'>";
                     echo "<tr> <th scope='row' name='idZlecenia' id='idZlecenia'>".$query['idZlecenia']."</th>";
                     echo "<td>".$query['dataDodania']."</td>";
@@ -100,7 +101,9 @@
 
     <div class="modal fade bd-example2-modal-lg" tabindex="-1" role="dialog" 
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+
     <?php
+    
         $idZlecenia = $_POST['idZlecenia'] ?? '';
         if(isset($_POST['zapisz'])){
             //pobieramy dane z pól
@@ -110,13 +113,15 @@
             $opisZlecenia = $_POST['opisZlecenia'] ?? '';
             $dataPrzekazaniaPojazdu = $_POST['dataPrzekazaniaPojazdu'] ?? '';
 
-            $sql="UPDATE Zlecenia set opisZlecenia='$opisZlecenia',opisUsterki='$opisUsterki',markaPojazdu='$markaPojazdu',modelPojazdu='$modelPojazdu'
+            $sql="UPDATE Zlecenia set opisZlecenia='$opisZlecenia',opisUsterki='$opisUsterki',
+            markaPojazdu='$markaPojazdu',modelPojazdu='$modelPojazdu'
                     where idZlecenia=$idZlecenia";
                 
                 mysqli_query($polaczenie, $sql);
         }
         /*
-        $select="select imie, nazwisko, email, telefon, nrDomu, kodPocztowy, ulica, miasto, nazwaFirmy, nip FROM Klienci where idKlienta=$idKlienta";
+        $select="select imie, nazwisko, email, telefon, nrDomu, kodPocztowy, ulica, miasto, nazwaFirmy, nip 
+        FROM Klienci where idKlienta=$idKlienta";
         $result=mysqli_query($polaczenie, $select);     
         $query=mysqli_fetch_array($result);
         */
@@ -144,12 +149,12 @@
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Marka pojazdu:</b></label>
                                 <input type="text" class="form-control" name="markaPojazdu"
-                                value="<?php echo $markaPojazdu; ?>" required data-validation>
+                                value="<?php echo $query['markaPojazdu']; ?>" required data-validation>
                             </div>
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Model pojazdu:</b></label>
                                 <input type="text" class="form-control" name="modelPojazdu"
-                                value="<?php echo $modelPojazdu; ?>" required data-validation>
+                                value="<?php echo $query['modelPojazdu']; ?>" required data-validation>
                             </div>
                     
                         </div>
@@ -160,17 +165,17 @@
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Opis usterki:</b></label>
                                 <input type="text" class="form-control" name="opisUsterki"
-                                value="<?php echo $opisUsterki; ?>" required data-validation>
+                                value="<?php echo $query['opisUsterki']; ?>" required data-validation>
                             </div>
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Opis zlecenia:</b></label>
                                 <input type="text" class="form-control" name="opisZlecenia"
-                                value="<?php echo $opisZlecenia; ?>" required data-validation>
+                                value="<?php echo $query['opisZlecenia']; ?>" required data-validation>
                             </div>
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Data Przekazania Pojazdu:</b></label>
                                 <input type="text" class="form-control" name="dataPrzekazaniaPojazdu"
-                                value="<?php echo $dataPrzekazaniaPojazdu; ?>" required data-validation>
+                                value="<?php echo $query['dataPrzekazaniaPojazdu']; ?>" required data-validation>
                             </div>
                         </div>
                         <br>
