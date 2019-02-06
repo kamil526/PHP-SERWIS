@@ -61,6 +61,7 @@
             $_SESSION['logged'] = true;
             $_SESSION['idKlienta'] = $row['idKlienta'];
             $_SESSION['login'] = $_POST['login'];
+            $_SESSION['typUsera'] = 1;
             zamknijPoloczenie();
             header('Location: zlecenieKlient.php');
         } else {

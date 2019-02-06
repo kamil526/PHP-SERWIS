@@ -44,11 +44,19 @@
             <a class="nav-link" href="startpage/data/construction.html">Oferta i cennik</a>
           </li>
           <?php
-            if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)){
+            if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true) && ($_SESSION['typUsera']==1)){
                 echo'
                 <li class="nav-item">
-                  <a class="nav-link" href="zleceniaKlient.php">Panel Klienta</a>
+                  <a class="nav-link" href="zleceniaKlient.php"><b>Panel Klienta</b></a>
                 </li>';
+            }else
+            {
+              if(((isset($_SESSION['logged'])) && ($_SESSION['logged']==true) && ($_SESSION['typUsera']==0))){
+                echo'
+                <li class="nav-item">
+                  <a class="nav-link" href="panelPracownika.php"><b>Panel Pracownika</b></a>
+                </li>';
+              }
             }
           ?>
         </ul>  
