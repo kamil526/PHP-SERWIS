@@ -55,6 +55,7 @@
                 $_SESSION['logged'] = true;
                 $_SESSION['idPracownika'] = $row['idPracownika'];
                 $_SESSION['login'] = $_POST['login'];
+                $_SESSION['typUsera'] = 0;
                 header('Location: panelPracownika.php');
             } else {
                     echo '<br> <div class="alert alert-danger" role="alert">
