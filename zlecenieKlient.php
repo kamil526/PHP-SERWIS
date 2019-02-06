@@ -1,16 +1,27 @@
 <?php
     include 'topPage.php';
-    otworzPoloczenie();
 ?>
 
 <div class="container">
     <h1 class="w3-green" style="padding:10px;">Nowe Zlecenie</h1>
     <div class="row featurette">
     
-
-        <?php
-            include 'menuKlient.php';
-        ?>
+        <div class="col-md-2">
+            <form>
+                <input type="button" value="Nowe Zlecenie" onclick="window.location.href='zlecenieKlient.php'" 
+                class="w3-btn w3-green" />
+            </form>
+            <br>
+            <form>
+                <input type="button" value="Moje Zlecenia" onclick="window.location.href='zleceniaKlient.php'" 
+                class="w3-btn w3-green" />
+            </form>
+            <br>
+            <form>
+                <input type="button" name="zmianaDanych" data-toggle="modal" data-target=".bd-example-modal-lg" value="Moje Dane" 
+                class="w3-btn w3-green"/>
+            </form>
+        </div>
 
         <form class="col-md-10" method="post" action="zlecenieKlient.php" >
             <div class="row featurette">
