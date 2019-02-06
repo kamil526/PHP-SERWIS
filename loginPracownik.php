@@ -23,46 +23,51 @@
                 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Login</label>
-                    <input type="text" class="form-control" name="login" aria-describedby="emailHelp" placeholder="login">
+                    <input type="text" class="form-control" name="login" placeholder="login"
+                     required data-validation>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputPassword1">Hasło</label>
-                    <input type="password" class="form-control" name="password" placeholder="hasło">
+                    <input type="password" class="form-control" name="password" placeholder="hasło"
+                     required data-validation>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Zaloguj się</button>
+                <button type="submit" class="w3-btn w3-green">Zaloguj się</button>
 
             </form>
-        </div>
+      
+
+
+    <?php
+        // jeśli zostanie naciśnięty przycisk "Zaloguj"
+        if(isset($_POST['login'])) {
+            // filtrujemy dane...
+            $login = $_POST['login'] ?? '';
+            //$_POST['password'] = $_POST['password'];
+            $password = hashHaslo($_POST['password']) ?? '';
+            $sql="SELECT idPracownika FROM Pracownicy WHERE login = '$login' AND haslo = '$password' LIMIT 1";
+            // sprawdzamy prostym zapytaniem sql czy podane dane są prawidłowe
+            $result = mysqli_query($polaczenie, $sql);
+            if(mysqli_num_rows($result) > 0) {
+                // jeśli tak to ustawiamy sesje "logged" na true oraz do sesji "idPracownika" wstawiamy idPracownika
+                $row = mysqli_fetch_assoc($result);
+                $_SESSION['logged'] = true;
+                $_SESSION['idPracownika'] = $row['idPracownika'];
+                $_SESSION['login'] = $_POST['login'];
+                header('Location: panelPracownika.php');
+            } else {
+                    echo '<br> <div class="alert alert-danger" role="alert">
+                            Hasło lub login jest niepoprawne!
+                        </div>';
+                }
+        }
+
+        //zamknijPoloczenie();
+    ?>
+      </div>
     </div>
 </div>
-
-<?php
-    // jeśli zostanie naciśnięty przycisk "Zaloguj"
-    if(isset($_POST['login'])) {
-        // filtrujemy dane...
-        $login = $_POST['login'] ?? '';
-        //$_POST['password'] = $_POST['password'];
-        $password = hashHaslo($_POST['password']) ?? '';
-        $sql="SELECT idPracownika FROM Pracownicy WHERE login = '$login' AND haslo = '$password' LIMIT 1";
-        // sprawdzamy prostym zapytaniem sql czy podane dane są prawidłowe
-        $result = mysqli_query($polaczenie, $sql);
-        if(mysqli_num_rows($result) > 0) {
-            // jeśli tak to ustawiamy sesje "logged" na true oraz do sesji "idPracownika" wstawiamy idPracownika
-            $row = mysqli_fetch_assoc($result);
-            $_SESSION['logged'] = true;
-            $_SESSION['idPracownika'] = $row['idPracownika'];
-            $_SESSION['login'] = $_POST['login'];
-            header('Location: panelPracownika.php');
-        } else {
-                echo '<p>Podany login i/lub hasło jest nieprawidłowe.</p>';
-            }
-    }
-
-    //zamknijPoloczenie();
-?>
-
 <?php
     include 'bottomPage.php';  
    // zamknijPoloczenie();
