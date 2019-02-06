@@ -27,16 +27,20 @@
                 <div class="col-md-5">
                     <div class="form-group">
                         <label class="w3-text-green"><b>Marka:</b></label>
-                        <input type="text" class="form-control" name="markaPojazdu" placeholder="Marka pojazdu">
+                        <input type="text" class="form-control" name="markaPojazdu" placeholder="Marka pojazdu"
+                        required data-validation>
                     </div>
                     <div class="form-group">
                         <label class="w3-text-green"><b>Model:</b></label>
-                        <input type="text" class="form-control" name="modelPojazdu" placeholder="Model pojazdu">
+                        <input type="text" class="form-control" name="modelPojazdu" placeholder="Model pojazdu"
+                        required data-validation>
                     </div>
                     <div class="form-group">
                         <label class="w3-text-green"><b>Opis usterki:</b></label>
                         <textarea class="form-control" name="opisUsterki" 
-                        placeholder="Tutaj szczegółowo usterkę pojazdu, na jej podstawie, oszacujemy koszt naprawy" rows="8"></textarea>
+                            placeholder="Tutaj szczegółowo usterkę pojazdu, na jej podstawie, oszacujemy koszt naprawy" rows="8"
+                            required data-validation>
+                        </textarea>
                     </div>
                 </div>
 
@@ -44,13 +48,16 @@
                     <div class="form-group">
                         <label class="w3-text-green"><b>Opis zlecenia:</b></label>
                         <textarea class="form-control" name="opisZlecenia" 
-                        placeholder="Tutaj opisz na czym ma polgać zlecenie" rows="6"></textarea>
+                            placeholder="Tutaj opisz na czym ma polgać zlecenie" rows="6"
+                            required data-validation>
+                        </textarea>
                     </div>
 
                     <div class="form-group">
                         <label class="w3-text-green"><b>Data przekazania pojazdu:</b></label>
                         <input type="date" name="dataPrzekazaniaPojazdu" max="3000-12-31" 
-                                min="2019-01-01" class="form-control">    
+                                min="2019-01-01" class="form-control"
+                                required data-validation>    
                     </div>
                 </div>
 
@@ -62,7 +69,7 @@
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" name="zdjecieUszkodzenia">
                         <label class="custom-file-label" for="customFile"></label>
-                    </div>
+                    </div> 
                 </div>
             </div>
             
