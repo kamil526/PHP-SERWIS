@@ -184,7 +184,16 @@
                 <div class="row">
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Klient:</b></label>
-                        <input type="text" class="form-control" name="idKlienta">
+                        <!-- <input type="text" class="form-control" name="idKlienta"> -->
+                        <?php 
+                        $selectKlienci = "SELECT * FROM Klienci";
+                        $resultKlienci = mysqli_query($polaczenie, $selectKlienci);
+                        ?>
+                        <select>
+                                <?php while($row1 = mysqli_fetch_array($resultKlienci)):;?>
+                                <option><?php echo $row1[1];?></option>
+                        </select>
+
                     </div> 
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Wartość zlecenia:</b></label>
