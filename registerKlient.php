@@ -54,9 +54,9 @@
                 $password = hashHaslo($_POST['password']);
                 // i wykonujemy zapytanie na dodanie usera
                 $sql="INSERT INTO Klienci (login, haslo, imie, nazwisko, email, telefon, ulica
-                                            , nrDomu, kodPocztowy, miasto, nip, nazwaFirmy, nazwaBanku)
+                                            , nrDomu, kodPocztowy, miasto, nip)
                     VALUES ('$login', '$password', '$imie', '$nazwisko', '$email','$telefon', '$ulica'
-                            , '$nrDomu', '$kodPocztowy', '$miasto', '$nip', '$nazwaFirmy', '$nazwaBanku')";
+                            , '$nrDomu', '$kodPocztowy', '$miasto', '$nip')";
                 mysqli_query($polaczenie, $sql);
                 zamknijPoloczenie();
                 //echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php">zalogować</a>.</p>';
