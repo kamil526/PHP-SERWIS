@@ -45,36 +45,35 @@
             </form>
         
 
-<?php
-    // jeśli zostanie naciśnięty przycisk "Zaloguj"
-    if(isset($_POST['login'])) {
-        // filtrujemy dane...
-        $login = $_POST['login'] ?? '';
-        //$_POST['password'] = $_POST['password'];
-        $password = hashHaslo($_POST['password']) ?? '';
-        $sql="SELECT idKlienta FROM Klienci WHERE login = '$login' AND haslo = '$password' LIMIT 1";
-        // sprawdzamy prostym zapytaniem sql czy podane dane są prawidłowe
-        $result = mysqli_query($polaczenie, $sql);
-        if(mysqli_num_rows($result) > 0) {
-            // jeśli tak to ustawiamy sesje "logged" na true oraz do sesji "idKlienta" wstawiamy idKlienta
-            $row = mysqli_fetch_assoc($result);
-            $_SESSION['logged'] = true;
-            $_SESSION['idKlienta'] = $row['idKlienta'];
-            $_SESSION['login'] = $_POST['login'];
-            $_SESSION['typUsera'] = 1;
-            zamknijPoloczenie();
-            header('Location: zleceniaKlient.php');
-        } else {
-                echo '<br> <div class="alert alert-danger" role="alert">
-                        Hasło lub login jest niepoprawne!
-                    </div>';
-            }
-    }
+            <?php
+                // jeśli zostanie naciśnięty przycisk "Zaloguj"
+                if(isset($_POST['login'])) {
+                    // filtrujemy dane...
+                    $login = $_POST['login'] ?? '';
+                    //$_POST['password'] = $_POST['password'];
+                    $password = hashHaslo($_POST['password']) ?? '';
+                    $sql="SELECT idKlienta FROM Klienci WHERE login = '$login' AND haslo = '$password' LIMIT 1";
+                    // sprawdzamy prostym zapytaniem sql czy podane dane są prawidłowe
+                    $result = mysqli_query($polaczenie, $sql);
+                    if(mysqli_num_rows($result) > 0) {
+                        // jeśli tak to ustawiamy sesje "logged" na true oraz do sesji "idKlienta" wstawiamy idKlienta
+                        $row = mysqli_fetch_assoc($result);
+                        $_SESSION['logged'] = true;
+                        $_SESSION['idKlienta'] = $row['idKlienta'];
+                        $_SESSION['login'] = $_POST['login'];
+                        $_SESSION['typUsera'] = 1;
+                        zamknijPoloczenie();
+                        header('Location: zleceniaKlient.php');
+                    } else {
+                            echo '<br> <div class="alert alert-danger" role="alert">
+                                    Hasło lub login jest niepoprawne!
+                                </div>';
+                        }
+                }
 
-    //
-?>
+            ?>
+        </div>
     </div>
-   </div>
 </div>
 
 <?php

@@ -34,41 +34,42 @@
                 </div>
 
                 <button type="submit" class="w3-btn w3-green">Zaloguj się</button>
-
+                <br> 
+                <br>
+                <br>
             </form>
       
-
-
-    <?php
-        // jeśli zostanie naciśnięty przycisk "Zaloguj"
-        if(isset($_POST['login'])) {
-            // filtrujemy dane...
-            $login = $_POST['login'] ?? '';
-            //$_POST['password'] = $_POST['password'];
-            $password = hashHaslo($_POST['password']) ?? '';
-            $sql="SELECT idPracownika FROM Pracownicy WHERE login = '$login' AND haslo = '$password' LIMIT 1";
-            // sprawdzamy prostym zapytaniem sql czy podane dane są prawidłowe
-            $result = mysqli_query($polaczenie, $sql);
-            if(mysqli_num_rows($result) > 0) {
-                // jeśli tak to ustawiamy sesje "logged" na true oraz do sesji "idPracownika" wstawiamy idPracownika
-                $row = mysqli_fetch_assoc($result);
-                $_SESSION['logged'] = true;
-                $_SESSION['idPracownika'] = $row['idPracownika'];
-                $_SESSION['login'] = $_POST['login'];
-                $_SESSION['typUsera'] = 0;
-                header('Location: panelPracownika.php');
-            } else {
-                    echo '<br> <div class="alert alert-danger" role="alert">
-                            Hasło lub login jest niepoprawne!
-                        </div>';
+            <?php
+                // jeśli zostanie naciśnięty przycisk "Zaloguj"
+                if(isset($_POST['login'])) {
+                    // filtrujemy dane...
+                    $login = $_POST['login'] ?? '';
+                    //$_POST['password'] = $_POST['password'];
+                    $password = hashHaslo($_POST['password']) ?? '';
+                    $sql="SELECT idPracownika FROM Pracownicy WHERE login = '$login' AND haslo = '$password' LIMIT 1";
+                    // sprawdzamy prostym zapytaniem sql czy podane dane są prawidłowe
+                    $result = mysqli_query($polaczenie, $sql);
+                    if(mysqli_num_rows($result) > 0) {
+                        // jeśli tak to ustawiamy sesje "logged" na true oraz do sesji "idPracownika" wstawiamy idPracownika
+                        $row = mysqli_fetch_assoc($result);
+                        $_SESSION['logged'] = true;
+                        $_SESSION['idPracownika'] = $row['idPracownika'];
+                        $_SESSION['login'] = $_POST['login'];
+                        $_SESSION['typUsera'] = 0;
+                        header('Location: panelPracownika.php');
+                    } else {
+                            echo '<br> <div class="alert alert-danger" role="alert">
+                                    Hasło lub login jest niepoprawne!
+                                </div>';
+                        }
                 }
-        }
 
-        //zamknijPoloczenie();
-    ?>
-      </div>
+                //zamknijPoloczenie();
+            ?>
+        </div>
     </div>
 </div>
+
 <?php
     include 'bottomPage.php';  
    // zamknijPoloczenie();
