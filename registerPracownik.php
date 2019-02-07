@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row featurette">
 
-                <div class="col-md-4">
+                <div class="col-md-4 offset-md-2">
                     <h3>Dane konta:</h3><br>
 
                     <label class="w3-text-green"><b>Login:</b></label>
