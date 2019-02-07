@@ -52,6 +52,22 @@
     ?>
 
     <?php
+            if(isset($_GET['idZlecenia']))
+            { ?>
+                'use strict';
+                (function($)
+                {
+                    jQuery(window).on("load",function() {
+                    jQuery('#modalEZP').modal('show');
+                    });
+                })(jQuery);
+                
+                
+    <?php   }
+
+    ?>
+
+    <?php
             if(isset($_GET['idKlienta']))
             { ?>
                 'use strict';

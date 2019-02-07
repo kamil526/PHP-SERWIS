@@ -1,4 +1,3 @@
-
 <?php
 include 'topPage.php';
 
@@ -18,7 +17,7 @@ if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==1)){
 otworzPoloczenie();
 ?>
 
-<!-- Polaczenie z bazy i wyciagniecie danych klientow -->
+<!-- Wyciagniecie danych z tabeli Klienci i przypisanie ich do options -->
 <?php
     $selectKlient = "SELECT idKlienta, imie, nazwisko FROM Klienci";
     $resultKlient = mysqli_query($polaczenie, $selectKlient);
@@ -31,60 +30,26 @@ otworzPoloczenie();
     }
 ?>
 
-<?php
-        if(isset($_POST['zapisz']))
-        {
-            $idPracownika=$_SESSION['idPracownika'] ?? '';
-            $dataDodania = $_POST['dataDodania'] ?? '';
-            $dataPrzekazania = $_POST['dataPrzekazania'] ?? '';
-            $dataZakonczenia = $_POST['dataZakonczenia'] ?? '';
-            $statusZlecenia = $_POST['statusZlecenia'] ?? '';
-            $rodzajZlecenia = $_POST['rodzajZlecenia'] ?? '';
-            $opisZlecenia = $_POST['opisZlecenia'] ?? '';
-            $opisUsterki = $_POST['opisUsterki'] ?? '';
-            $komentarzPracownika = $_POST['komentarzPracownika'] ?? '';
-            $markaPojazdu = $_POST['markaPojazdu'] ?? '';
-            $modelPojazdu = $_POST['modelPojazdu'] ?? '';
-            $wartoscZlecenia = $_POST['wartoscZlecenia'] ?? '';
-            $idKlienta = $_POST['idKlienta'] ?? '';
-            
-
-
-            $sql="INSERT INTO Zlecenia (idPracownika, idKlienta, dataDodania, dataPrzekazania, dataZakonczenia, 
-            statusZlecenia, rodzajZlecenia, opisZlecenia, opisUsterki, komentarzPracownika, 
-            markaPojazdu, modelPojazdu, wartoscZlecenia)
-            VALUES ('$idPracownika', '$idKlienta', '$dataDodania', '$dataPrzekazania', '$dataZakonczenia', '$statusZlecenia','$rodzajZlecenia', '$opisZlecenia'
-            , '$opisUsterki', '$komentarzPracownika', '$markaPojazdu', '$modelPojazdu', '$wartoscZlecenia')";
-            mysqli_query($polaczenie, $sql);
-
-/*              if (mysqli_query($polaczenie, $sql)) {
-                echo "New record created successfully";
-            } else {
-                echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
-            }   */
-        }
-    
-?>
-
-
-
-
-
 <div class="container">
         <div class="row featurette">
             <div class="col-md-2">
                 <div class=" w3-bar-block w3-large" > 
-                    <button type="button" class="w3-btn w3-green" data-toggle="modal" data-target=".bd-example-modal-lg">Nowe zlecenie</button>
+                    <button type="button" class="w3-btn w3-green" data-toggle="modal" data-target="#modalNoweZlecenie">Nowe zlecenie</button>
                 </div>
             </div>
             <div class="col-md-2">
                 <div class=" w3-bar-block w3-large" > 
-                    <form><input type="button" value="Dodaj pracownika" onclick="window.location.href='registerPracownik.php'" class="w3-btn w3-green" /></form>
+                    <button type="button" onclick="window.location.href='registerPracownik.php'" class="w3-btn w3-green">Dodaj pracownika</button>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class=" w3-bar-block w3-large" > 
+                <button type="button" onclick="window.location.href='addKlient.php'" class="w3-btn w3-green">Dodaj klienta</button>
                 </div>
             </div>
         </div>
         <div class="row featurette">
-        <div class="col-md-12">
+        <div class="col">
             <div class="w3-container col-md">
                 <h1 class="w3-green" style="padding:10px;">Zlecenia</h1>
                 
@@ -121,6 +86,7 @@ otworzPoloczenie();
 
                                                 <th scope="col">Wartość</th>
                                                 <th scope="col"></th>
+                                                <th scope="col"></th>
                                             </tr>
                                         </thead>
                                     <tbody>';
@@ -136,7 +102,7 @@ otworzPoloczenie();
                                         echo "<td>".$query['rodzajZlecenia']."</td>";
                                         echo "<td>".$query['opisZlecenia']."</td>";
                                         echo "<td>".$query['wartoscZlecenia']."</td>";
-                                        
+                                        echo "<td><a href='panelPracownika.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Edytuj </a></td>";
                                         echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td>";
                                     }
 
@@ -151,8 +117,8 @@ otworzPoloczenie();
         </div>
     </div>
 </div>
-
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" 
+<!-- MODAL NOWE ZLECENIE -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="modalNoweZlecenie"
       aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="dialog">
         <div class="modal-content">
@@ -163,6 +129,42 @@ otworzPoloczenie();
                 </button>
             </div>
             <div class="modal-body">
+
+            <?php
+                if(isset($_POST['zapisz']))
+                {
+                    $idPracownika=$_SESSION['idPracownika'] ?? '';
+                    $dataDodania = $_POST['dataDodania'] ?? '';
+                    $dataPrzekazania = $_POST['dataPrzekazania'] ?? '';
+                    $dataZakonczenia = $_POST['dataZakonczenia'] ?? '';
+                    $statusZlecenia = $_POST['statusZlecenia'] ?? '';
+                    $rodzajZlecenia = $_POST['rodzajZlecenia'] ?? '';
+                    $opisZlecenia = $_POST['opisZlecenia'] ?? '';
+                    $opisUsterki = $_POST['opisUsterki'] ?? '';
+                    $komentarzPracownika = $_POST['komentarzPracownika'] ?? '';
+                    $markaPojazdu = $_POST['markaPojazdu'] ?? '';
+                    $modelPojazdu = $_POST['modelPojazdu'] ?? '';
+                    $wartoscZlecenia = $_POST['wartoscZlecenia'] ?? '';
+                    $idKlienta = $_POST['idKlienta'] ?? '';
+                    
+
+
+                    $sql="INSERT INTO Zlecenia (idPracownika, idKlienta, dataDodania, dataPrzekazania, dataZakonczenia, 
+                    statusZlecenia, rodzajZlecenia, opisZlecenia, opisUsterki, komentarzPracownika, 
+                    markaPojazdu, modelPojazdu, wartoscZlecenia)
+                    VALUES ('$idPracownika', '$idKlienta', '$dataDodania', '$dataPrzekazania', '$dataZakonczenia', '$statusZlecenia','$rodzajZlecenia', '$opisZlecenia'
+                    , '$opisUsterki', '$komentarzPracownika', '$markaPojazdu', '$modelPojazdu', '$wartoscZlecenia')";
+                    mysqli_query($polaczenie, $sql);
+
+        /*              if (mysqli_query($polaczenie, $sql)) {
+                        echo "New record created successfully";
+                    } else {
+                        echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
+                    }   */
+                }
+            
+            ?>
+
             <!-- Zawartosc modala -->
             <form method="post" action="panelPracownika.php" id="modal-form">
             <div class="container-fluid">
@@ -252,11 +254,10 @@ otworzPoloczenie();
         </div>
     </div>
 </div>
-
-
-
+      
 
 <?php
+    include 'editZlecenieModalPracownik.php';
     include 'bottomPage.php';
     zamknijPoloczenie(); 
 ?>
