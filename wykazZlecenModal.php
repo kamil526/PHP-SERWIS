@@ -16,7 +16,7 @@
                         <?php
 
                         $idKlienta=$_GET['idKlienta'];
-                        $sql="SELECT idZlecenia, dataDodania, markaPojazdu, modelPojazdu, statusZlecenia, wartoscZlecenia  
+                        $sql="SELECT idZlecenia, dataDodania, markaPojazdu, modelPojazdu, statusZlecenia, round(wartoscZlecenia,2) as wartoscZlecenia 
                                 FROM Zlecenia WHERE idKlienta=$idKlienta";
                         $result=mysqli_query($polaczenie, $sql);
                         echo'<div class="container">

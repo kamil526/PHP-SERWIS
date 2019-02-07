@@ -12,7 +12,7 @@
         <div class="col-md-12">
                 <?php
                 //$sql="SELECT idKlienta, login, imie, nazwisko, nazwaFirmy FROM Klienci";
-                $sql='SELECT Klienci.idKlienta, login, imie, nazwisko, nazwaFirmy, sum(Zlecenia.wartoscZlecenia) as wartoscZlecen 
+                $sql='SELECT Klienci.idKlienta, login, imie, nazwisko, nazwaFirmy, round(sum(Zlecenia.wartoscZlecenia),2) as wartoscZlecen 
                 FROM Klienci left join Zlecenia on Zlecenia.idKlienta=Klienci.idKlienta GROUP BY Klienci.idKlienta';
                 $result = mysqli_query($polaczenie, $sql);
                 echo '<div class="container">
