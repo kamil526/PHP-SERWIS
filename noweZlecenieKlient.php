@@ -9,7 +9,7 @@
     
         <div class="col-md-2">
             <form>
-                <input type="button" value="Nowe Zlecenie" onclick="window.location.href='zlecenieKlient.php'" 
+                <input type="button" value="Nowe Zlecenie" onclick="window.location.href='noweZlecenieKlient.php'" 
                 class="w3-btn w3-green" />
             </form>
             <br>
@@ -21,7 +21,7 @@
             <button type="button" class="w3-btn w3-green" data-toggle="modal" data-target=".bd-example-modal-lg">Moje dane</button>
         </div>
 
-        <form class="col-md-10" method="post" action="zlecenieKlient.php" >
+        <form class="col-md-10" method="post" action="noweZlecenieKlient.php" >
             <div class="row featurette">
 
                 <div class="col-md-5">
@@ -106,7 +106,6 @@
                 mysqli_query($polaczenie, $sql);
                 
                 echo '<p><center>Zlecenie zostało dodane</center></p>';
-                //zamknijPoloczenie();
         }
     }
 ?>
@@ -114,4 +113,5 @@
 <?php
     include 'editKlient.php';
     include 'bottomPage.php';
+    zamknijPoloczenie(); 
 ?>  
