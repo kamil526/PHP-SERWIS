@@ -1,13 +1,24 @@
+
 <?php
-    include 'topPage.php';
-    otworzPoloczenie();
-?>
-<?php
+include 'topPage.php';
+
 if ($_SESSION['logged']==false){
     header('Location: loginPracownik.php');
     //nie wykonuj kodu poniżej
     exit();
 }
+if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==1)){
+    echo '<br> <div class="alert alert-danger" role="alert">
+        Nie masz odpowiednich uprawnień!
+        </div>';
+
+    exit();
+}
+?>
+
+<?php
+
+    otworzPoloczenie();
 ?>
 
 <!-- Polaczenie z bazy i wyciagniecie danych klientow -->
