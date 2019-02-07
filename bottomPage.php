@@ -47,9 +47,25 @@
                 })(jQuery);
                 
                 
+    <?php   }
+
+    ?>
+
+    <?php
+            if(isset($_GET['idKlienta']))
+            { ?>
+                'use strict';
+                (function($)
+                {
+                    jQuery(window).on("load",function() {
+                    jQuery('#modal3').modal('show');
+                    });
+                })(jQuery);
+                
+                
 <?php       }
 
-?>
+    ?>
 
 </script>
 </body>
