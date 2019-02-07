@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Druk offsetowy, druk cyfrowy, introligatornia">
+    <meta name="description" content="Serwis samochodowy, warsztat, klimatyzacja, wymiana oleju, opony">
     <meta name="author" content="Michał Sierotowicz, Kamil Poręba">
     <link rel="icon" href="startpage/img/faviconkw.ico">
     <title>eSerwis - Samochodowy </title>
