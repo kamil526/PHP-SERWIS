@@ -17,12 +17,13 @@
             
 
             //mysqli_query($polaczenie, $sql);
-            if (mysqli_query($polaczenie, $sql)) {
+            if (mysqli_query($polaczenie, $sql)) 
+            {
                 echo '<p><center>Zlecenie zostało pomyślnie edytowane.</center></p>';
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
             }    
-            include 'upload.php';
+            //include 'upload.php';
         }
 ?>
 
@@ -89,14 +90,14 @@
                                 value="<?php echo $query2['dataPrzekazania']; ?>">
                             </div>
                         </div>
-                        <div class="row featurette">
+                        <!-- <div class="row featurette">
                             <div class="col-md-10">
                                 <label class="w3-text-green"><b>Tutaj dołącz zdjęcie lub inny dokument dotyczący zlecenia:</b></label>
                                 <div class="custom-file">
                                     <input type="file" name="fileToUpload" id="fileToUpload">
                                 </div> 
                             </div>
-                        </div>
+                        </div> -->
                         <br>
                     </div>
                     <div class="modal-footer">
@@ -108,9 +109,6 @@
         </div>
     </div>
 </div>
-
-
-
 
 <?php
     zamknijPoloczenie(); 
