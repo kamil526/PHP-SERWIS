@@ -223,7 +223,7 @@ otworzPoloczenie();
                 <div class="row">
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Klient:</b></label><br>
-                        <select class="form-control" name="idKlienta" class="form-control">
+                        <select class="form-control" name="idKlienta" class="form-control" disabled>
                             <?php echo $optionsKlient;?>
                         </select>
                     </div> 
