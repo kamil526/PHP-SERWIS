@@ -10,6 +10,25 @@ if ($_SESSION['logged']==false){
 }
 ?>
 
+<?php
+
+if ($_SESSION['logged']==false){
+    header('Location: loginKlient.php');
+    //nie wykonuj kodu poniżej
+    exit();
+}
+if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==0)){
+    echo '<br> <div class="alert alert-danger" role="alert">
+        <center>Nie masz odpowiednich uprawnień!</center>
+        </div>';
+
+    exit();
+}
+?>
+
+
+
+
 <?php   
     $idKlienta =$_SESSION['idKlienta'] ?? '';
 
