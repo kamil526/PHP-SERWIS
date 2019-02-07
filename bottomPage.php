@@ -33,7 +33,7 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
-        // POST idZlecenie jako parametr do strony
+        // Uruchomienie Modala po zaladowaniu strony z parametrem idZlecenia
         <?php
             if(isset($_GET['idZlecenia']))
             { ?>
@@ -49,6 +49,7 @@
 <?php       }
 
 ?>
+
 </script>
 </body>
 </html>

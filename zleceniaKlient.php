@@ -84,7 +84,7 @@
                     echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Usuń </a></td></form>";
  
                 }
-
+                
                 ?>
 
                         </tr>
