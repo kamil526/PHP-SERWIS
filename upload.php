@@ -5,7 +5,13 @@
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     // Check if image file is a actual image or fake image
-    if(isset($_POST["submit"])) {
+    if($_FILES['fileToUpload']['size'] != 0)
+    {
+
+    
+    
+    if(isset($_POST["submit"])) 
+    {
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
             echo "File is an image - " . $check["mime"] . ".";
@@ -42,5 +48,5 @@
             echo "Sorry, there was an error uploading your file.";
         }
     }
-
+    }
 ?>
