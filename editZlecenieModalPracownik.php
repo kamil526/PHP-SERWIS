@@ -119,21 +119,20 @@
                 <br>
                 <div class="row">
                     <div class="col-md-4">   
+                        <label class="w3-text-green"><b>Id zlecenia:</b></label>
+                        <input type="text" class="form-control" name="idZlecenia" readonly
+                                value="<?php echo $query2['idZlecenia']; ?>">
+                    </div> 
+                    <div class="col-md-4">   
                         <label class="w3-text-green"><b>Klient:</b></label><br>
-                        <select class="form-control" name="idKlienta" class="form-control">
+                        <select class="form-control" name="idKlienta" class="form-control" disabled>
                             <option><?php echo $query2['imie']; ?> <?php echo $query2['nazwisko']; ?></option>
-                            <?php echo $optionsKlient;?>
                         </select>
                     </div> 
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Wartość zlecenia:</b></label>
                         <input type="text" class="form-control" name="wartoscZlecenia"
                                 value="<?php echo $query2['wartoscZlecenia']; ?>">
-                    </div> 
-                    <div class="col-md-4">   
-                        <label class="w3-text-green"><b>Id zlecenia:</b></label>
-                        <input type="text" class="form-control" name="idZlecenia" readonly
-                                value="<?php echo $query2['idZlecenia']; ?>">
                     </div> 
                 </div>
                 <br>
