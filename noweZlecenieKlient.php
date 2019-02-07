@@ -30,6 +30,7 @@
                 
                 echo '<p><center>Zlecenie zostało dodane</center></p>';
         }
+        include 'upload.php';
     }
 ?>
 
@@ -51,7 +52,7 @@
             <button type="button" class="w3-btn w3-green" data-toggle="modal" data-target=".bd-example-modal-lg">Moje dane</button>
         </div>
 
-        <form class="col-md-10" method="post" action="noweZlecenieKlient.php" >
+        <form class="col-md-10" method="post" action="noweZlecenieKlient.php" enctype="multipart/form-data" >
             <div class="row featurette">
 
                 <div class="col-md-5">
@@ -97,8 +98,7 @@
                 <div class="col-md-10">
                     <label class="w3-text-green"><b>Tutaj możesz dołączyć zdjęcie lub inny dokument dotyczący zlecenia:</b></label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="zdjecieUszkodzenia">
-                        <label class="custom-file-label" for="customFile"></label>
+                        <input type="file" name="fileToUpload" id="fileToUpload">
                     </div> 
                 </div>
             </div>
