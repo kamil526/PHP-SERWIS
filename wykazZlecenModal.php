@@ -21,7 +21,7 @@
                         $result=mysqli_query($polaczenie, $sql);
                         echo'<div class="container">
                         
-                                <div class="row featurette">
+                                <div class="row">
                                     <table class="table">
                                         <thead class="thead-light">
                                             <tr>
