@@ -95,7 +95,7 @@
 
             <div class="row featurette">
                 <div class="col-md-10">
-                    <label class="w3-text-green"><b>Tutaj dołączyć zdjęcie lub inny dokument dotyczący zlecenia:</b></label>
+                    <label class="w3-text-green"><b>Tutaj dołącz zdjęcie lub inny dokument dotyczący zlecenia:</b></label>
                     <div class="custom-file">
                         <input type="file" name="fileToUpload" id="fileToUpload" required data-validation>
                     </div> 
