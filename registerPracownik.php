@@ -97,7 +97,7 @@ otworzPoloczenie();
             <div class="row">
                 <div class="col">
                 <center>
-                    <input class="w3-btn w3-green" type="submit" value="Zarejestruj" name="zarejestruj">
+                    <input href="panelPracownika.php" class="w3-btn w3-green" type="submit" value="Zarejestruj" name="zarejestruj">
                 </center>
                 </div>
             </div>
