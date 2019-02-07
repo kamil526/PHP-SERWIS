@@ -114,7 +114,7 @@
                 <div class="col-md-10">
                     <label class="w3-text-green"><b>Tutaj dołącz zdjęcie lub inny dokument dotyczący zlecenia:</b></label>
                     <div class="custom-file">
-                        <input type="file" name="fileToUpload" id="fileToUpload" required data-validation>
+                        <input type="file" name="fileToUpload" id="fileToUpload">
                     </div> 
                 </div>
             </div>
