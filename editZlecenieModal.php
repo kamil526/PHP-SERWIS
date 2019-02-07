@@ -28,9 +28,11 @@
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 
     <?php 
-                $sql2="SELECT * FROM Zlecenia WHERE idKlienta='$idKlienta'";
+                $idZlecenia=$GET['idZlecenia'];
+                $sql2="SELECT * FROM Zlecenia WHERE idKlienta='$idKlienta' AND idZlecenia='$idZlecenia'";
                 $result2 = mysqli_query($polaczenie, $sql2);
                 $query2 = mysqli_fetch_array($result2);
+              
     ?>
 
     <div class="modal-dialog modal-lg" role="dialog">
@@ -50,7 +52,7 @@
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>idZlecenia:</b></label>
 
-                                <input type="text" class="form-control" name="idZlecenia"
+                                <input type="text" class="form-control" name="idZlecenia" readonly
                                 value="<?php echo $query2['idZlecenia'];?>">
 
                             </div>

@@ -86,8 +86,7 @@
 
                     <div class="form-group">
                         <label class="w3-text-green"><b>Data przekazania pojazdu:</b></label>
-                        <input type="date" name="dataPrzekazania" max="3000-12-31" 
-                                min="2019-01-01" class="form-control"
+                        <input type="date" name="dataPrzekazania" value="<?php echo date('Y-m-d');?>" class="form-control"
                                 required data-validation>    
                     </div>
                 </div>
