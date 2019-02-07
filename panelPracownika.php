@@ -9,16 +9,13 @@ if ($_SESSION['logged']==false){
 }
 if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==1)){
     echo '<br> <div class="alert alert-danger" role="alert">
-        Nie masz odpowiednich uprawnień!
+        <center>Nie masz odpowiednich uprawnień!</center>
         </div>';
 
     exit();
 }
-?>
 
-<?php
-
-    otworzPoloczenie();
+otworzPoloczenie();
 ?>
 
 <!-- Polaczenie z bazy i wyciagniecie danych klientow -->
