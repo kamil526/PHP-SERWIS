@@ -56,78 +56,84 @@
 
 
 
-<div class="row">
-    <div class="col-sm-2">
-        <div class=" w3-bar-block w3-large" > 
-            <button type="button" class="w3-btn w3-hover-green" data-toggle="modal" data-target=".bd-example-modal-lg">Nowe zlecenie</button>
-            <br><br><br>
-            <form><input type="button" value="Dodaj pracownika" onclick="window.location.href='registerPracownik.php'" class="w3-btn w3-hover-green" /></form>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="w3-container col-md">
-            <h1 class="w3-green" style="padding:10px;">Zlecenia</h1>
-            
-                <div class="container">
-
-                    <?php
-                        if(isset($_POST['deleteZlecenie'])) 
-                        {
-                            global $polaczenie;
-                            $idZlecenia = $_POST['idZlecenia'];
-                            $rozkaz = "delete from Zlecenia where idZlecenia=$idZlecenia;";
-                            mysqli_query($polaczenie, $rozkaz)
-                            or exit("Błąd w zapytaniu: ".$rozkaz);
-                        }
-                    ?>
-                    <?php
-                            
-                        $sql2="SELECT * FROM Zlecenia INNER JOIN Klienci ON Zlecenia.idKlienta=Klienci.IdKlienta";
-                        $result = mysqli_query($polaczenie, $sql2);
-                        echo 
-                        '<form method="post" action="panelPracownika.php" >
-                            <div class="row featurette">
-                                <table class="table">
-                                    <thead class="thead-light">
-                                        <tr>
-                                            <th scope="col">ID Zlecenia</th>
-                                            <th scope="col">Klient</th>
-                                            <th scope="col">Data dodania</th>
-                                            <th scope="col">Data przekazania</th>
-                                            <th scope="col">Data zakończenia</th>
-                                            <th scope="col">Status zlecenia</th>
-                                            <th scope="col">Rodzaj</th>
-                                            <th scope="col">Opis zlecenia</th>
-
-                                            <th scope="col">Wartość</th>
-                                            <th scope="col"></th>
-                                        </tr>
-                                    </thead>
-                                <tbody>';
-
-                                while($query=mysqli_fetch_array($result))
-                                {
-                                    echo "<tr> <th scope='row' name='idZlecenia' id='idZlecenia'>".$query['idZlecenia']."</th>";
-                                    echo "<td>".$query['imie']." ".$query['nazwisko']."</td>";
-                                    echo "<td>".$query['dataDodania']."</td>";
-                                    echo "<td>".$query['dataZakonczenia']."</td>";
-                                    echo "<td>".$query['dataPrzekazania']."</td>";
-                                    echo "<td>".$query['statusZlecenia']."</td>";
-                                    echo "<td>".$query['rodzajZlecenia']."</td>";
-                                    echo "<td>".$query['opisZlecenia']."</td>";
-                                    echo "<td>".$query['wartoscZlecenia']."</td>";
-                                    
-                                    echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td>";
-                                }
-
-                    ?>
-                                        </tr>
-                                </tbody>
-                                </table>
-                            </div>
-                        </form>
+<div class="container">
+        <div class="row featurette">
+            <div class="col-md-2">
+                <div class=" w3-bar-block w3-large" > 
+                    <button type="button" class="w3-btn w3-green" data-toggle="modal" data-target=".bd-example-modal-lg">Nowe zlecenie</button>
                 </div>
+            </div>
+            <div class="col-md-2">
+                <div class=" w3-bar-block w3-large" > 
+                    <form><input type="button" value="Dodaj pracownika" onclick="window.location.href='registerPracownik.php'" class="w3-btn w3-green" /></form>
+                </div>
+            </div>
+        </div>
+        <div class="row featurette">
+        <div class="col-md-12">
+            <div class="w3-container col-md">
+                <h1 class="w3-green" style="padding:10px;">Zlecenia</h1>
+                
+                    <div class="container">
+
+                        <?php
+                            if(isset($_POST['deleteZlecenie'])) 
+                            {
+                                global $polaczenie;
+                                $idZlecenia = $_POST['idZlecenia'];
+                                $rozkaz = "delete from Zlecenia where idZlecenia=$idZlecenia;";
+                                mysqli_query($polaczenie, $rozkaz)
+                                or exit("Błąd w zapytaniu: ".$rozkaz);
+                            }
+                        ?>
+                        <?php
+                                
+                            $sql2="SELECT * FROM Zlecenia INNER JOIN Klienci ON Zlecenia.idKlienta=Klienci.IdKlienta";
+                            $result = mysqli_query($polaczenie, $sql2);
+                            echo 
+                            '<form method="post" action="panelPracownika.php" >
+                                <div class="row featurette">
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">ID Zlecenia</th>
+                                                <th scope="col">Klient</th>
+                                                <th scope="col">Data dodania</th>
+                                                <th scope="col">Data przekazania</th>
+                                                <th scope="col">Data zakończenia</th>
+                                                <th scope="col">Status zlecenia</th>
+                                                <th scope="col">Rodzaj</th>
+                                                <th scope="col">Opis zlecenia</th>
+
+                                                <th scope="col">Wartość</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                    <tbody>';
+
+                                    while($query=mysqli_fetch_array($result))
+                                    {
+                                        echo "<tr> <th scope='row' name='idZlecenia' id='idZlecenia'>".$query['idZlecenia']."</th>";
+                                        echo "<td>".$query['imie']." ".$query['nazwisko']."</td>";
+                                        echo "<td>".$query['dataDodania']."</td>";
+                                        echo "<td>".$query['dataZakonczenia']."</td>";
+                                        echo "<td>".$query['dataPrzekazania']."</td>";
+                                        echo "<td>".$query['statusZlecenia']."</td>";
+                                        echo "<td>".$query['rodzajZlecenia']."</td>";
+                                        echo "<td>".$query['opisZlecenia']."</td>";
+                                        echo "<td>".$query['wartoscZlecenia']."</td>";
+                                        
+                                        echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td>";
+                                    }
+
+                        ?>
+                                            </tr>
+                                    </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                    </div>
+            </div>
         </div>
     </div>
 </div>
