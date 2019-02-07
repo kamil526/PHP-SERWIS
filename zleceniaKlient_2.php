@@ -132,8 +132,8 @@
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>idZlecenia:</b></label>
 
-                                <input type="text" class="form-control" name="imie"
-                                value="<?php echo $query2['idZlecenia']; ?>" readonly>
+                                <input type="text" class="form-control" name="idZlecenia" readonly
+                                value="<?php echo $query2['idZlecenia'];?>">
 
                             </div>
                             <div class="col-md-4">

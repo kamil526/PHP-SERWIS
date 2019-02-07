@@ -4,11 +4,40 @@
 ?>
 
 <?php
+        if(isset($_POST['zapiszKlient'])){
+            //pobieramy dane z pól
+            $imie=$_POST['imie'] ?? '';
+            $password = $_POST['password'] ?? '';
+            $password2 = $_POST['password2'] ?? '';
+            $nazwisko=$_POST['nazwisko'] ?? '';
+            $email=$_POST['email'] ?? '';
+            $telefon=$_POST['telefon'] ?? '';
+            $kodPocztowy=$_POST['kodPocztowy'] ?? '';
+            $miasto=$_POST['miasto'] ?? '';
+            $ulica=$_POST['ulica'] ?? '';
+            $nrDomu=$_POST['nrDomu'] ?? '';
+            $nazwaFirmy=$_POST['nazwaFirmy'] ?? '';
+            $nip=$_POST['nip'] ?? '';
 
-        
+            
+            if($password != $password2){
+                echo '<p>Podane hasła różnią się od siebie.</p>';
+            } else {
+                    $password = hashHaslo($_POST['password']);
+                    // i wykonujemy zapytanie na edycje usera
+                    $sql="UPDATE Klienci set imie='$imie',haslo='$password',nazwisko='$nazwisko',email='$email',telefon='$telefon'
+                        ,nrDomu='$nrDomu',kodPocztowy='$kodPocztowy', ulica='$ulica',miasto='$miasto',nazwaFirmy='$nazwaFirmy',nip='$nip'
+                        where idKlienta=$idKlienta";
+                    mysqli_query($polaczenie, $sql);
+            }
+        }
 
-    
-?>
+        $idKlienta=$_SESSION['idKlienta'] ?? '';
+
+        $select="select imie, nazwisko, email, telefon, nrDomu, kodPocztowy, ulica, miasto, nazwaFirmy, nip FROM Klienci where idKlienta=$idKlienta";
+        $result=mysqli_query($polaczenie, $select);     
+        $query=mysqli_fetch_array($result);
+    ?>
 
 
 <div class="container">
@@ -68,15 +97,14 @@
 
                 while($query=mysqli_fetch_array($result))
                 {
-                    echo "<form name='submit' action='editZlecenieModal.php' method='POST'>";
+                    echo "<form name='submit' action='zleceniaKlient.php' method='POST'>";
                     echo "<tr> <th scope='row' name='idZlecenia' id='idZlecenia'>".$query['idZlecenia']."</th>";
                     echo "<td>".$query['dataDodania']."</td>";
                     echo "<td>".$query['statusZlecenia']."</td>";
                     echo "<td>".$query['wartoscZlecenia']."</td>";
                     ECHO "<td><button type='button' class='w3-btn w3-green' data-toggle='modal' data-target='.bd-example2-modal-lg'>Edytuj</button></td>";
                     echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td></form>";
-
-                    
+ 
                 }
 
                 ?>
@@ -99,11 +127,7 @@
 
     <!--   TUTAJ MODAL DLA EDYCJI ZLECENIA  -->
 
-    <div class="modal fade bd-example2-modal-lg" tabindex="-1" role="dialog" 
-    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-
     <?php
-    
         $idZlecenia = $_POST['idZlecenia'] ?? '';
         if(isset($_POST['zapisz'])){
             //pobieramy dane z pól
@@ -120,11 +144,20 @@
                 mysqli_query($polaczenie, $sql);
         }
         /*
-        $select="select imie, nazwisko, email, telefon, nrDomu, kodPocztowy, ulica, miasto, nazwaFirmy, nip 
-        FROM Klienci where idKlienta=$idKlienta";
+        $select="select imie, nazwisko, email, telefon, nrDomu, kodPocztowy, ulica, miasto, nazwaFirmy, nip FROM Klienci where idKlienta=$idKlienta";
         $result=mysqli_query($polaczenie, $select);     
         $query=mysqli_fetch_array($result);
         */
+    ?>
+
+
+    <div class="modal fade bd-example2-modal-lg" tabindex="-1" role="dialog" 
+    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+
+    <?php 
+            $idKlienta =$_SESSION['idKlienta'] ?? '';
+            $sql2="SELECT idZlecenia, dataDodania, statusZlecenia, wartoscZlecenia FROM Zlecenia WHERE idKlienta=$idKlienta";
+            $result2 = mysqli_query($polaczenie, $sql2);
     ?>
 
     <div class="modal-dialog modal-lg" role="dialog">
@@ -143,13 +176,16 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>idZlecenia:</b></label>
-                                <input type="text" class="form-control" name="idZlecenia"
-                                value="<?php echo $idZlecenia; ?>" readonly>
+
+                                <input type="text" class="form-control" name="imie"
+                                value="<?php echo $query['idZlecenia']; ?>" readonly>
+
                             </div>
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Marka pojazdu:</b></label>
                                 <input type="text" class="form-control" name="markaPojazdu"
                                 value="<?php echo $query['markaPojazdu']; ?>" required data-validation>
+
                             </div>
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Model pojazdu:</b></label>
@@ -170,12 +206,12 @@
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Opis zlecenia:</b></label>
                                 <input type="text" class="form-control" name="opisZlecenia"
-                                value="<?php echo $query['opisZlecenia']; ?>" required data-validation>
+                                value="<?php echo $opisZlecenia; ?>" required data-validation>
                             </div>
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Data Przekazania Pojazdu:</b></label>
                                 <input type="text" class="form-control" name="dataPrzekazaniaPojazdu"
-                                value="<?php echo $query['dataPrzekazaniaPojazdu']; ?>" required data-validation>
+                                value="<?php echo $dataPrzekazaniaPojazdu; ?>" required data-validation>
                             </div>
                         </div>
                         <br>
@@ -194,7 +230,7 @@
 
 <?php
     //include 'editZlecenieModal.php';
-    include 'editKlient.php';
+    //include 'editKlient.php';
     include 'bottomPage.php';
 
 ?>  
