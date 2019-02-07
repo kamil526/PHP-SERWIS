@@ -8,7 +8,7 @@
 
 <div class="container">
     <h1 class="w3-green" style="padding:10px;">Wykaz kontrahentów</h1>
-    <div class="row featurette">
+    <div class="row">
         <div class="col-md-12">
                 <?php
                 //$sql="SELECT idKlienta, login, imie, nazwisko, nazwaFirmy FROM Klienci";

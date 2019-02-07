@@ -41,7 +41,7 @@
             <a class="nav-link" href="startpage/data/construction.html">O firmie</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="startpage/data/construction.html">Oferta i cennik</a>
+            <a class="nav-link" href="ofertaICennik.php">Oferta i cennik</a>
           </li>
           <?php
             if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true) && ($_SESSION['typUsera']==1)){

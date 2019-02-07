@@ -2,26 +2,28 @@
     include 'topPage.php';
 ?>
 
-<center>
-<div class="col-md-4">
+<div class="conatiner">
+    <div class="col-md-4">
 
-    <h3>Cennik podstawowy:</h3><br>
+        <h2>Cennik podstawowy:</h2><br><br>
 
-    <label class="w3-text-green"><b>Wymiana oleju:</b></label>
-    <label class="w3-text">50 zł</label>
-    <br>
-    <label class="w3-text-green"><b>Wymiana oleju:</b></label>
-    <label class="w3-text">90 zł</label>
-    <br>
-    <label class="w3-text-green"><b>Wymiana oleju:</b></label>
-    <label class="w3-text">90 zł</label>
-    <br>
-    <label class="w3-text-green"><b>Wymiana oleju:</b></label>
-    <label class="w3-text">90 zł</label>
-    <br>
-        
+        <h3>Klimatyzacja:</h3><br>
+        <label class="w3-text-green"><b>Napełnianie układu klimatyzacji:</b></label>
+        <label class="w3-text">100-200 zł</label>
+        <br>
+        <label class="w3-text-green"><b>Dezynfekcja układu klimatyzacji z kontrolą filtra kabinowego:</b></label>
+        <label class="w3-text">50 zł</label>
+        <br>
+        <label class="w3-text-green"><b>Roczny przegląd klimatyzacji:</b></label>
+        <label class="w3-text">70 zł</label>
+        <br>
+        <label class="w3-text-green"><b>Wymiana kompresora klimatyzacji wraz z pełną obsługą:</b></label>
+        <label class="w3-text">od 300 zł</label>
+        <br>
+            
+    </div>
 </div>
-</center>   
+   
 
 
 <?php
