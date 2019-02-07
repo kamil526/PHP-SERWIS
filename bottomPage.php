@@ -33,6 +33,7 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+        // POST idZlecenie jako parametr do strony
         <?php
             if(isset($_GET['idZlecenia']))
             { ?>

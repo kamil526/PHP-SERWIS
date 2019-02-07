@@ -76,13 +76,11 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Opis usterki:</b></label>
-                                <input type="text" class="form-control" name="opisUsterki"
-                                value="<?php echo $query2['opisUsterki']; ?>" required data-validation>
+                                <textarea class="form-control" name="opisUsterki" rows=5 required data-validation><?php echo $query2['opisUsterki'];?></textarea>
                             </div>
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Opis zlecenia:</b></label>
-                                <input type="text" class="form-control" name="opisZlecenia"
-                                value="<?php echo $query2['opisZlecenia']; ?>" required data-validation>
+                                <textarea class="form-control" name="opisZlecenia" rows=5 required data-validation><?php echo $query2['opisZlecenia'];?></textarea>
                             </div>
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Data Przekazania Pojazdu:</b></label>

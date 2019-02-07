@@ -10,8 +10,6 @@ if ($_SESSION['logged']==false){
 }
 ?>
 
-
-
 <div class="container">
     <h1 class="w3-green" style="padding:10px;">Moje Zlecenia</h1>
     <div class="row featurette">
@@ -50,7 +48,7 @@ if ($_SESSION['logged']==false){
                     <table class="table">
                     <thead class="thead-light">
                         <tr>
-                        <th scope="col">ID Zlecenia</th>
+                        <th scope="col">Nr zlecenia</th>
                         <th scope="col">Data</th>
                         <th scope="col">Marka pojazdu</th>
                         <th scope="col">Model pojazdu</th>
