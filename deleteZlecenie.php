@@ -1,14 +1,18 @@
+
 <?php
+session_start();
+
 if ($_SESSION['logged']==false){
     header('Location: loginPracownik.php');
     //nie wykonuj kodu poniżej
     exit();
 }
+
+include('config.php');
+otworzPoloczenie();
 ?>
+
 <?php
-    include('config.php');
-    otworzPoloczenie();
-    session_start();
 
     $idZlecenia=$_GET['idZlecenia'];
     $sql="delete from Zlecenia  WHERE idZlecenia=$idZlecenia";
