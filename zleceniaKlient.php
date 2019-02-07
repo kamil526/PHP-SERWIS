@@ -26,15 +26,17 @@
         <div class="col-md-2">
             <form>
                 <input type="button" value="Nowe Zlecenie" onclick="window.location.href='noweZlecenieKlient.php'" 
-                class="w3-btn w3-green" />
+                class="w3-btn w3-green" style="width:100%"/>
             </form>
             <br>
             <form>
                 <input type="button" value="Moje Zlecenia" onclick="window.location.href='zleceniaKlient.php'" 
-                class="w3-btn w3-green" />
+                class="w3-btn w3-green" style="width:100%"/>
             </form>
             <br>
-            <button type="button" class="w3-btn w3-green" data-toggle="modal" data-target=".bd-example-modal-lg">Moje dane</button>
+            <button type="button" class="w3-btn w3-green" style="width:100%" data-toggle="modal" data-target=".bd-example-modal-lg">Moje dane</button>
+            <br>
+            <br>
         </div>
 
         <div class="col-md-10">
@@ -54,7 +56,7 @@
                     $result = mysqli_query($polaczenie, $sql);
                 echo '<div class="container">
                 <form class="col-md-12" method="post" action="zleceniaKlient.php" >
-                <div class="row featurette">
+                <div class="row">
                     <table class="table">
                     <thead class="thead-light">
                         <tr>
