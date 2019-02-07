@@ -23,7 +23,7 @@
                 //mysqli_query($polaczenie, $sql);
 
                 if (mysqli_query($polaczenie, $sql)) {
-                echo "New record created successfully";
+                //echo "New record created successfully";
                 } else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
                 }   
@@ -96,9 +96,9 @@
 
             <div class="row featurette">
                 <div class="col-md-10">
-                    <label class="w3-text-green"><b>Tutaj możesz dołączyć zdjęcie lub inny dokument dotyczący zlecenia:</b></label>
+                    <label class="w3-text-green"><b>Tutaj dołączyć zdjęcie lub inny dokument dotyczący zlecenia:</b></label>
                     <div class="custom-file">
-                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="file" name="fileToUpload" id="fileToUpload" required data-validation>
                     </div> 
                 </div>
             </div>
