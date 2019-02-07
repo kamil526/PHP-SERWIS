@@ -11,8 +11,10 @@
     <div class="row featurette">
         <div class="col-md-12">
                 <?php
-                $sql="SELECT idKlienta, login, imie, nazwisko, nazwaFirmy FROM Klienci";
-                    $result = mysqli_query($polaczenie, $sql);
+                //$sql="SELECT idKlienta, login, imie, nazwisko, nazwaFirmy FROM Klienci";
+                $sql='SELECT Klienci.idKlienta, login, imie, nazwisko, nazwaFirmy, sum(Zlecenia.wartoscZlecenia) as wartoscZlecen 
+                FROM Klienci left join Zlecenia on Zlecenia.idKlienta=Klienci.idKlienta GROUP BY Klienci.idKlienta';
+                $result = mysqli_query($polaczenie, $sql);
                 echo '<div class="container">
                 <form class="col-md-12" method="post" action="zleceniaKlient.php" >
                 <div class="row featurette">
@@ -24,6 +26,7 @@
                             <th scope="col">Imie</th>
                             <th scope="col">Nazwisko</th>
                             <th scope="col">Nazwa Firmy</th>
+                            <th scope="col">Wartość Zlec.</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -37,6 +40,7 @@
                     echo "<td>".$query['imie']."</td>";
                     echo "<td>".$query['nazwisko']."</td>";
                     echo "<td>".$query['nazwaFirmy']."</td>";
+                    echo "<td>".$query['wartoscZlecen']."</td>";
                     echo "<td><a href='wykazKlientow.php?idKlienta=".$query['idKlienta']."' class='w3-btn w3-green'>Wyświetl zlec. </a></td>";
                 }
                 
