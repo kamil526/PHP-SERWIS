@@ -1,9 +1,19 @@
+
 <?php
+
 if ($_SESSION['logged']==false){
-    header('Location: loginPracownik.php');
+    header('Location: loginKlient.php');
     //nie wykonuj kodu poniżej
     exit();
 }
+if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==0)){
+    echo '<br> <div class="alert alert-danger" role="alert">
+        <center>Nie masz odpowiednich uprawnień!</center>
+        </div>';
+
+    exit();
+}
+
 ?>
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" 
