@@ -17,13 +17,9 @@
 ?>
 
 <div class="container">
-
     <div class="row featurette">
-    
-        <div class="col-md-4 offset-md-4">
-            
-            <form method="post" action="loginKlient.php">
-                
+        <div class="col-md-4 offset-md-4">   
+            <form method="post" action="loginKlient.php"> 
                 <div class="form-group">
                     <label class="w3-text-green"><b>Login</b></label>
                     <input type="text" class="form-control" name="login" placeholder="login"
@@ -41,10 +37,8 @@
                 <p> 
                     [<a href="registerKlient.php">Nie posiadasz konta? Zarejestruj się!</a>]
                 </p>
-
             </form>
         
-
             <?php
                 // jeśli zostanie naciśnięty przycisk "Zaloguj"
                 if(isset($_POST['login'])) {
