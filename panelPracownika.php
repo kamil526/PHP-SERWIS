@@ -31,29 +31,17 @@ otworzPoloczenie();
 ?>
 
 <div class="container">
-        <div class="row featurette">
-            <div class="col-md-2">
-                <div class=" w3-bar-block w3-large" > 
-                    <button type="button" class="w3-btn w3-green" data-toggle="modal" data-target="#modalNoweZlecenie">Nowe zlecenie</button>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class=" w3-bar-block w3-large" > 
-                    <button type="button" onclick="window.location.href='registerPracownik.php'" class="w3-btn w3-green">Dodaj pracownika</button>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class=" w3-bar-block w3-large" > 
-                <button type="button" onclick="window.location.href='addKlient.php'" class="w3-btn w3-green">Dodaj klienta</button>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class=" w3-bar-block w3-large" > 
-                <button type="button" onclick="window.location.href='wykazKlientow.php'" class="w3-btn w3-green">Wykaz klientów</button>
-                </div>
+        <div class="w3-center">
+            <div class="w3-bar">
+                <button type="button" data-toggle="modal" data-target="#modalNoweZlecenie" class="w3-btn w3-green" >Nowe zlecenie</button>
+                <button type="button" onclick="window.location.href='registerPracownik.php'" class="w3-btn w3-green" >Dodaj pracownika</button>
+                <button type="button" onclick="window.location.href='addKlient.php'" class="w3-btn w3-green" >Dodaj klienta</button>
+                <button type="button" onclick="window.location.href='wykazKlientow.php'" class="w3-btn w3-green" >Wykaz klientów</button>
+
             </div>
         </div>
-        <div class="row featurette">
+        <br>
+        <div class="row">
         <div class="col">
             <div class="w3-container col-md">
                 <h1 class="w3-green" style="padding:10px;">Zlecenia</h1>
