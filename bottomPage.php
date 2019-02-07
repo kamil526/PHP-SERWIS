@@ -8,7 +8,8 @@
     <!-- FOOTER -->
 <footer class="container"  >
     <div class="col">
-        <p> &copy; 2018 e-Serwis &middot; <a href="startpage/data/construction.html" class="text-success">Regulamin</a></p>
+        <p> &copy; 2019 e-Serwis &middot; <a href="startpage/data/construction.html" class="text-success">Regulamin</a></p>
+        <p>Created by: Kamil Poręba & Michał Sierotowicz</p>
     </div>
 </footer>
 
