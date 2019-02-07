@@ -2,6 +2,13 @@
     include 'topPage.php';
     otworzPoloczenie();
 ?>
+<?php
+if ($_SESSION['logged']==false){
+    header('Location: loginKlient.php');
+    //nie wykonuj kodu poniżej
+    exit();
+}
+?>
 
 <?php   
     $idKlienta =$_SESSION['idKlienta'] ?? '';

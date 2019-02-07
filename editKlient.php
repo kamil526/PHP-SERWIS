@@ -1,3 +1,11 @@
+<?php
+if ($_SESSION['logged']==false){
+    header('Location: loginPracownik.php');
+    //nie wykonuj kodu poniżej
+    exit();
+}
+?>
+
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" 
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 

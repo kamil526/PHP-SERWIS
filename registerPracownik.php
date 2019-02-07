@@ -3,6 +3,14 @@
     otworzPoloczenie();
 ?>
 
+<?php
+if ($_SESSION['logged']==false){
+    header('Location: loginPracownik.php');
+    //nie wykonuj kodu poniżej
+    exit();
+}
+?>
+
 <?php   
     // jeśli zostanie naciśnięty przycisk "Zarejestruj"
     if(isset($_POST['login'])) {

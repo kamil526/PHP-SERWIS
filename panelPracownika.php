@@ -2,7 +2,13 @@
     include 'topPage.php';
     otworzPoloczenie();
 ?>
-
+<?php
+if ($_SESSION['logged']==false){
+    header('Location: loginPracownik.php');
+    //nie wykonuj kodu poniżej
+    exit();
+}
+?>
 
 <!-- Polaczenie z bazy i wyciagniecie danych klientow -->
 <?php
