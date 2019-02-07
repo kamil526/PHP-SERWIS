@@ -45,7 +45,9 @@
                     echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
                 }   
                 
-                echo '<p><center>Zlecenie zostało dodane</center></p>';
+                echo '<div class="alert alert-success" role="alert">
+                        <center>Zlecenie zostało dodane</center>
+                     </div>';
         }
         include 'upload.php';
     }
