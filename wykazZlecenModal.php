@@ -1,14 +1,5 @@
 <div class="modal fade bd-example3-modal-lg" tabindex="-1" role="dialog" id="modal3"
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <?php
-        //$idKlienta=25; //?? '';   // TUTAJ PRZECHWYCIC TYM SPOSOBEM ... :)
-        $idKlienta=$_GET['idKlienta'];
-        $sql="SELECT idZlecenia, dataDodania, markaPojazdu, modelPojazdu, statusZlecenia, wartoscZlecenia  
-                FROM Zlecenia WHERE idKlienta=$idKlienta";
-        $result=mysqli_query($polaczenie, $sql);     
-        $query=mysqli_fetch_array($result);
-    ?>
-
     <div class="modal-dialog modal-lg" role="dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -20,13 +11,16 @@
 
             <div class="modal-body">
                 <!-- Zawartosc modala -->
-              <!--  <form id="modal-formm"> -->
+                <form id="modal-formm"> 
                     <div class="container-fluid">    
                         <?php
-                        //$idKlienta =$_SESSION['idKlienta'] ?? '';
-                        // $sql="SELECT idZlecenia, dataDodania, markaPojazdu, modelPojazdu, statusZlecenia, wartoscZlecenia  FROM Zlecenia WHERE idKlienta=$idKlienta";
-                        //   $result = mysqli_query($polaczenie, $sql);
+
+                        $idKlienta=$_GET['idKlienta'];
+                        $sql="SELECT idZlecenia, dataDodania, markaPojazdu, modelPojazdu, statusZlecenia, wartoscZlecenia  
+                                FROM Zlecenia WHERE idKlienta=$idKlienta";
+                        $result=mysqli_query($polaczenie, $sql);
                         echo'<div class="container">
+                        
                                 <div class="row featurette">
                                     <table class="table">
                                         <thead class="thead-light">
@@ -42,7 +36,7 @@
                                         <tbody>';
                                             while($query=mysqli_fetch_array($result))
                                             {
-                                                echo "<tr> <th scope='row' name='idZlecenia' id='idZlecenia'>".$query['idZlecenia']."</th>";
+                                                echo "<tr> <th scope='row' name='idZlecenia'>".$query['idZlecenia']."</th>";
                                                 echo "<td>".$query['dataDodania']."</td>";
                                                 echo "<td>".$query['markaPojazdu']."</td>";
                                                 echo "<td>".$query['modelPojazdu']."</td>";
@@ -63,7 +57,7 @@
                         
                     </div>
 
-              <!-- </form> -->
+               </form> 
             </div>
         </div>
     </div>
