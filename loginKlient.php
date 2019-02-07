@@ -63,7 +63,7 @@
             $_SESSION['login'] = $_POST['login'];
             $_SESSION['typUsera'] = 1;
             zamknijPoloczenie();
-            header('Location: zlecenieKlient.php');
+            header('Location: zleceniaKlient.php');
         } else {
                 echo '<br> <div class="alert alert-danger" role="alert">
                         Hasło lub login jest niepoprawne!

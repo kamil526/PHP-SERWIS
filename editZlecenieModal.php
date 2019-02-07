@@ -50,7 +50,7 @@
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>idZlecenia:</b></label>
 
-                                <input type="text" class="form-control" name="idZlecenia" readonly
+                                <input type="text" class="form-control" name="idZlecenia"
                                 value="<?php echo $query2['idZlecenia'];?>">
 
                             </div>
@@ -98,3 +98,8 @@
         </div>
     </div>
 </div>
+
+
+<?php
+    zamknijPoloczenie(); 
+?>  

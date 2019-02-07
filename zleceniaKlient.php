@@ -35,7 +35,7 @@
 
                 <?php
                 $idKlienta =$_SESSION['idKlienta'] ?? '';
-                $sql="SELECT idZlecenia, dataDodania, statusZlecenia, wartoscZlecenia FROM Zlecenia WHERE idKlienta=$idKlienta";
+                $sql="SELECT idZlecenia, dataDodania, markaPojazdu, modelPojazdu, statusZlecenia, wartoscZlecenia  FROM Zlecenia WHERE idKlienta=$idKlienta";
                     $result = mysqli_query($polaczenie, $sql);
                 echo '<div class="container">
                 <form class="col-md-12" method="post" action="zleceniaKlient.php" >
@@ -45,6 +45,8 @@
                         <tr>
                         <th scope="col">ID Zlecenia</th>
                         <th scope="col">Data</th>
+                        <th scope="col">Marka pojazdu</th>
+                        <th scope="col">Model pojazdu</th>
                         <th scope="col">Status</th>
                         <th scope="col">Kwota</th>
                         <th scope="col"></th>
@@ -58,6 +60,8 @@
                     echo "<form name='submit' action='zleceniaKlient.php' method='POST'>";
                     echo "<tr> <th scope='row' name='idZlecenia' id='idZlecenia'>".$query['idZlecenia']."</th>";
                     echo "<td>".$query['dataDodania']."</td>";
+                    echo "<td>".$query['markaPojazdu']."</td>";
+                    echo "<td>".$query['modelPojazdu']."</td>";
                     echo "<td>".$query['statusZlecenia']."</td>";
                     echo "<td>".$query['wartoscZlecenia']."</td>";
                     ECHO "<td><button type='button' class='w3-btn w3-green' data-toggle='modal' data-target='.bd-example2-modal-lg'>Edytuj</button></td>";
