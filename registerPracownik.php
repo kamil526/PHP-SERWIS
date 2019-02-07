@@ -1,15 +1,18 @@
 <?php
-    include 'topPage.php';
-    otworzPoloczenie();
-?>
+include 'topPage.php';
 
-<?php
-if ($_SESSION['logged']==false){
-    header('Location: loginPracownik.php');
-    //nie wykonuj kodu poniżej
+if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==1)){
+    echo '<br> <div class="alert alert-danger" role="alert">
+        <center>Nie masz odpowiednich uprawnień!</center>
+        </div>';
+
     exit();
 }
+
+otworzPoloczenie();
 ?>
+
+
 
 <?php   
     // jeśli zostanie naciśnięty przycisk "Zarejestruj"
