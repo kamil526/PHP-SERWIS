@@ -1,6 +1,5 @@
 <?php
     include 'topPage.php';
-    otworzPoloczenie();
 ?>
     <!--Carousel -->
 <div class="container" md-12>
