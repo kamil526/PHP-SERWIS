@@ -87,17 +87,17 @@
                 
                 ?>
 
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                </form>
-        </div>
-
-    
-
+                </tr>
+                </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
 <?php
-    include 'editKlient.php';
-    include 'editZlecenieModal.php';
-    include 'bottomPage.php';
+include 'editKlient.php';
+include 'editZlecenieModal.php';
+include 'bottomPage.php';
 ?>  
