@@ -1,4 +1,6 @@
 <?php
+
+        $idZlecenia=$_POST['edit'];
         if(isset($_POST['zapisz']))
         {
             //pobieramy dane z pól
@@ -28,7 +30,6 @@
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 
     <?php 
-                $idZlecenia=$GET['idZlecenia'];
                 $sql2="SELECT * FROM Zlecenia WHERE idKlienta='$idKlienta' AND idZlecenia='$idZlecenia'";
                 $result2 = mysqli_query($polaczenie, $sql2);
                 $query2 = mysqli_fetch_array($result2);

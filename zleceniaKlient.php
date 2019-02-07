@@ -64,7 +64,7 @@
                     echo "<td>".$query['modelPojazdu']."</td>";
                     echo "<td>".$query['statusZlecenia']."</td>";
                     echo "<td>".$query['wartoscZlecenia']."</td>";
-                    ECHO "<td><button type='button' class='w3-btn w3-green' data-toggle='modal' data-target='.bd-example2-modal-lg'>Edytuj</button></td>";
+                    ECHO "<td><button type='submit' name='edit' value=".$query['idZlecenia']." class='w3-btn w3-green' data-toggle='modal' data-target='.bd-example2-modal-lg'>Edytuj</button></td>";
                     //echo "<td><a href='editZlecenieModal.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Edytuj </a></td></form>";
                     echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Usuń </a></td></form>";
  
