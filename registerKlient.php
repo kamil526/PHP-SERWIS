@@ -3,6 +3,14 @@
     otworzPoloczenie();
 ?>
 
+<?php
+    if ($_SESSION['logged']==true){
+        header('Location: index.php');
+        //nie wykonuj kodu poniżej
+        exit();
+    }
+?>
+
 <?php   
     // jeśli zostanie naciśnięty przycisk "Zarejestruj"
     if(isset($_POST['login'])) {
