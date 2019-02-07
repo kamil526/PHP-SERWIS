@@ -38,7 +38,7 @@
             <a class="nav-link text-success " href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="startpage/data/construction.html">O firmie</a>
+            <a class="nav-link" href="oFirmie.php">O firmie</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="ofertaICennik.php">Oferta i cennik</a>
