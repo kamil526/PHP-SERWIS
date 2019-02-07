@@ -86,19 +86,16 @@
                     <div class="form-group">
                         <label class="w3-text-green"><b>Opis usterki:</b></label>
                         <textarea class="form-control" name="opisUsterki" 
-                            placeholder="Tutaj szczegółowo usterkę pojazdu, na jej podstawie, oszacujemy koszt naprawy" rows="8"
-                            required data-validation>
-                        </textarea>
+                        placeholder="Tutaj szczegółowo usterkę pojazdu, na jej podstawie, oszacujemy koszt naprawy" rows="8"
+                        required data-validation></textarea>
                     </div>
                 </div>
 
                 <div class="col-md-5">
                     <div class="form-group">
                         <label class="w3-text-green"><b>Opis zlecenia:</b></label>
-                        <textarea class="form-control" name="opisZlecenia" 
-                            placeholder="Tutaj opisz na czym ma polgać zlecenie" rows="6"
-                            required data-validation>
-                        </textarea>
+                        <textarea class="form-control" name="opisZlecenia" placeholder="Tutaj opisz na czym ma polegać zlecenie" rows="6"
+                         required data-validation></textarea>
                     </div>
 
                     <div class="form-group">

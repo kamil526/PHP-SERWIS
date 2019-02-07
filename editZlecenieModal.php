@@ -1,6 +1,6 @@
 
 <?php
-        if(isset($_POST['zapisz']))
+        if(isset($_POST['zapisz'])&&(isset($_SESSION['logged'])) && ($_SESSION['logged']==true))
         {
             //pobieramy dane z pól
             $idKlienta = $_SESSION['idKlienta'] ?? '';
@@ -16,12 +16,13 @@
             WHERE idZlecenia='$idZlecenia'";
             
 
-            mysqli_query($polaczenie, $sql);
-/*          if (mysqli_query($polaczenie, $sql)) {
-                echo "Record updated successfully";
+            //mysqli_query($polaczenie, $sql);
+            if (mysqli_query($polaczenie, $sql)) {
+                echo '<p><center>Zlecenie zostało pomyślnie edytowane.</center></p>';
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
-            }   */ 
+            }    
+            include 'upload.php';
         }
 ?>
 
@@ -88,6 +89,14 @@
                                 value="<?php echo $query2['dataPrzekazania']; ?>">
                             </div>
                         </div>
+                        <div class="row featurette">
+                            <div class="col-md-10">
+                                <label class="w3-text-green"><b>Tutaj dołącz zdjęcie lub inny dokument dotyczący zlecenia:</b></label>
+                                <div class="custom-file">
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                </div> 
+                            </div>
+                        </div>
                         <br>
                     </div>
                     <div class="modal-footer">
@@ -105,5 +114,4 @@
 
 <?php
     zamknijPoloczenie(); 
-    
 ?>  
