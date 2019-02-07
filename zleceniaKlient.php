@@ -1,14 +1,24 @@
 <?php
     include 'topPage.php';
+
+    if ($_SESSION['logged']==false){
+        header('Location: loginPracownik.php');
+        //nie wykonuj kodu poniżej
+        exit();
+    }
+    if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==0)){
+        echo '<br> <div class="alert alert-danger" role="alert">
+            <center>Nie masz odpowiednich uprawnień!</center>
+            </div>';
+
+        exit();
+    }
+
     otworzPoloczenie();
 ?>
-<?php
-if ($_SESSION['logged']==false){
-    header('Location: loginKlient.php');
-    //nie wykonuj kodu poniżej
-    exit();
-}
-?>
+
+
+
 
 <div class="container">
     <h1 class="w3-green" style="padding:10px;">Moje Zlecenia</h1>
