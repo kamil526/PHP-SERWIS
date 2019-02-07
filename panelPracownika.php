@@ -47,6 +47,11 @@ otworzPoloczenie();
                 <button type="button" onclick="window.location.href='addKlient.php'" class="w3-btn w3-green">Dodaj klienta</button>
                 </div>
             </div>
+            <div class="col-md-2">
+                <div class=" w3-bar-block w3-large" > 
+                <button type="button" onclick="window.location.href='wykazKlientow.php'" class="w3-btn w3-green">Wykaz klientów</button>
+                </div>
+            </div>
         </div>
         <div class="row featurette">
         <div class="col">
