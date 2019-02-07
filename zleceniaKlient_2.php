@@ -13,10 +13,10 @@
             $modelPojazdu = $_POST['modelPojazdu'] ?? '';
             $opisUsterki = $_POST['opisUsterki'] ?? '';
             $opisZlecenia = $_POST['opisZlecenia'] ?? '';
-            $dataPrzekazaniaPojazdu = $_POST['dataPrzekazaniaPojazdu'] ?? '';
+            $dataPrzekazania = $_POST['dataPrzekazania'] ?? '';
 
             $sql="UPDATE Zlecenia SET markaPojazdu='$markaPojazdu', modelPojazdu='$modelPojazdu', opisUsterki='$opisUsterki', 
-            opisZlecenia='$opisZlecenia'
+            opisZlecenia='$opisZlecenia', dataPrzekazania='$dataPrzekazania'
             WHERE idZlecenia='$idZlecenia'";
             
             // tak dla sprawdzenia co wysyła w update
@@ -165,8 +165,8 @@
                             </div>
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Data Przekazania Pojazdu:</b></label>
-                                <input type="date" class="form-control" name="dataPrzekazaniaPojazdu"
-                                value="<?php echo $query2['dataPrzekazaniaPojazdu']; ?>">
+                                <input type="date" class="form-control" name="dataPrzekazania" class="form-control"
+                                value="<?php echo $query2['dataPrzekazania']; ?>">
                             </div>
                         </div>
                         <br>
