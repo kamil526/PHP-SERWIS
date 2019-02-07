@@ -3,6 +3,36 @@
     otworzPoloczenie();
 ?>
 
+<?php   
+    $idKlienta =$_SESSION['idKlienta'] ?? '';
+
+    if(isset($_POST['zapisz'])&&(isset($_SESSION['logged'])) && ($_SESSION['logged']==true)) {
+        //pobieramy dane z pól
+        $markaPojazdu = $_POST['markaPojazdu'] ?? '';
+        $modelPojazdu = $_POST['modelPojazdu'] ?? '';
+        $opisUsterki = $_POST['opisUsterki'] ?? '';
+        $opisZlecenia = $_POST['opisZlecenia'] ?? '';
+        $dataPrzekazania = $_POST['dataPrzekazania'] ?? '';
+        // sprawdzamy czy wszystkie pola zostały wypełnione
+        if(empty($markaPojazdu) || empty($modelPojazdu) || empty($opisUsterki) || empty($opisZlecenia) 
+        || empty($dataPrzekazania)) {
+            echo '<p><center>Musisz wypełnić wszystkie obowiązkowe pola</center>.</p>';
+        } else{
+                $sql="INSERT INTO Zlecenia (idPracownika, idKlienta, dataDodania, dataPrzekazania, dataZakonczenia, statusZlecenia, rodzajZlecenia, opisZlecenia, opisUsterki, komentarzPracownika, markaPojazdu, modelPojazdu, wartoscZlecenia)
+                VALUES (1, '$idKlienta',now(), '$dataPrzekazania', NULL, 'Oczekuje', ' ','$opisZlecenia','$opisUsterki',' ','$markaPojazdu','$modelPojazdu',NULL)";
+                //mysqli_query($polaczenie, $sql);
+
+                if (mysqli_query($polaczenie, $sql)) {
+                echo "New record created successfully";
+                } else {
+                    echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
+                }   
+                
+                echo '<p><center>Zlecenie zostało dodane</center></p>';
+        }
+    }
+?>
+
 <div class="container">
     <h1 class="w3-green" style="padding:10px;">Nowe Zlecenie</h1>
     <div class="row featurette">
@@ -55,7 +85,7 @@
 
                     <div class="form-group">
                         <label class="w3-text-green"><b>Data przekazania pojazdu:</b></label>
-                        <input type="date" name="dataPrzekazaniaPojazdu" max="3000-12-31" 
+                        <input type="date" name="dataPrzekazania" max="3000-12-31" 
                                 min="2019-01-01" class="form-control"
                                 required data-validation>    
                     </div>
@@ -84,31 +114,6 @@
 
     </div>
 </div>
-
-<?php   
-    $idKlienta =$_SESSION['idKlienta'] ?? '';
-
-    if(isset($_POST['zapisz'])&&(isset($_SESSION['logged'])) && ($_SESSION['logged']==true)) {
-        //pobieramy dane z pól
-        $markaPojazdu = $_POST['markaPojazdu'] ?? '';
-        $modelPojazdu = $_POST['modelPojazdu'] ?? '';
-        $opisUsterki = $_POST['opisUsterki'] ?? '';
-        $opisZlecenia = $_POST['opisZlecenia'] ?? '';
-        $dataPrzekazaniaPojazdu = $_POST['dataPrzekazaniaPojazdu'] ?? '';
-        // sprawdzamy czy wszystkie pola zostały wypełnione
-        if(empty($markaPojazdu) || empty($modelPojazdu) || empty($opisUsterki) || empty($opisZlecenia) 
-        || empty($dataPrzekazaniaPojazdu)) {
-            echo '<p><center>Musisz wypełnić wszystkie obowiązkowe pola</center>.</p>';
-        } else{
-                $sql="INSERT INTO Zlecenia (dataDodania, idKlienta, idPracownika, opisZlecenia, opisUsterki, 
-                    statusZlecenia, wartoscZlecenia, markaPojazdu, modelPojazdu )
-                        VALUES (now(), $idKlienta, 3, '$opisZlecenia','$opisUsterki', 1, 0, '$markaPojazdu', '$modelPojazdu')";
-                mysqli_query($polaczenie, $sql);
-                
-                echo '<p><center>Zlecenie zostało dodane</center></p>';
-        }
-    }
-?>
 
 <?php
     include 'editKlient.php';
