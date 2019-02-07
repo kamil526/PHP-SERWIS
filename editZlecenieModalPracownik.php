@@ -125,9 +125,8 @@
                     </div> 
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Klient:</b></label><br>
-                        <select class="form-control" name="idKlienta" class="form-control" disabled>
-                            <option><?php echo $query2['imie']; ?> <?php echo $query2['nazwisko']; ?></option>
-                        </select>
+                        <input type="text" class="form-control" name="idKlienta" readonly
+                            value="<?php echo $query2['imie']; ?> <?php echo $query2['nazwisko']; ?>">
                     </div> 
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Wartość zlecenia:</b></label>
