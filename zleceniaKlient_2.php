@@ -19,20 +19,13 @@
             opisZlecenia='$opisZlecenia', dataPrzekazania='$dataPrzekazania'
             WHERE idZlecenia='$idZlecenia'";
             
-            // tak dla sprawdzenia co wysyła w update
-            echo $idKlienta;
-            echo $idZlecenia;
-            echo $markaPojazdu;
-            echo $modelPojazdu;
-            echo $opisUsterki;
-            echo $opisZlecenia;
 
             //mysqli_query($polaczenie, $sql);
-            if (mysqli_query($polaczenie, $sql)) {
+/*             if (mysqli_query($polaczenie, $sql)) {
                 echo "Record updated successfully";
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
-            }  
+            }   */
         }
 ?>
 
