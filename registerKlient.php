@@ -29,14 +29,18 @@
             echo '<p>Musisz wypełnić wszystkie obowiązkowe pola.</p>';
         // sprawdzamy czy podane dwa hasła są takie same
         } elseif($password != $password2) {
-            echo '<p>Podane hasła różnią się od siebie.</p>';
+            echo  '<div class="alert alert-danger" role="alert">
+                    <center>Podane hasła różnią się od siebie.</center>
+                    </div>';
         } else {
             // sprawdzamy czy są jacyś uzytkownicy z takim loginem lub adresem email
             $sql="SELECT Count(idKlienta) FROM Klienci WHERE login = '$login'";
             $result = mysqli_query($polaczenie, $sql);
             $row = mysqli_fetch_row($result);
             if($row[0] > 0) {
-                echo '<p>Już istnieje użytkownik z takim loginem.</p>';
+                echo '<div class="alert alert-danger" role="alert">
+                        <center>Już istnieje użytkownik z takim loginem.</center>
+                        </div>';
             } else {
                 // jeśli nie istnieje to kodujemy haslo...
                 $password = hashHaslo($_POST['password']);
@@ -48,7 +52,7 @@
                 mysqli_query($polaczenie, $sql);
                 zamknijPoloczenie();
                 //echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php">zalogować</a>.</p>';
-                echo '<div class="alert alert-success" "col-md-12" role="alert">
+                echo '<div class="alert alert-success" role="alert">
                         <center>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php" class="alert-link">zalogować</a>.</center>
                      </div>';
             }
@@ -66,29 +70,32 @@
                     <h3>Dane konta:</h3><br>
 
                     <label class="w3-text-green"><b>Login:</b></label>
-                    <input type="text" class="form-control" name="login" placeholder="pole wymagane">
+                    <input type="text" class="form-control" name="login" placeholder="pole wymagane"
+                    required data-validation>
 
                     <label class="w3-text-green"><b>Hasło:</b></label>
-                    <input type="password" class="form-control" name="password" placeholder="pole wymagane">
+                    <input type="password" class="form-control" name="password" placeholder="pole wymagane"
+                    required data-validation>
 
                     <label class="w3-text-green"><b>Powtórz hasło:</b></label>
-                    <input type="password" class="form-control" name="password2" placeholder="pole wymagane">
+                    <input type="password" class="form-control" name="password2" placeholder="pole wymagane"
+                    required data-validation>
                     <br>
                 </div>
                 <div class="col-md-4">
                     <h3>Dane adresowe:</h3><br>
 
                     <label class="w3-text-green"><b>Imię:</b></label>
-                    <input type="text" class="form-control" name="imie">
+                    <input type="text" class="form-control" name="imie"
+                    required data-validation>
 
                     <label class="w3-text-green"><b>Nazwisko:</b></label>
-                    <input type="text" class="form-control" name="nazwisko">
+                    <input type="text" class="form-control" name="nazwisko"
+                    required data-validation>
 
-                    <label class="w3-text-green"><b>Adres E-mail:</b></label>
-                    <input type="text" class="form-control" name="email"
-                     data-validation-matches-match="@" 
-                     data-validation-matches-message=
-                         "Must match email address entered above" >
+                    <label for="mail" class="w3-text-green"><b>Adres E-mail:</b></label>
+                    <input type="email" class="form-control" id="mail" name="email"
+                    required data-validation>
 
                     <label class="w3-text-green"><b>Telefon:</b></label>
                     <input type="text" class="form-control" name="telefon">
@@ -117,6 +124,17 @@
                     
                 </div>
             </div>
+            <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Akceptuje<a href="startpage/data/construction.html"><b> regulamin </b></a>serwisu
+                </label>
+                <div class="invalid-feedback">
+                    Musisz zaakceptować regulamin
+                </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col">
                 <center>
@@ -128,6 +146,20 @@
         </form>
     </div>
 </section>  
+
+
+<script>
+var email = document.getElementById("mail");
+
+email.addEventListener("input", function (event) {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("Proszę podać poprawny E-Mail");
+  } else {
+    email.setCustomValidity("");
+  }
+});
+</script>
+
 <?php
     include 'bottomPage.php';
 ?>
