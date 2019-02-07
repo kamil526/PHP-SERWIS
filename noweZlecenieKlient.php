@@ -122,7 +122,7 @@
             
             <div class="form-group row">
                 <div class="col-md-12">
-                    <button type="submit" class="w3-btn w3-green"name="zapisz">Zapisz</button>
+                    <button type="submit" class="w3-btn w3-green" name="zapisz">Zapisz</button>
                 </div>
             </div>
             
