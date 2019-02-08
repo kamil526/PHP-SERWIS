@@ -166,15 +166,18 @@ otworzPoloczenie();
                 <div class="row">
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data dodania:</b></label>
-                        <input type="date" name="dataDodania"  value="<?php echo date('Y-m-d');?>" class="form-control"> 
+                        <input type="date" name="dataDodania"  value="<?php echo date('Y-m-d');?>" class="form-control"
+                            min="<?php echo date('Y-m-d'); ?>" max="2100-12-01"> 
                     </div>
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data przekazania:</b></label>
-                        <input type="date" name="dataPrzekazania"  value="<?php echo date('Y-m-d');?>" class="form-control"> 
+                        <input type="date" name="dataPrzekazania"  value="<?php echo date('Y-m-d');?>" class="form-control"
+                            min="<?php echo date('Y-m-d'); ?>" max="2100-12-01"> 
                     </div>
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data zakończenia:</b></label>
-                        <input type="date" name="dataZakonczenia" value="<?php echo date('Y-m-d');?>" class="form-control"> 
+                        <input type="date" name="dataZakonczenia" value="<?php echo date('Y-m-d');?>" class="form-control"
+                            min="<?php echo date('Y-m-d'); ?>" max="2100-12-01"> 
                     </div>
                 </div>
                 <br>
