@@ -52,7 +52,8 @@
 
                 <?php
                 $idKlienta =$_SESSION['idKlienta'] ?? '';
-                $sql="SELECT idZlecenia, dataDodania, markaPojazdu, modelPojazdu, statusZlecenia, wartoscZlecenia  FROM Zlecenia WHERE idKlienta=$idKlienta";
+                $sql="SELECT idZlecenia, dataDodania, markaPojazdu, modelPojazdu, statusZlecenia, round(wartoscZlecenia,2) as wartoscZlecenia 
+                FROM Zlecenia WHERE idKlienta=$idKlienta";
                     $result = mysqli_query($polaczenie, $sql);
                 echo '<div class="container">
                 <form class="col-md-12" method="post" action="zleceniaKlient.php" >
@@ -80,7 +81,7 @@
                     echo "<td>".$query['markaPojazdu']."</td>";
                     echo "<td>".$query['modelPojazdu']."</td>";
                     echo "<td>".$query['statusZlecenia']."</td>";
-                    echo "<td>".$query['wartoscZlecenia']."</td>";
+                    echo "<td>".$query['wartoscZlecenia']." zł</td>";
                     //ECHO "<td><button type='submit' id='buttonform' name='edit' value=".$query['idZlecenia']." class='w3-btn w3-green' data-toggle='modal' data-target='.bd-example2-modal-lg'>Edytuj</button></td>";
                     echo "<td><a href='zleceniaKlient.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Edytuj </a></td>";
                     echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Usuń </a></td></form>";
