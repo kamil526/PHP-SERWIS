@@ -6,11 +6,11 @@ if ($_SESSION['logged']==false){
     //nie wykonuj kodu poniżej
     exit();
 }
-if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==0)){
+if(($_SESSION['logged']==true)&&(($_SESSION['typUsera']==0)||($_SESSION['typUsera']==1))){
     echo '<br> <div class="alert alert-danger" role="alert">
         <center>Nie masz odpowiednich uprawnień!</center>
         </div>';
-
+    include 'bottomPage.php';
     exit();
 }
 
@@ -139,12 +139,12 @@ if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==0)){
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>Nazwa firmy:</b></label>
                                 <input type="text" class="form-control" name="nazwaFirmy"
-                                value="<?php echo $query['nazwaFirmy']; ?>" required data-validation>
+                                value="<?php echo $query['nazwaFirmy']; ?>">
                             </div>
                             <div class="col-md-4">
                                 <label class="w3-text-green" ><b>NIP:</b></label>
                                 <input type="text" class="form-control" name="nip"
-                                value="<?php echo $query['nip']; ?>" required data-validation>
+                                value="<?php echo $query['nip']; ?>">
                             </div>
                         </div>
                         <br>

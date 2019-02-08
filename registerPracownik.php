@@ -1,11 +1,11 @@
 <?php
 include 'topPage.php';
 
-if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==1)){
+if(($_SESSION['logged']==true)&&(($_SESSION['typUsera']==0)||($_SESSION['typUsera']==2))){
     echo '<br> <div class="alert alert-danger" role="alert">
         <center>Nie masz odpowiednich uprawnień!</center>
         </div>';
-
+    include 'bottomPage.php';
     exit();
 }
 

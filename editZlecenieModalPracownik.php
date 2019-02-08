@@ -74,7 +74,7 @@
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data zakończenia:</b></label>
                         <input type="date" class="form-control" name="dataZakonczenia" class="form-control"
-                                value="<?php echo $query2['dataZakonczenia']; ?>"> 
+                                value="<?php echo $query2['dataZakonczenia'];?>"> 
                     </div>
                 </div>
                 <br>

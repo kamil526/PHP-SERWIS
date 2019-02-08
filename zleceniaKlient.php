@@ -6,11 +6,11 @@
         //nie wykonuj kodu poniżej
         exit();
     }
-    if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==0)){
+    if(($_SESSION['logged']==true)&&(($_SESSION['typUsera']==0)||($_SESSION['typUsera']==1))){
         echo '<br> <div class="alert alert-danger" role="alert">
             <center>Nie masz odpowiednich uprawnień!</center>
             </div>';
-
+        include 'bottomPage.php';    
         exit();
     }
 

@@ -6,11 +6,11 @@ if ($_SESSION['logged']==false){
     //nie wykonuj kodu poniżej
     exit();
 }
-if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==1)){
+if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==2)){
     echo '<br> <div class="alert alert-danger" role="alert">
         <center>Nie masz odpowiednich uprawnień!</center>
         </div>';
-
+    include 'bottomPage.php';    
     exit();
 }
 
@@ -60,7 +60,9 @@ otworzPoloczenie();
                         ?>
                         <?php
                                 
-                            $sql2="SELECT * FROM Zlecenia INNER JOIN Klienci ON Zlecenia.idKlienta=Klienci.IdKlienta";
+                            $sql2="SELECT Zlecenia.idZlecenia, imie, nazwisko, dataDodania, dataPrzekazania, dataZakonczenia, 
+                            statusZlecenia, rodzajZlecenia, opisZlecenia, wartoscZlecenia 
+                            FROM Zlecenia INNER JOIN Klienci ON Zlecenia.idKlienta=Klienci.IdKlienta";
                             $result = mysqli_query($polaczenie, $sql2);
                             echo 
                             '<form method="post" action="panelPracownika.php" >
@@ -76,7 +78,6 @@ otworzPoloczenie();
                                                 <th scope="col">Status zlecenia</th>
                                                 <th scope="col">Rodzaj</th>
                                                 <th scope="col">Opis zlecenia</th>
-
                                                 <th scope="col">Wartość</th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
@@ -89,8 +90,8 @@ otworzPoloczenie();
                                         echo "<tr> <th scope='row' name='idZlecenia' id='idZlecenia'>".$query['idZlecenia']."</th>";
                                         echo "<td>".$query['imie']." ".$query['nazwisko']."</td>";
                                         echo "<td>".$query['dataDodania']."</td>";
-                                        echo "<td>".$query['dataZakonczenia']."</td>";
                                         echo "<td>".$query['dataPrzekazania']."</td>";
+                                        echo "<td>".$query['dataZakonczenia']."</td>";
                                         echo "<td>".$query['statusZlecenia']."</td>";
                                         echo "<td>".$query['rodzajZlecenia']."</td>";
                                         echo "<td>".$query['opisZlecenia']."</td>";

@@ -46,7 +46,7 @@
                     $login = $_POST['login'] ?? '';
                     //$_POST['password'] = $_POST['password'];
                     $password = hashHaslo($_POST['password']) ?? '';
-                    $sql="SELECT idPracownika FROM Pracownicy WHERE login = '$login' AND haslo = '$password' LIMIT 1";
+                    $sql="SELECT * FROM Pracownicy WHERE login = '$login' AND haslo = '$password' LIMIT 1";
                     // sprawdzamy prostym zapytaniem sql czy podane dane są prawidłowe
                     $result = mysqli_query($polaczenie, $sql);
                     if(mysqli_num_rows($result) > 0) {
@@ -55,7 +55,7 @@
                         $_SESSION['logged'] = true;
                         $_SESSION['idPracownika'] = $row['idPracownika'];
                         $_SESSION['login'] = $_POST['login'];
-                        $_SESSION['typUsera'] = 0;
+                        $_SESSION['typUsera'] = $row['typUzytkownika'];
                         header('Location: panelPracownika.php');
                     } else {
                             echo '<br> <div class="alert alert-danger" role="alert">

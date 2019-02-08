@@ -44,14 +44,14 @@
             <a class="nav-link" href="ofertaICennik.php">Oferta i cennik</a>
           </li>
           <?php
-            if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true) && ($_SESSION['typUsera']==1)){
+            if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true) && ($_SESSION['typUsera']==2)){
                 echo'
                 <li class="nav-item">
                   <a class="nav-link" href="zleceniaKlient.php"><b>Panel Klienta</b></a>
                 </li>';
             }else
             {
-              if(((isset($_SESSION['logged'])) && ($_SESSION['logged']==true) && ($_SESSION['typUsera']==0))){
+              if((isset($_SESSION['logged']) && ($_SESSION['logged']==true)) &&(($_SESSION['typUsera']==0)||($_SESSION['typUsera']==1))){
                 echo'
                 <li class="nav-item">
                   <a class="nav-link" href="panelPracownika.php"><b>Panel Pracownika</b></a>
