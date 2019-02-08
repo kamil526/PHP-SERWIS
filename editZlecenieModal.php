@@ -1,13 +1,5 @@
 
 <?php
-
-if(empty($idZlecenia=$_GET['idZlecenia'])){
-    header('Location: index.php');
-    exit();
-}
-?>
-
-<?php
         if(isset($_POST['zapisz'])&&(isset($_SESSION['logged'])) && ($_SESSION['logged']==true))
         {
             //pobieramy dane z pól
