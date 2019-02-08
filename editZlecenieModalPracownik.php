@@ -27,7 +27,7 @@
             //mysqli_query($polaczenie, $sql);
             if (mysqli_query($polaczenie, $sql)) 
             {
-                echo '<p><center>Zlecenie zostało pomyślnie edytowane.</center></p>';
+                echo '<p><center>Operacja wykonana poprawnie.</center></p>';
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
             }    
