@@ -14,7 +14,7 @@
             $komentarzPracownika = $_POST['komentarzPracownika'] ?? '';
             $markaPojazdu = $_POST['markaPojazdu'] ?? '';
             $modelPojazdu = $_POST['modelPojazdu'] ?? '';
-            $wartoscZlecenia = $_POST['wartoscZlecenia'] ?? NULL;
+            $wartoscZlecenia = str_replace(',', '.',$_POST['wartoscZlecenia']) ?? NULL;
 
             
 
