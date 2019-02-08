@@ -46,7 +46,7 @@
                     echo "<td>".$query['imie']."</td>";
                     echo "<td>".$query['nazwisko']."</td>";
                     echo "<td>".$query['nazwaFirmy']."</td>";
-                    echo "<td>".$query['wartoscZlecen']."</td>";
+                    echo "<td>".$query['wartoscZlecen']." zł</td>";
                     echo "<td><a href='wykazKlientow.php?idKlienta=".$query['idKlienta']."' class='w3-btn w3-green'>Wyświetl zlec. </a></td>";
                 }
                 
