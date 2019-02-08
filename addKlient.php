@@ -146,6 +146,7 @@
             <div class="row">
                 <div class="col">
                 <center>
+                    <a href="panelPracownika.php" class="w3-btn w3-red">Anuluj</a>
                     <input href="panelPracownika.php" class="w3-btn w3-green" type="submit" value="Zapisz" name="zarejestruj">
                 </center>
                 </div>
