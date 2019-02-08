@@ -19,7 +19,9 @@
             //mysqli_query($polaczenie, $sql);
             if (mysqli_query($polaczenie, $sql)) 
             {
-                echo '<p><center>Operacja została wykonana poprawnie.</center></p>';
+                echo'<br> <div class="alert alert-success" role="alert">
+                        <center>Operacja została wykonana poprawnie.</center>
+                        </div>';
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
             }    
