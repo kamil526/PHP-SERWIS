@@ -10,6 +10,7 @@
             // jeśli nie ma jeszcze sesji "logged" i "idKlienta" to wypełniamy je domyślnymi danymi
             $_SESSION['logged'] = false;
             $_SESSION['idKlienta'] = -1;
+            otworzPoloczenie();
         }
 ?>
 
