@@ -1,4 +1,12 @@
 <?php
+    if ($_SESSION['logged']==false){
+        header('Location: index.php');
+        //nie wykonuj kodu poniżej
+        exit();
+    }
+?>
+
+<?php
 
     //$idZlecenie=
     $idKlienta =$_SESSION['idKlienta'] ?? '';

@@ -1,14 +1,13 @@
 <?php
     include 'topPage.php';
-    otworzPoloczenie();
-?>
-
-<?php
+    
     if ($_SESSION['logged']==true){
         header('Location: index.php');
         //nie wykonuj kodu poniżej
         exit();
     }
+    
+    otworzPoloczenie();
 ?>
 
 <?php   

@@ -1,9 +1,6 @@
 <?php
     include 'topPage.php';
-    otworzPoloczenie();
-?>
-
-<?php
+    
     //jezeli uzytkownik jest zalogowany, przekieruj go na index.php
     if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)){
         header('Location: zleceniaKlient.php');

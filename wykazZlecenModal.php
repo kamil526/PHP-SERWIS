@@ -1,3 +1,23 @@
+<?php
+
+    if ($_SESSION['logged']==false){
+        header('Location: loginPracownik.php');
+        //nie wykonuj kodu poniżej
+        exit();
+    }
+    if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==2)){
+        echo '<br> <div class="alert alert-danger" role="alert">
+            <center>Nie masz odpowiednich uprawnień!</center>
+            </div>';
+        include 'bottomPage.php';
+        exit();
+    }
+
+?>
+
+
+
+
 <div class="modal fade bd-example3-modal-lg" tabindex="-1" role="dialog" id="modal3"
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="dialog">
