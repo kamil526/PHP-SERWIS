@@ -65,6 +65,14 @@
             </div>
         </form>
     </div>
+    <center>
+        <div class="row">
+            <div class="col">
+                <a href="panelPracownika.php" class="w3-btn w3-green"> Powrót </a>
+                </div>
+        </div>
+    </center>
+
 </div>
 </div>
 </div>
