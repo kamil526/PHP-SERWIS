@@ -2,15 +2,7 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top">Wróć na górę</button>   
 
     <!-- FOOTER -->
-    <style>
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: white;
-}
-</style>
+
 <div class="footer" >
     <div class="col">
         <hr class="featurette-divider">
