@@ -1,17 +1,26 @@
     <!-- back to top button -->
-<button onclick="topFunction()" id="myBtn" title="Go to top">Wróć na górę</button>
-<br>
-<br>
-<br>
-<hr class="featurette-divider">    
+<button onclick="topFunction()" id="myBtn" title="Go to top">Wróć na górę</button>   
 
     <!-- FOOTER -->
-<footer class="container"  >
+    <style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+}
+</style>
+<div class="footer" >
     <div class="col">
-        <p> &copy; 2019 e-Serwis &middot; <a href="startpage/data/construction.html" class="text-success">Regulamin</a></p>
-        <p>Created by: Kamil Poręba & Michał Sierotowicz</p>
+        <br>
+        <p class=""> 
+            &copy; 2019 e-Serwis &middot;
+            Created by: Kamil Poręba & Michał Sierotowicz &middot;           
+            <a href="startpage/data/construction.html" class="text-success">Regulamin</a>
+        </p>
     </div>
-</footer>
+</div>
 
     <!-- Bootstrap core JavaScript -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

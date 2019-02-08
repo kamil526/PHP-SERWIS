@@ -3,6 +3,17 @@ body {
   padding-bottom: 2rem;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+#content {
+  padding-bottom: 50px;
+}
+#footer .navbar{
+  position: absolute;
+}
+
 .carousel {
   margin-bottom: 5rem;
 }
