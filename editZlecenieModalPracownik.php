@@ -1,18 +1,16 @@
 <?php
-if ($_SESSION['logged']==false){
-    header('Location: loginPracownik.php');
-    //nie wykonuj kodu poniżej
-    exit();
-}
-if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==2)){
-    echo '<br> <div class="alert alert-danger" role="alert">
-        <center>Nie masz odpowiednich uprawnień!</center>
-        </div>';
-    include 'bottomPage.php';    
-    exit();
-}
-
-otworzPoloczenie();
+    if ($_SESSION['logged']==false){
+        header('Location: loginPracownik.php');
+        //nie wykonuj kodu poniżej
+        exit();
+    }
+    if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==2)){
+        echo '<br> <div class="alert alert-danger" role="alert">
+            <center>Nie masz odpowiednich uprawnień!</center>
+            </div>';
+        include 'bottomPage.php';    
+        exit();
+    }
 ?>
 
 
@@ -45,7 +43,9 @@ otworzPoloczenie();
             //mysqli_query($polaczenie, $sql);
             if (mysqli_query($polaczenie, $sql)) 
             {
-                echo '<p><center>Operacja wykonana poprawnie.</center></p>';
+                echo'<br> <div class="alert alert-success" role="alert">
+                        <center>Operacja została wykonana poprawnie.</center>
+                    </div>';
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
             }    
