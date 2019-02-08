@@ -128,9 +128,9 @@ otworzPoloczenie();
                 if(isset($_POST['zapisz']))
                 {
                     $idPracownika=$_SESSION['idPracownika'] ?? '';
-                    $dataDodania = $_POST['dataDodania'] ?? '';
-                    $dataPrzekazania = $_POST['dataPrzekazania'] ?? '';
-                    $dataZakonczenia = $_POST['dataZakonczenia'] ?? '';
+                    $dataDodania = $_POST['dataDodania'] ?? NULL;
+                    $dataPrzekazania = $_POST['dataPrzekazania'] ?? NULL;
+                    $dataZakonczenia = $_POST['dataZakonczenia'] ?? NULL;
                     $statusZlecenia = $_POST['statusZlecenia'] ?? '';
                     $rodzajZlecenia = $_POST['rodzajZlecenia'] ?? '';
                     $opisZlecenia = $_POST['opisZlecenia'] ?? '';
@@ -138,7 +138,7 @@ otworzPoloczenie();
                     $komentarzPracownika = $_POST['komentarzPracownika'] ?? '';
                     $markaPojazdu = $_POST['markaPojazdu'] ?? '';
                     $modelPojazdu = $_POST['modelPojazdu'] ?? '';
-                    $wartoscZlecenia = $_POST['wartoscZlecenia'] ?? '';
+                    $wartoscZlecenia = $_POST['wartoscZlecenia'] ?? NULL;
                     $idKlienta = $_POST['idKlienta'] ?? '';
                     
 
