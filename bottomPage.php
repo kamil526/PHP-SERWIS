@@ -1,12 +1,12 @@
     <!-- back to top button -->
 <button onclick="topFunction()" id="myBtn" title="Go to top">Wróć na górę</button>   
-
+<br>
+<br>
     <!-- FOOTER -->
-
 <div class="footer" >
     <div class="col">
-        <hr class="featurette-divider">
-        <p class=""> 
+        <hr class="footer-divider">
+        <p> 
             &copy; 2019 e-Serwis &middot;
             Created by: Kamil Poręba & Michał Sierotowicz &middot;           
             <a href="startpage/data/construction.html" class="text-success">Regulamin</a>

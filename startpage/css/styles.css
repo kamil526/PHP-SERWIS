@@ -3,11 +3,6 @@ body {
   padding-bottom: 2rem;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 .footer {
   position: fixed;
   left: 0;
@@ -41,8 +36,13 @@ html {
 }
 
 .featurette-divider {
-  margin: 0.5rem;
+  margin: 3rem;
 }
+
+.footer-divider {
+ margin: 0.5rem
+}
+
 .featurette-heading {
     font-size: 50px;
   }
