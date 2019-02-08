@@ -25,7 +25,7 @@
         <div class="col-lg-4">
             <img class="rounded-circle" src="startpage/img/naprawy.jpg" alt="Introligatornia" width="200" height="200">
             <h2 class=" text-success">Naprawy</h2>
-            <p>Nasi doświadczeni pracownicy wykonają dla Państwa dowolną naprawę z zakresu mechaniki oraz elektromechaniki pojazdowej.</p>
+            <p>Nasi doświadczeni pracownicy wykonają dla Państwa dowolną naprawę z zakresu mechaniki pojazdowej.</p>
             <p>
                 <a class="btn btn-secondary" href="startpage/data/construction.html" role="button">Dowiedz się więcej &raquo;</a>
             </p>
@@ -34,6 +34,7 @@
 
 <!--Carousel -->
 <div class="container" md-14>
+    <br><br>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
