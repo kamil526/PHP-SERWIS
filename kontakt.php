@@ -3,9 +3,8 @@
 ?>
 
 <div class="container">
-    <br><br>
         <h1 class="w3-text-green">Kontakt<small></small></h1>
-       <hr>
+        <br>
     </div>
 </div>
 
@@ -51,7 +50,7 @@
     </div>
 </div>
 </div>
-
+<br><br><br><br>
 </div>
 
 <?php
