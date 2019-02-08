@@ -30,7 +30,6 @@
         //dane firmy
         $nip = $_POST['nip'] ?? '';
         $nazwaFirmy = $_POST['nazwaFirmy'] ?? '';
-        $nazwaBanku = $_POST['nazwaBanku'] ?? '';
 
         // sprawdzamy czy wszystkie pola zostały wypełnione
         if(empty($login) || empty($password) || empty($password2)) {
@@ -56,7 +55,7 @@
                 $sql="INSERT INTO Klienci (login, haslo, imie, nazwisko, email, telefon, ulica
                                             , nrDomu, kodPocztowy, miasto, nip, nazwaFirmy)
                     VALUES ('$login', '$password', '$imie', '$nazwisko', '$email','$telefon', '$ulica'
-                            , '$nrDomu', '$kodPocztowy', '$miasto', '$nip', 'nazwaFirmy')";
+                            , '$nrDomu', '$kodPocztowy', '$miasto', '$nip', '$nazwaFirmy')";
                 mysqli_query($polaczenie, $sql);
                 zamknijPoloczenie();
                 //echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php">zalogować</a>.</p>';
