@@ -61,7 +61,7 @@ otworzPoloczenie();
                         <?php
                                 
                             $sql2="SELECT Zlecenia.idZlecenia, imie, nazwisko, dataDodania, dataPrzekazania, dataZakonczenia, 
-                            statusZlecenia, rodzajZlecenia, opisZlecenia, wartoscZlecenia 
+                            statusZlecenia, rodzajZlecenia, opisZlecenia, round(wartoscZlecenia,2) as wartoscZlecenia
                             FROM Zlecenia INNER JOIN Klienci ON Zlecenia.idKlienta=Klienci.IdKlienta";
                             $result = mysqli_query($polaczenie, $sql2);
                             echo 
@@ -95,7 +95,7 @@ otworzPoloczenie();
                                         echo "<td>".$query['statusZlecenia']."</td>";
                                         echo "<td>".$query['rodzajZlecenia']."</td>";
                                         echo "<td>".$query['opisZlecenia']."</td>";
-                                        echo "<td>".$query['wartoscZlecenia']."</td>";
+                                        echo "<td>".$query['wartoscZlecenia']." zł</td>";
                                         echo "<td><a href='panelPracownika.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Edytuj </a></td>";
                                         echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td>";
                                     }

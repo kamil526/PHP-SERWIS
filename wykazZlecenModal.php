@@ -41,7 +41,7 @@
                                                 echo "<td>".$query['markaPojazdu']."</td>";
                                                 echo "<td>".$query['modelPojazdu']."</td>";
                                                 echo "<td>".$query['statusZlecenia']."</td>";
-                                                echo "<td>".$query['wartoscZlecenia']."</td></tr>";
+                                                echo "<td>".$query['wartoscZlecenia']." zł</td></tr>";
                                             }
                 
                                             ?>
@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="w3-btn" data-dismiss="modal">Close</button>
+                        <button type="button" class="w3-btn w3-green" data-dismiss="modal">Close</button>
                         
                     </div>
 
