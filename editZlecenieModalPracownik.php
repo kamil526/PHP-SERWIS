@@ -1,4 +1,22 @@
 <?php
+if ($_SESSION['logged']==false){
+    header('Location: loginPracownik.php');
+    //nie wykonuj kodu poniżej
+    exit();
+}
+if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==2)){
+    echo '<br> <div class="alert alert-danger" role="alert">
+        <center>Nie masz odpowiednich uprawnień!</center>
+        </div>';
+    include 'bottomPage.php';    
+    exit();
+}
+
+otworzPoloczenie();
+?>
+
+
+<?php
         if(isset($_POST['zapisz']))
         {
             //pobieramy dane z pól
