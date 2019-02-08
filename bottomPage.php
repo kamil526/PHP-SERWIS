@@ -13,7 +13,7 @@
 </style>
 <div class="footer" >
     <div class="col">
-        <br>
+        <hr class="featurette-divider">
         <p class=""> 
             &copy; 2019 e-Serwis &middot;
             Created by: Kamil Poręba & Michał Sierotowicz &middot;           
