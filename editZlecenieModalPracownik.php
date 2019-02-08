@@ -149,7 +149,7 @@ otworzPoloczenie();
                     <div class="col-md-4">   
                         <label class="w3-text-green"><b>Wartość zlecenia:</b></label>
                         <input type="text" class="form-control" name="wartoscZlecenia"
-                                value="<?php echo $query2['wartoscZlecenia']; ?>">
+                            value="<?php echo number_format((float)$query2['wartoscZlecenia'],2,'.',''); ?> zł">
                     </div> 
                 </div>
                 <br>
