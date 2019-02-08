@@ -43,6 +43,9 @@
           <li class="nav-item">
             <a class="nav-link" href="ofertaICennik.php">Oferta i cennik</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kontakt.php">Kontakt</a>
+          </li>
           <?php
             if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true) && ($_SESSION['typUsera']==2)){
                 echo'
