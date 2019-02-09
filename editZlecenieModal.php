@@ -91,14 +91,23 @@
                                 value="<?php echo $query2['dataPrzekazania']; ?>">
                             </div>
                         </div>
-                        <!-- <div class="row featurette">
-                            <div class="col-md-10">
-                                <label class="w3-text-green"><b>Tutaj dołącz zdjęcie lub inny dokument dotyczący zlecenia:</b></label>
-                                <div class="custom-file">
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
-                                </div> 
+
+                        <div class="row">
+                            <div class="col-md-6"> 
+                                <label class="w3-text-green"><b>Zdjęcie dodane do zlecenia:</b></label>
+                                <a>  
+                                    <?php
+                                        $dirname = "uploads/$query2[idKlienta]/$idZlecenia/";
+                                        $images = glob($dirname."*.jpg");
+                                        foreach($images as $image) {
+                                            echo '<img style="width:300px" src="'.$image.'" /><br />';
+                                        }
+                                    ?>                          
+                                </a>
                             </div>
-                        </div> -->
+                        </div>
+
+
                         <br>
                     </div>
                     <div class="modal-footer">

@@ -18,9 +18,13 @@
     
     $idZlecenia = $query['idZlecenia'];
 
-    if(!is_dir("uploads/$idKlienta/$idZlecenia"))mkdir("uploads/$idKlienta/$idZlecenia",0666);
+    echo $idKlienta;
+
+    // if(!is_dir('uploads/.$idKlienta./.$idZlecenia.'))mkdir('uploads/.$idKlienta./.$idZlecenia.',0777, true);
+    if(!is_dir("uploads/$idKlienta/$idZlecenia"))mkdir("uploads/$idKlienta/$idZlecenia",0777, true);
+    // $target_dir = "uploads/$idKlienta/$idZlecenia/";
     $target_dir = "uploads/$idKlienta/$idZlecenia/";
-    $target_file = $target_dir.$idKlienta."_".$idZlecenia."_".($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir.$idKlienta."_".($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     if($_FILES['fileToUpload']['size'] != 0)
