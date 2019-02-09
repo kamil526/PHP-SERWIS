@@ -96,15 +96,15 @@
                     <h3>Dane adresowe:</h3><br>
 
                     <label class="w3-text-green"><b>Imię:</b></label>
-                    <input type="text" class="form-control" name="imie"
+                    <input type="text" class="form-control" name="imie" placeholder="pole wymagane"
                     required data-validation>
 
                     <label class="w3-text-green"><b>Nazwisko:</b></label>
-                    <input type="text" class="form-control" name="nazwisko"
+                    <input type="text" class="form-control" name="nazwisko" placeholder="pole wymagane"
                     required data-validation>
 
                     <label for="mail" class="w3-text-green"><b>Adres E-mail:</b></label>
-                    <input type="email" class="form-control" id="mail" name="email"
+                    <input type="email" class="form-control" id="mail" name="email" placeholder="pole wymagane"
                     required data-validation>
 
                     <label class="w3-text-green"><b>Telefon:</b></label>
