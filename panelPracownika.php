@@ -35,7 +35,7 @@ otworzPoloczenie();
             <div class="w3-bar">
                 <button type="button" data-toggle="modal" data-target="#modalNoweZlecenie" class="w3-btn w3-green" >Nowe zlecenie</button>
                 <button type="button" onclick="window.location.href='registerPracownik.php'" class="w3-btn w3-green" >Dodaj pracownika</button>
-                <button type="button" onclick="window.location.href='addKlient.php'" class="w3-btn w3-green" >Dodaj klienta</button>
+                <button type="button" onclick="window.location.href='registerKlient.php'" class="w3-btn w3-green" >Dodaj klienta</button>
                 <button type="button" onclick="window.location.href='wykazKlientow.php'" class="w3-btn w3-green" >Wykaz klientów</button>
 
             </div>

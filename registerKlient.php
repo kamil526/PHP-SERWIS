@@ -1,7 +1,7 @@
 <?php
     include 'topPage.php';
     
-    if ($_SESSION['logged']==true){
+    if (($_SESSION['logged']==true)&&($_SESSION['typUsera']==2)){
         header('Location: index.php');
         //nie wykonuj kodu poniżej
         exit();
@@ -57,10 +57,13 @@
                             , '$nrDomu', '$kodPocztowy', '$miasto', '$nip', '$nazwaFirmy')";
                 mysqli_query($polaczenie, $sql);
                 zamknijPoloczenie();
-                //echo '<p>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php">zalogować</a>.</p>';
-                echo '<div class="alert alert-success" role="alert">
-                        <center>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php" class="alert-link">zalogować</a>.</center>
-                     </div>';
+                if($_SESSION['typUsera']==2)
+                {
+                    echo '<div class="alert alert-success" role="alert">
+                    <center>Zostałeś poprawnie zarejestrowany! Możesz się teraz <a href="loginKlient.php" class="alert-link">zalogować</a>.</center>
+                    </div>';
+                }
+
             }
         }
     }  
@@ -130,11 +133,31 @@
                     
                 </div>
             </div>
+            
+            <?php 
+                if( ($_SESSION['logged']==true) && ($_SESSION['typUsera']==0) || ($_SESSION['typUsera']==1) )
+                {
+            ?>
+
+            <div class="form-group">
+            <div class="row">
+                <div class="col">
+                <center>
+                    <a href="panelPracownika.php" class="w3-btn w3-red">Anuluj</a>
+                    <input href="panelPracownika.php" class="w3-btn w3-green" type="submit" value="Zapisz" name="zarejestruj">
+                </center>
+                </div>
+            </div>
+            <?php 
+                } 
+                else {
+            ?>
+
             <div class="form-group">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                 <label class="form-check-label" for="invalidCheck">
-                    Akceptuje<a href="startpage/data/construction.html"><b> regulamin </b></a>serwisu
+                    Akceptuje<a href="regulamin.php"><b> regulamin </b></a>serwisu
                 </label>
                 <div class="invalid-feedback">
                     Musisz zaakceptować regulamin
@@ -148,6 +171,11 @@
                 </center>
                 </div>
             </div>
+
+            <?php 
+                } 
+                
+            ?>
         </div>
         </form>
     </div>
