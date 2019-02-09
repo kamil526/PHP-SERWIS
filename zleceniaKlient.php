@@ -40,15 +40,17 @@
         </div>
 
         <div class="col-md-10">
-        <?php
-                    if(isset($_POST['deleteZlecenie'])) {
-                        global $polaczenie;
-                        $idZlecenia = $_POST['idZlecenia'];
-                        $rozkaz = "delete from Zlecenia where idZlecenia=$idZlecenia;";
-                        mysqli_query($polaczenie, $rozkaz)
-                        or exit("Błąd w zapytaniu: ".$rozkaz);
-                    }
-                ?>
+        
+        <!-- usuwanie zlecenia - tymczasowo wyłączona opcja 
+                //    if(isset($_POST['deleteZlecenie'])) {
+                //        global $polaczenie;
+                //        $idZlecenia = $_POST['idZlecenia'];
+                //        $rozkaz = "delete from Zlecenia where idZlecenia=$idZlecenia;";
+                //        mysqli_query($polaczenie, $rozkaz)
+                //       or exit("Błąd w zapytaniu: ".$rozkaz);
+                //    }
+        -->
+       
 
                 <?php
                 $idKlienta =$_SESSION['idKlienta'] ?? '';
@@ -68,7 +70,7 @@
                         <th scope="col">Status</th>
                         <th scope="col">Kwota</th>
                         <th scope="col"></th>
-                        <th scope="col"></th>
+                       <!-- <th scope="col"></th> -->
                         </tr>
                     </thead>
                     <tbody>';
@@ -82,9 +84,8 @@
                     echo "<td>".$query['modelPojazdu']."</td>";
                     echo "<td>".$query['statusZlecenia']."</td>";
                     echo "<td>".$query['wartoscZlecenia']." zł</td>";
-                    //ECHO "<td><button type='submit' id='buttonform' name='edit' value=".$query['idZlecenia']." class='w3-btn w3-green' data-toggle='modal' data-target='.bd-example2-modal-lg'>Edytuj</button></td>";
                     echo "<td><a href='zleceniaKlient.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Edytuj </a></td>";
-                    echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-red'>Usuń </a></td></form>";
+                    //echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-red'>Usuń </a></td></form>";
  
                 }
                 
