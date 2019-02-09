@@ -154,17 +154,29 @@
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-md-12">   
+                    <div class="col-md-6">   
                         <label class="w3-text-green"><b>Komentarz pracownika:</b></label>
                         <textarea class="form-control" name="komentarzPracownika" rows=5 ><?php echo $query2['komentarzPracownika'];?></textarea>
                     </div> 
+                    <div class="col-md-6"> 
+                        <label class="w3-text-green"><b>Zdjęcie dodane do zlecenia:</b></label>
+                        <a>  
+                            <?php
+                                $dirname = "uploads/$query2[idKlienta]/$idZlecenia/";
+                                $images = glob($dirname."*.jpg");
+                                foreach($images as $image) {
+                                    echo '<img style="width:300px" src="'.$image.'" /><br />';
+                                }
+                            ?>                          
+                        </a>
+                    </div>
                 </div>
-                        <br>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="w3-btn" data-dismiss="modal">Anuluj</button>
-                        <input class="w3-btn w3-green" type="submit" value="Zapisz" name="zapisz" form="modal-form3">
-                    </div>
+                
+                <br>
+                <div class="modal-footer">
+                    <button type="button" class="w3-btn" data-dismiss="modal">Anuluj</button>
+                    <input class="w3-btn w3-green" type="submit" value="Zapisz" name="zapisz" form="modal-form3">
+                </div>
                 </form>
             </div>
         </div>
