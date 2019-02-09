@@ -1,4 +1,3 @@
-
 <?php
         if(isset($_POST['zapisz'])&&(isset($_SESSION['logged'])) && ($_SESSION['logged']==true))
         {
