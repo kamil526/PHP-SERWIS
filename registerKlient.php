@@ -1,5 +1,6 @@
 <?php
     include 'topPage.php';
+    $loggedd = $_SESSION['typUsera'] ?? '';
     
     if (($_SESSION['logged']==true)&&($_SESSION['typUsera']==2)){
         header('Location: index.php');
@@ -135,20 +136,20 @@
             </div>
             
             <?php 
-                if( ($_SESSION['logged']==true) && ($_SESSION['typUsera']==0) || ($_SESSION['typUsera']==1) )
+                if( ($_SESSION['logged']==true) && ($loggedd==0) || ($loggedd==1) )
                 {
-            ?>
+                    ?>
 
-            <div class="form-group">
-            <div class="row">
-                <div class="col">
-                <center>
-                    <a href="panelPracownika.php" class="w3-btn w3-red">Anuluj</a>
-                    <input href="panelPracownika.php" class="w3-btn w3-green" type="submit" value="Zapisz" name="zarejestruj">
-                </center>
-                </div>
-            </div>
-            <?php 
+                    <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                        <center>
+                            <a href="panelPracownika.php" class="w3-btn w3-red">Anuluj</a>
+                            <input href="panelPracownika.php" class="w3-btn w3-green" type="submit" value="Zapisz" name="zarejestruj">
+                        </center>
+                        </div>
+                    </div>
+                    <?php 
                 } 
                 else {
             ?>
