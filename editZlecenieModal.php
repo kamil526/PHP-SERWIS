@@ -9,10 +9,11 @@
             $opisUsterki = $_POST['opisUsterki'] ?? '';
             $opisZlecenia = $_POST['opisZlecenia'] ?? '';
             $dataPrzekazania = $_POST['dataPrzekazania'] ?? NULL;
+            $dataZakonczenia = $_POST['dataZakonczenia'] ?? NULL;
             $statusZlecenia = $_POST['statusZlecenia'] ?? '';
 
             $sql="UPDATE Zlecenia SET markaPojazdu='$markaPojazdu', modelPojazdu='$modelPojazdu', opisUsterki='$opisUsterki', 
-            opisZlecenia='$opisZlecenia', dataPrzekazania='$dataPrzekazania',statusZlecenia='$statusZlecenia'
+            opisZlecenia='$opisZlecenia', dataPrzekazania='$dataPrzekazania', dataZakonczenia='$dataZakonczenia' ,statusZlecenia='$statusZlecenia'
             WHERE idZlecenia='$idZlecenia'";
             
 
