@@ -150,7 +150,7 @@ if(($_SESSION['logged']==true)&&(($_SESSION['typUsera']==0)||($_SESSION['typUser
                         <br>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="w3-btn" data-dismiss="modal">Close</button>
+                        <button type="button" class="w3-btn w3-red" data-dismiss="modal">Anuluj</button>
                         <input class="w3-btn w3-green" type="submit" value="Zapisz" name="zapiszKlient" form="modal-form">
                     </div>
                 </form>
