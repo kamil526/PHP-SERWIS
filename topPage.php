@@ -35,7 +35,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto font-weight-bold">
           <li class="nav-item active">
-            <a class="nav-link text-success " href="index.php">Home</a>
+            <a class="nav-link text-success" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="oFirmie.php">O firmie</a>
@@ -50,14 +50,14 @@
             if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true) && ($_SESSION['typUsera']==2)){
                 echo'
                 <li class="nav-item">
-                  <a class="nav-link" href="zleceniaKlient.php"><b>Panel Klienta</b></a>
+                  <a class="nav-link  text-success" href="zleceniaKlient.php"><b>Panel Klienta</b></a>
                 </li>';
             }else
             {
               if((isset($_SESSION['logged']) && ($_SESSION['logged']==true)) &&(($_SESSION['typUsera']==0)||($_SESSION['typUsera']==1))){
                 echo'
                 <li class="nav-item">
-                  <a class="nav-link" href="panelPracownika.php"><b>Panel Pracownika</b></a>
+                  <a class="nav-link  text-success" href="panelPracownika.php"><b>Panel Pracownika</b></a>
                 </li>';
               }
             }
