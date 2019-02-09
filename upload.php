@@ -7,10 +7,20 @@
 ?>
 
 <?php
+
+    otworzPoloczenie();
+
     $idKlienta =$_SESSION['idKlienta'] ?? '';
+
+    $sql="SELECT idZlecenia FROM Zlecenia WHERE idKlienta=$idKlienta ORDER BY idZlecenia DESC LIMIT 1";
+    $result = mysqli_query($polaczenie, $sql);
+    $query = mysqli_fetch_array($result);
+    
+    $idZlecenia = $query['idZlecenia'];
+
     if(!is_dir("uploads/klientId-$idKlienta"))mkdir("uploads/klientId-$idKlienta",0666);
     $target_dir = "uploads/klientId-$idKlienta/";
-    $target_file = $target_dir.$idKlienta."_".basename($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir.$idZlecenia."_".basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     if($_FILES['fileToUpload']['size'] != 0)
