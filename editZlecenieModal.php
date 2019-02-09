@@ -97,21 +97,24 @@
                                     <option><?php echo $query2['statusZlecenia']; ?></option>
                                     <option value="Akceptacja">Apceptacja</<option>
                                 </select>
-                            </div>
+                            </div> 
+                            <div class="col-md-4">   
+                                <label class="w3-text-green"><b>Wartość zlecenia:</b></label>
+                                <input type="text" class="form-control" name="wartoscZlecenia" readonly
+                                    value="<?php echo number_format((float)$query2['wartoscZlecenia'],2,'.',''); ?>">
+                            </div> 
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12"> 
+                            <div class="col-md-12">
+                                <br>
                                 <label class="w3-text-green"><b>Zdjęcie dodane do zlecenia:</b></label>
                                 <a>  
                                     <?php
                                         $dirname = "uploads/$query2[idKlienta]/$idZlecenia/";
                                         $images = glob($dirname."*.jpg");
                                         foreach($images as $image) {
-                                            echo '
-                                          
-                                            <img class="col-md-12" style="" src="'.$image.'" /><br />
-                                            ';
+                                            echo '<img class="col-md-12" style="" src="'.$image.'" /><br />';
                                         }
                                     ?>                          
                                 </a>
