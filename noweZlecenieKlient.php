@@ -63,7 +63,7 @@
             </form>
             <br>
             <form>
-                <input type="button" value="Moje Zlecenia" onclick="window.location.href='zleceniaKlient.php'" 
+                <input type="button" value="Moje Zlecenia" onclick="window.location.href='panelKlienta.php'" 
                 class="w3-btn w3-green" style="width:100%" />
             </form>
             <br>

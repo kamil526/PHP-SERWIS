@@ -50,7 +50,7 @@
             if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true) && ($_SESSION['typUsera']==2)){
                 echo'
                 <li class="nav-item">
-                  <a class="nav-link  text-success" href="zleceniaKlient.php"><b>Panel Klienta</b></a>
+                  <a class="nav-link  text-success" href="panelKlienta.php"><b>Panel Klienta</b></a>
                 </li>';
             }else
             {

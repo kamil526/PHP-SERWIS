@@ -52,7 +52,7 @@
 
             <div class="modal-body">
                 <!-- Zawartosc modala -->
-                <form method="post" action="zleceniaKlient.php" id="modal-form2">
+                <form method="post" action="panelKlienta.php" id="modal-form2">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-4">

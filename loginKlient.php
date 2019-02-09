@@ -3,7 +3,7 @@
     
     //jezeli uzytkownik jest zalogowany, przekieruj go na index.php
     if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)){
-        header('Location: zleceniaKlient.php');
+        header('Location: panelKlienta.php');
         //nie wykonuj kodu poniżej
 		exit();
 	}else{
@@ -55,7 +55,7 @@
                         $_SESSION['login'] = $_POST['login'];
                         $_SESSION['typUsera'] = 2;
                         zamknijPoloczenie();
-                        header('Location: zleceniaKlient.php');
+                        header('Location: panelKlienta.php');
                     } else {
                             echo '<br> <div class="alert alert-danger" role="alert">
                                     Hasło lub login jest niepoprawne!

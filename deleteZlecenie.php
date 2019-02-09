@@ -20,7 +20,7 @@ otworzPoloczenie();
     mysqli_query($polaczenie, $sql);
 
     if ($_SESSION['typUsera']==2){
-        header('location: zleceniaKlient.php');
+        header('location: panelKlienta.php');
     }else header('location: panelPracownika.php');
-    //header('location: zleceniaKlient.php');
+
 ?>

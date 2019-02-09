@@ -30,7 +30,7 @@
             </form>
             <br>
             <form>
-                <input type="button" value="Moje Zlecenia" onclick="window.location.href='zleceniaKlient.php'" 
+                <input type="button" value="Moje Zlecenia" onclick="window.location.href='panelKlienta.php'" 
                 class="w3-btn w3-green" style="width:100%"/>
             </form>
             <br>
@@ -58,7 +58,7 @@
                 FROM Zlecenia WHERE idKlienta=$idKlienta";
                     $result = mysqli_query($polaczenie, $sql);
                 echo '<div class="container">
-                <form class="col-md-12" method="post" action="zleceniaKlient.php" >
+                <form class="col-md-12" method="post" action="panelKlienta.php" >
                 <div class="row">
                     <table class="table">
                     <thead class="thead-light">
@@ -77,14 +77,14 @@
 
                 while($query=mysqli_fetch_array($result))
                 {
-                    echo "<form name='submit' action='zleceniaKlient.php' method='POST' id='modal-form3'>";
+                    echo "<form name='submit' action='panelKlienta.php' method='POST' id='modal-form3'>";
                     echo "<tr> <th scope='row' name='idZlecenia' id='idZlecenia'>".$query['idZlecenia']."</th>";
                     echo "<td>".$query['dataDodania']."</td>";
                     echo "<td>".$query['markaPojazdu']."</td>";
                     echo "<td>".$query['modelPojazdu']."</td>";
                     echo "<td>".$query['statusZlecenia']."</td>";
                     echo "<td>".$query['wartoscZlecenia']." zł</td>";
-                    echo "<td><a href='zleceniaKlient.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Edytuj </a></td>";
+                    echo "<td><a href='panelKlienta.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Edytuj </a></td>";
                     //echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-red'>Usuń </a></td></form>";
  
                 }

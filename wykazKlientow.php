@@ -29,7 +29,7 @@
                 FROM Klienci left join Zlecenia on Zlecenia.idKlienta=Klienci.idKlienta GROUP BY Klienci.idKlienta';
                 $result = mysqli_query($polaczenie, $sql);
                 echo '<div class="container">
-                <form class="col-md-12" method="post" action="zleceniaKlient.php" >
+                <form class="col-md-12" method="post" action="panelKlienta.php" >
                 <div class="row featurette">
                     <table class="table">
                     <thead class="thead-light">

@@ -66,7 +66,7 @@ if(($_SESSION['logged']==true)&&(($_SESSION['typUsera']==0)||($_SESSION['typUser
 
             <div class="modal-body">
                 <!-- Zawartosc modala -->
-                <form method="post" action="zleceniaKlient.php" id="modal-form">
+                <form method="post" action="panelKlienta.php" id="modal-form">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-4">
