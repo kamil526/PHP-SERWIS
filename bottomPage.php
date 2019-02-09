@@ -9,7 +9,7 @@
         <p> 
             &copy; 2019 e-Serwis &middot;
             Created by: Kamil Poręba & Michał Sierotowicz &middot;           
-            <a href="startpage/data/construction.html" class="text-success">Regulamin</a>
+            <a href="regulamin.php" class="text-success">Regulamin</a>
         </p>
     </div>
 </div>
