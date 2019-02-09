@@ -35,7 +35,7 @@
             echo '<p><center>Musisz wypełnić wszystkie obowiązkowe pola</center>.</p>';
         } else{
                 $sql="INSERT INTO Zlecenia (idPracownika, idKlienta, dataDodania, dataPrzekazania, dataZakonczenia, statusZlecenia, rodzajZlecenia, opisZlecenia, opisUsterki, komentarzPracownika, markaPojazdu, modelPojazdu, wartoscZlecenia)
-                VALUES (1, '$idKlienta',now(), '$dataPrzekazania', NULL, 'Oczekuje', ' ','$opisZlecenia','$opisUsterki',' ','$markaPojazdu','$modelPojazdu',0)";
+                VALUES (1, '$idKlienta',now(), '$dataPrzekazania', NULL, 'Oczekiwanie', ' ','$opisZlecenia','$opisUsterki',' ','$markaPojazdu','$modelPojazdu',0)";
                 //mysqli_query($polaczenie, $sql);
 
                 if (mysqli_query($polaczenie, $sql)) {

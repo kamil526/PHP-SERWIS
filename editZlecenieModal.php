@@ -9,9 +9,10 @@
             $opisUsterki = $_POST['opisUsterki'] ?? '';
             $opisZlecenia = $_POST['opisZlecenia'] ?? '';
             $dataPrzekazania = $_POST['dataPrzekazania'] ?? NULL;
+            $statusZlecenia = $_POST['statusZlecenia'] ?? '';
 
             $sql="UPDATE Zlecenia SET markaPojazdu='$markaPojazdu', modelPojazdu='$modelPojazdu', opisUsterki='$opisUsterki', 
-            opisZlecenia='$opisZlecenia', dataPrzekazania='$dataPrzekazania'
+            opisZlecenia='$opisZlecenia', dataPrzekazania='$dataPrzekazania',statusZlecenia='$statusZlecenia'
             WHERE idZlecenia='$idZlecenia'";
             
 
@@ -89,6 +90,13 @@
                                 <label class="w3-text-green" ><b>Data Przekazania Pojazdu:</b></label>
                                 <input type="date" class="form-control" name="dataPrzekazania" class="form-control" min="<?php echo date('Y-m-d'); ?>" max="2100-12-01"
                                 value="<?php echo $query2['dataPrzekazania']; ?>">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="w3-text-green"><b>Status zlecenia:</b></label>
+                                <select class="form-control" name="statusZlecenia" list="exampleList">
+                                    <option><?php echo $query2['statusZlecenia']; ?></option>
+                                    <option value="Akceptacja">Apceptacja</<option>
+                                </select>
                             </div>
                         </div>
 
