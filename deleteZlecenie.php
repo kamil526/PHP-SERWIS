@@ -2,7 +2,8 @@
 <?php
 session_start();
 
-if ($_SESSION['logged']==false){
+if ($_SESSION['logged']==false)
+{
     header('Location: loginPracownik.php');
     //nie wykonuj kodu poniżej
     exit();
@@ -18,7 +19,7 @@ otworzPoloczenie();
     $sql="delete from Zlecenia  WHERE idZlecenia=$idZlecenia";
     mysqli_query($polaczenie, $sql);
 
-    if ($_SESSION['typUsera']==1){
+    if ($_SESSION['typUsera']==2){
         header('location: zleceniaKlient.php');
     }else header('location: panelPracownika.php');
     //header('location: zleceniaKlient.php');
