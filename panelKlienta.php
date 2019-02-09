@@ -101,7 +101,7 @@
 </div>
 </div>
 <?php
-include 'editKlient.php';
+include 'editKlientModal.php';
 include 'editZlecenieModal.php';
 include 'bottomPage.php';
 ?>  

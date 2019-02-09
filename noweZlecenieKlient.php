@@ -128,7 +128,7 @@
 </div>
 
 <?php
-    include 'editKlient.php';
+    include 'editKlientModal.php';
     include 'bottomPage.php';
     zamknijPoloczenie(); 
 ?>  
