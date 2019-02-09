@@ -73,7 +73,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="w3-btn w3-green" data-dismiss="modal">Close</button>
+                        <button type="button" class="w3-btn w3-red" data-dismiss="modal">Zamknij</button>
                         
                     </div>
 

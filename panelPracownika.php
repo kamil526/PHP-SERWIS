@@ -97,7 +97,7 @@ otworzPoloczenie();
                                         echo "<td>".$query['opisZlecenia']."</td>";
                                         echo "<td>".$query['wartoscZlecenia']." zł</td>";
                                         echo "<td><a href='panelPracownika.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Edytuj </a></td>";
-                                        echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-green'>Usuń </a></td>";
+                                        echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-red'>Usuń </a></td>";
                                     }
 
                         ?>
