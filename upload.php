@@ -8,7 +8,8 @@
 
 <?php
     $idKlienta =$_SESSION['idKlienta'] ?? '';
-    $target_dir = "uploads/";
+    if(!is_dir("uploads/klientId-$idKlienta"))mkdir("uploads/klientId-$idKlienta",0666);
+    $target_dir = "uploads/klientId-$idKlienta/";
     $target_file = $target_dir.$idKlienta."_".basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

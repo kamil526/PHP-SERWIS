@@ -31,8 +31,7 @@
         $opisZlecenia = $_POST['opisZlecenia'] ?? '';
         $dataPrzekazania = $_POST['dataPrzekazania'] ?? '';
         // sprawdzamy czy wszystkie pola zostały wypełnione
-        if(empty($markaPojazdu) || empty($modelPojazdu) || empty($opisUsterki) || empty($opisZlecenia) 
-        || empty($dataPrzekazania)) {
+        if(empty($markaPojazdu) || empty($modelPojazdu) || empty($dataPrzekazania)) {
             echo '<p><center>Musisz wypełnić wszystkie obowiązkowe pola</center>.</p>';
         } else{
                 $sql="INSERT INTO Zlecenia (idPracownika, idKlienta, dataDodania, dataPrzekazania, dataZakonczenia, statusZlecenia, rodzajZlecenia, opisZlecenia, opisUsterki, komentarzPracownika, markaPojazdu, modelPojazdu, wartoscZlecenia)
