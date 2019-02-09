@@ -118,7 +118,7 @@
                         <select class="form-control" name="statusZlecenia" list="exampleList">
                             <option><?php echo $query2['statusZlecenia']; ?></option>
                             <option value="Wycena">Wycena</<option>
-                            <option value="Oczekujące">Oczekujące</<option>
+                            <option value="Oczekujące">Oczekiwanie</<option>
                             <option value="W trakcie">Rozpoczęte</<option>
                             <option value="Zakończone">Zakończone</<option>
                         </select>
