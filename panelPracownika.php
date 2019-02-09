@@ -150,16 +150,10 @@ otworzPoloczenie();
                     , '$opisUsterki', '$komentarzPracownika', '$markaPojazdu', '$modelPojazdu', '$wartoscZlecenia')";
                     mysqli_query($polaczenie, $sql);
 
-        /*              if (mysqli_query($polaczenie, $sql)) {
-                        echo "New record created successfully";
-                    } else {
-                        echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
-                    }   */
                 }
             
             ?>
 
-            <!-- Zawartosc modala -->
             <form method="post" action="panelPracownika.php" id="modal-form">
             <div class="container-fluid">
 

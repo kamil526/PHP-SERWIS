@@ -20,7 +20,7 @@
 
 
 <div class="container">
-    <h1 class="w3-green" style="padding:10px;">Wykaz kontrahentów</h1>
+    <h1 class="w3-green" style="padding:10px;">Wykaz klientów</h1>
     <div class="row">
         <div class="col-md-12">
                 <?php

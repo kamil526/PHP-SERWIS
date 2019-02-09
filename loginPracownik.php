@@ -43,11 +43,9 @@
                 // jeśli zostanie naciśnięty przycisk "Zaloguj"
                 if(isset($_POST['login'])) {
                     // filtrujemy dane...
-                    $login = $_POST['login'] ?? '';
-                    //$_POST['password'] = $_POST['password'];
+                    $login = $_POST['login'] ?? '';    
                     $password = hashHaslo($_POST['password']) ?? '';
                     $sql="SELECT * FROM Pracownicy WHERE login = '$login' AND haslo = '$password' LIMIT 1";
-                    // sprawdzamy prostym zapytaniem sql czy podane dane są prawidłowe
                     $result = mysqli_query($polaczenie, $sql);
                     if(mysqli_num_rows($result) > 0) {
                         // jeśli tak to ustawiamy sesje "logged" na true oraz do sesji "idPracownika" wstawiamy idPracownika
@@ -64,7 +62,6 @@
                         }
                 }
 
-                //zamknijPoloczenie();
             ?>
         </div>
     </div>
@@ -72,5 +69,4 @@
 
 <?php
     include 'bottomPage.php';  
-   // zamknijPoloczenie();
 ?>
