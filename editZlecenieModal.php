@@ -93,14 +93,17 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6"> 
+                            <div class="col-md-12"> 
                                 <label class="w3-text-green"><b>Zdjęcie dodane do zlecenia:</b></label>
                                 <a>  
                                     <?php
                                         $dirname = "uploads/$query2[idKlienta]/$idZlecenia/";
                                         $images = glob($dirname."*.jpg");
                                         foreach($images as $image) {
-                                            echo '<img style="width:300px" src="'.$image.'" /><br />';
+                                            echo '
+                                          
+                                            <img class="col-md-12" style="" src="'.$image.'" /><br />
+                                            ';
                                         }
                                     ?>                          
                                 </a>

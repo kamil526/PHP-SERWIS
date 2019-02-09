@@ -48,9 +48,8 @@
             $uploadOk = 0;
         }
         // obługiwane typu do uploadu
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-        && $imageFileType != "gif" ) {
-            echo "Dozwolone formaty pliku to: JPG, JPEG, PNG, GIF";
+        if($imageFileType != "jpg") {
+            echo "Dozwolone formaty pliku to: JPG";
             $uploadOk = 0;
         }
         // w przypadku błedu
