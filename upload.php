@@ -18,11 +18,8 @@
     
     $idZlecenia = $query['idZlecenia'];
 
-    echo $idKlienta;
-
-    // if(!is_dir('uploads/.$idKlienta./.$idZlecenia.'))mkdir('uploads/.$idKlienta./.$idZlecenia.',0777, true);
-    if(!is_dir("uploads/$idKlienta/$idZlecenia"))mkdir("uploads/$idKlienta/$idZlecenia",0777, true);
-    // $target_dir = "uploads/$idKlienta/$idZlecenia/";
+    if(!is_dir("uploads/$idKlienta/$idZlecenia")) mkdir("uploads/$idKlienta/$idZlecenia",0777, true);
+    else die('Nie udało się utworzyć folderu');
     $target_dir = "uploads/$idKlienta/$idZlecenia/";
     $target_file = $target_dir.$idKlienta."_".($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
