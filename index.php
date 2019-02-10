@@ -2,7 +2,6 @@
     include 'topPage.php';
 ?>
 
-    <!-- Marketing / 3 kolumny pod karuzelą-->
 <div class="container marketing">
 <br><br>
     <div class="row text-center">
@@ -11,7 +10,7 @@
             <h2 class=" text-success">Wymiana Oleju</h2>
             <p>Oferujemy wymianę oleju silnikowego przy zastosowaniu naszych olejów oraz dostarczonych przez klienta.</p>
             <p>
-                <a class="btn btn-secondary" href="startpage/data/construction.html" role="button">Dowiedz się więcej &raquo;</a>
+                <a class="btn btn-secondary" href="startpage/data/construction.php" role="button">Dowiedz się więcej &raquo;</a>
             </p>
         </div>
         <div class="col-lg-4">
@@ -19,7 +18,7 @@
             <h2 class=" text-success">Przegląd techniczny</h2>
             <p>Wykonujemy przegląd techniczny okresowy oraz przed pierwszą rejestracją pojazdu.</p>
             <p>
-                <a class="btn btn-secondary" href="startpage/data/construction.html" role="button">Dowiedz się więcej &raquo;</a>
+                <a class="btn btn-secondary" href="startpage/data/construction.php" role="button">Dowiedz się więcej &raquo;</a>
             </p>
         </div>
         <div class="col-lg-4">
@@ -27,12 +26,11 @@
             <h2 class=" text-success">Naprawy</h2>
             <p>Nasi doświadczeni pracownicy wykonają dla Państwa dowolną naprawę z zakresu mechaniki pojazdowej.</p>
             <p>
-                <a class="btn btn-secondary" href="startpage/data/construction.html" role="button">Dowiedz się więcej &raquo;</a>
+                <a class="btn btn-secondary" href="startpage/data/construction.php" role="button">Dowiedz się więcej &raquo;</a>
             </p>
         </div>
     </div>
 
-<!--Carousel -->
 <div class="container" md-14>
     <br><br>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -40,8 +38,7 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -65,60 +62,43 @@
     </div>
 </div>
 
-    <!-- Featurettes -->
     <hr class="featurette-divider">
     <div class="row featurette">
         <div class="col-md-7">
-            <h2 class="featurette-heading text-success">Lorem Ipsum
+            <h2 class="featurette-heading text-success">Kompleksowy serwis klimatyzacji
                 <span class="text-muted"></span>
             </h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="lead">Oferujemy Państwu kompleksowy serwis klimatyzacji w Nowym Sączu.
+            Klimatyzacja samochodowa wymaga regularnego roboczego przeglądu. 
+            Nieprawidłowo działające urządzenie jest idealnym podłożem dla bakterii oraz grzybów, które wraz z powietrzem dostają się do wnętrza pojazdu wywołując u 
+            pasażerów reakcje alergiczne oraz inne niepożądane skutki zdrowotne.
+            Przeglądy klimatyzacji gwarantują nie tylko komfort jazdy ale również pozwalają wykryć drobne uszkodzenia i zapobiegają poważnym i bardzo kosztownym awariom.</p>
         </div>
         <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="startpage/img/car4.jpg" alt="oprawa twarda">
+            <img class="featurette-image img-fluid mx-auto" src="startpage/img/klima.jpg">
         </div>
     </div>
     <hr class="featurette-divider">
     
     <div class="row featurette">
         <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading text-success">Lorem Ipsum</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2 class="featurette-heading text-success">Elektromechanika</h2>
+            <p class="lead">Jeśli w Twoim samochodzie szwankuje elektronika lub zaświeci się czerwona kontrolka błędu, możesz polegać na naszych fachowcach
+                którzy szybko zlokalizują i rozwiążą problem.</p>
         </div>
         <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" src="startpage/img/car3.jpg" alt="wizytówka">
+            <img class="featurette-image img-fluid mx-auto" src="startpage/img/elektro.jpg">
         </div>
     </div>
     <hr class="featurette-divider">
     <div class="row featurette">
         <div class="col-md-7">
-            <h2 class="featurette-heading text-success">Lorem Ipsum</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2 class="featurette-heading text-success">Wulkanizacja</h2>
+            <p class="lead">Nasz serwis wyposażony jest w najnowszej generacji urządzenia do wymiany oraz wyważania opon. <br>Współpracujemy z najbardziej prestiżowymi producentami opon, 
+                felg stalowych, aluminiowych dzięki czemu jesteśmy w stanie zapewnić naszym klientom najwyższą jakość świadczonych usług oraz pełną gamę produktów.</p>
         </div>
         <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="startpage/img/car2.jpg" alt="uszlachetnienia">
-        </div>
-    </div>
-    <hr class="featurette-divider">
-    <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading text-success">Lorem Ipsum</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" src="startpage/img/car1.png" alt="wizytówka">
+            <img class="featurette-image img-fluid mx-auto" src="startpage/img/wulkanizacja.jpg">
         </div>
     </div>
 </div>

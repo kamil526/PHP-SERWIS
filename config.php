@@ -1,5 +1,4 @@
 <?php
-
     function otworzPoloczenie()
     {
         global $polaczenie;
@@ -14,19 +13,14 @@
             or exit("Nieudane połączenie z bazą");
         mysqli_set_charset($polaczenie, "utf8");
     }
-
     function zamknijPoloczenie()
     {
         global $polaczenie;
         mysqli_close($polaczenie);
     }
-
     function hashHaslo($password) {
-        // kodujemy hasło (losowe znaki można zmienić lub całkowicie usunąć
         return sha1(md5($password).'#!%Rgd64');
     }
-
-    // tworzenie tabel
     function utworzTabele() 
     {
         global $polaczenie;
@@ -75,6 +69,5 @@
         "FOREIGN KEY (idKlienta) REFERENCES Klienci(idKlienta) )";
         mysqli_query($polaczenie, $rozkaz)
         or exit("Błąd w zapytaniu: ".$rozkaz);
-
     }
 ?>

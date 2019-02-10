@@ -12,11 +12,9 @@
     <meta name="author" content="Michał Sierotowicz, Kamil Poręba">
     <link rel="icon" href="startpage/img/faviconkw.ico">
     <title>eSerwis - Samochodowy </title>
-    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="startpage/css/styles.css">
     <link rel="stylesheet" href="startpage/css/bootstrap.css">
   </head>
@@ -63,28 +61,24 @@
             }
           ?>
         </ul>  
-
         <ul class="navbar-nav mr-auto font-weight-bold">
 
         <?php
               if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)){
-              echo
-              '
-              
-                  <li class="nav-item">
-                      <a class="nav-link">Witaj, '. $_SESSION['login']. '</a>
-                  </li>
-
-                  <li class="nav-item">
-                      <a class="nav-link" href="logout.php"> Wyloguj</a>
-                  </li>
-            
-              ';
+                echo
+                '
+                    <li class="nav-item">
+                        <a class="nav-link">Witaj, '. $_SESSION['login']. '</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php"> Wyloguj</a>
+                    </li>
+                ';
               }else{
                   echo
                   '
                   <li class="nav-item">
-                  <a class="nav-link" href="loginKlient.php">Panel Klienta</a>
+                      <a class="nav-link" href="loginKlient.php">Panel Klienta</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="loginPracownik.php">Panel Pracownika</a>
