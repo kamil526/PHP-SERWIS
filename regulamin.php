@@ -4,10 +4,8 @@
 
 <div class="container">
     <div class="col-md-10">
-
         <h2 class="w3-text-green">Regulamin:</h2>
         <br>
-
         <ol>
             <li>Ceny usług są cenami orientacyjnymi tzn. mogą się różnić od ostatecznych w następujących przypadkach:
             <ul type="a">
@@ -27,12 +25,9 @@
             <li>Serwis ma prawo odmówić wykonania usługi bez podania przyczyny.</li>
             <li>W sprawach nieuregulowanych niniejszym regulaminem obowiązują przepisy kodeksu cywilnego oraz obowiązujących ustaw.</li>
         </ol>
-            
     </div>
 </div>
    
-
 <?php
     include 'bottomPage.php';
-    
 ?>  

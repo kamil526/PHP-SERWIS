@@ -4,7 +4,6 @@
 
 <div class="container">
     <div class="col-md-10">
-
         <h2>Cennik podstawowy:</h2><br><br>
 
         <h3>Przeglądy:</h3><br>
@@ -62,7 +61,6 @@
         <label class="w3-text-green"><b>Wymiana kół z wyważeniem felga aluminiowa:</b></label>
         <label class="w3-text">60 zł</label>
         <br>
-            
     </div>
 </div>
    
