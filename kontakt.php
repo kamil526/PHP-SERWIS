@@ -28,10 +28,7 @@
                 Tel: +48 666 666 66<br>
                 e-mail: eSerwis@gmail.com<br>
                 </label>
-
-                <p>&nbsp;</p>
             </div>
-
             <div class="col-md-7">      
                 <h3>Mapka dojazdu</h3>
                 <div>
