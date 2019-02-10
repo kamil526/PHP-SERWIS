@@ -46,11 +46,8 @@
                     jQuery(window).on("load",function() {
                     jQuery('#modal1').modal('show');
                     });
-                })(jQuery);
-                
-                
+                })(jQuery);              
     <?php   }
-
     ?>
 
     <?php
@@ -63,10 +60,7 @@
                     jQuery('#modalEZP').modal('show');
                     });
                 })(jQuery);
-                
-                
     <?php   }
-
     ?>
 
     <?php
@@ -79,10 +73,7 @@
                     jQuery('#modal3').modal('show');
                     });
                 })(jQuery);
-                
-                
 <?php       }
-
     ?>
 
 </script>

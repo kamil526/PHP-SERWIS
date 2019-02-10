@@ -13,11 +13,9 @@
     }
 ?>
 
-
 <?php
         if(isset($_POST['zapisz']))
         {
-            //pobieramy dane z pól
             $idZlecenia = $_POST['idZlecenia'] ?? '';
             $idPracownika = $_SESSION['idPracownika'] ?? '';
             $dataDodania = $_POST['dataDodania'] ?? NULL;
@@ -32,15 +30,11 @@
             $modelPojazdu = $_POST['modelPojazdu'] ?? '';
             $wartoscZlecenia = str_replace(',', '.',$_POST['wartoscZlecenia']) ?? NULL;
 
-            
-
             $sql="UPDATE Zlecenia SET dataDodania='$dataDodania', dataPrzekazania='$dataPrzekazania', dataZakonczenia='$dataZakonczenia', 
             statusZlecenia='$statusZlecenia', rodzajZlecenia='$rodzajZlecenia', opisZlecenia='$opisZlecenia', komentarzPracownika='$komentarzPracownika',
             markaPojazdu='$markaPojazdu', modelPojazdu='$modelPojazdu', wartoscZlecenia='$wartoscZlecenia'
             WHERE idZlecenia='$idZlecenia'"; 
         
-
-            //mysqli_query($polaczenie, $sql);
             if (mysqli_query($polaczenie, $sql)) 
             {
                 echo'<br> <div class="alert alert-success" role="alert">
@@ -48,22 +42,18 @@
                     </div>';
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($polaczenie);
-            }    
-            
+            }         
         }
 ?>
 
 <div class="modal fade bd-example2-modal-lg" tabindex="-1" role="dialog" id="modalEZP"
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-
     <?php 
                 $idZlecenia=$_GET['idZlecenia'];
                 $sql2="SELECT * FROM Zlecenia INNER JOIN Klienci ON Zlecenia.idKlienta=Klienci.IdKlienta WHERE idZlecenia='$idZlecenia'";
                 $result2 = mysqli_query($polaczenie, $sql2);
-                $query2 = mysqli_fetch_array($result2);
-              
+                $query2 = mysqli_fetch_array($result2);   
     ?>
-
     <div class="modal-dialog modal-lg" role="dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -74,24 +64,21 @@
             </div>
 
             <div class="modal-body">
-                <!-- Zawartosc modala -->
                 <form method="post" action="panelPracownika.php" id="modal-form3">
             <div class="container-fluid">
-
                 <div class="row">
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data dodania:</b></label>
-                        <input type="date" class="form-control" name="dataDodania" class="form-control"  min="<?php echo $query2['dataDodania']; ?>" max="2100-12-01"
-                                value="<?php echo $query2['dataDodania']; ?>"> 
+                        <input type="date" class="form-control" name="dataDodania" class="form-control"  value="<?php echo $query2['dataDodania']; ?>" readonly> 
                     </div>
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data przekazania:</b></label>
-                        <input type="date" class="form-control" name="dataPrzekazania" class="form-control"  min="<?php echo $query2['dataPrzekazania']; ; ?>" max="2100-12-01"
+                        <input type="date" class="form-control" name="dataPrzekazania" class="form-control"  min="<?php echo $query2['dataDodania']; ; ?>" max="2100-12-01"
                                 value="<?php echo $query2['dataPrzekazania']; ?>"> 
                     </div>
                     <div class="col-md-4">
                         <label class="w3-text-green" ><b>Data zakończenia:</b></label>
-                        <input type="date" class="form-control" name="dataZakonczenia" class="form-control"  min="<?php echo $query2['dataZakonczenia'];  ?>" max="2100-12-01"
+                        <input type="date" class="form-control" name="dataZakonczenia" class="form-control"  min="<?php echo $query2['dataDodania'];  ?>" max="2100-12-01"
                                 value="<?php echo $query2['dataZakonczenia'];?>"> 
                     </div>
                 </div>
@@ -171,7 +158,6 @@
                         </a>
                     </div>
                 </div>
-                
                 <br>
                 <div class="modal-footer">
                     <button type="button" class="w3-btn" data-dismiss="modal">Anuluj</button>

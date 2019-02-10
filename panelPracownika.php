@@ -59,7 +59,6 @@ otworzPoloczenie();
                             }
                         ?>
                         <?php
-                                
                             $sql2="SELECT Zlecenia.idZlecenia, imie, nazwisko, dataDodania, dataPrzekazania, dataZakonczenia, 
                             statusZlecenia, rodzajZlecenia, opisZlecenia, round(wartoscZlecenia,2) as wartoscZlecenia
                             FROM Zlecenia INNER JOIN Klienci ON Zlecenia.idKlienta=Klienci.IdKlienta";
@@ -99,7 +98,6 @@ otworzPoloczenie();
                                         echo "<td><a href='panelPracownika.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Edytuj </a></td>";
                                         echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."'  class='w3-btn w3-red'>Usuń </a></td>";
                                     }
-
                         ?>
                                             </tr>
                                     </tbody>

@@ -4,13 +4,10 @@
 ?>
 
 <?php
-    //jezeli uzytkownik jest zalogowany, przekieruj go na index.php
     if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)){
         header('Location: panelPracownika.php');
-        //nie wykonuj kodu poniżej
 		exit();
 	}else{
-            // jeśli nie ma jeszcze sesji "logged" i "idPracownika" to wypełniamy je domyślnymi danymi
             $_SESSION['logged'] = false;
             $_SESSION['idPracownika'] = -1;
         }
@@ -40,15 +37,12 @@
             </form>
       
             <?php
-                // jeśli zostanie naciśnięty przycisk "Zaloguj"
                 if(isset($_POST['login'])) {
-                    // filtrujemy dane...
                     $login = $_POST['login'] ?? '';    
                     $password = hashHaslo($_POST['password']) ?? '';
                     $sql="SELECT * FROM Pracownicy WHERE login = '$login' AND haslo = '$password' LIMIT 1";
                     $result = mysqli_query($polaczenie, $sql);
                     if(mysqli_num_rows($result) > 0) {
-                        // jeśli tak to ustawiamy sesje "logged" na true oraz do sesji "idPracownika" wstawiamy idPracownika
                         $row = mysqli_fetch_assoc($result);
                         $_SESSION['logged'] = true;
                         $_SESSION['idPracownika'] = $row['idPracownika'];
@@ -61,7 +55,6 @@
                                 </div>';
                         }
                 }
-
             ?>
         </div>
     </div>
