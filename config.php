@@ -21,53 +21,5 @@
     function hashHaslo($password) {
         return sha1(md5($password).'#!%Rgd64');
     }
-    function utworzTabele() 
-    {
-        global $polaczenie;
-        
-        $rozkaz = "CREATE TABLE Pracownicy (" .
-        "idPracownika INT AUTO_INCREMENT PRIMARY KEY ," .
-        "login VARCHAR(50) NOT NULL, " .
-        "haslo VARCHAR(50) NOT NULL, " .
-        "imie VARCHAR(50), " .
-        "nazwisko VARCHAR(50), " .
-        "email VARCHAR(50), " .
-        "typUzytkownika INT )";
-        mysqli_query($polaczenie, $rozkaz)
-        or exit("Błąd w zapytaniu: ".$rozkaz);
-        
-        $rozkaz = "CREATE TABLE Klienci (" .
-        "idKlienta INT AUTO_INCREMENT PRIMARY KEY," .
-        "login VARCHAR(50) NOT NULL, " .
-        "haslo VARCHAR(50) NOT NULL," .
-        "imie VARCHAR(50), " .
-        "nazwisko VARCHAR(50), " .
-        "nazwaFirmy VARCHAR(50), " .
-        "nip VARCHAR(50), " .
-        "email VARCHAR(50), " .
-        "ulica VARCHAR(50), " .
-        "nrDomu VARCHAR(50), " .
-        "miasto VARCHAR(50), " .
-        "kodPocztowy VARCHAR(50), " .
-        "telefon VARCHAR(50), " .
-        "nazwaBanku VARCHAR(50), " .
-        "kontoBankowe VARCHAR(50) )";
-        mysqli_query($polaczenie, $rozkaz)
-        or exit("Błąd w zapytaniu: ".$rozkaz);
-        
-        $rozkaz = "CREATE TABLE Zlecenia (" .
-        "idZlecenia INT AUTO_INCREMENT PRIMARY KEY," .
-        "idPracownika INT, " .
-        "idKlienta INT, " .
-        "dataDodania DATE, " .
-        "dataZakonczenia DATE, " .
-        "statusZlecenia VARCHAR(50), " .
-        "rodzajZlecenia VARCHAR(50), " .
-        "opisZlecenia VARCHAR(255), " .
-        "wartoscZlecenia  DECIMAL(13, 4), " .
-        "FOREIGN KEY (idPracownika) REFERENCES Pracownicy(idPracownika), " .
-        "FOREIGN KEY (idKlienta) REFERENCES Klienci(idKlienta) )";
-        mysqli_query($polaczenie, $rozkaz)
-        or exit("Błąd w zapytaniu: ".$rozkaz);
-    }
+
 ?>
