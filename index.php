@@ -68,14 +68,14 @@
             <h2 class="featurette-heading text-success">Kompleksowy serwis klimatyzacji
                 <span class="text-muted"></span>
             </h2>
-            <p class="lead">Oferujemy Państwu kompleksowy serwis klimatyzacji w Nowym Sączu.
+            <p class="lead" align="justify">Oferujemy Państwu kompleksowy serwis klimatyzacji w Nowym Sączu.
             Klimatyzacja samochodowa wymaga regularnego roboczego przeglądu. 
             Nieprawidłowo działające urządzenie jest idealnym podłożem dla bakterii oraz grzybów, które wraz z powietrzem dostają się do wnętrza pojazdu wywołując u 
             pasażerów reakcje alergiczne oraz inne niepożądane skutki zdrowotne.
             Przeglądy klimatyzacji gwarantują nie tylko komfort jazdy ale również pozwalają wykryć drobne uszkodzenia i zapobiegają poważnym i bardzo kosztownym awariom.</p>
         </div>
         <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="startpage/img/klima.jpg">
+            <img class="img-fluid mx-auto" src="startpage/img/klima.jpg">
         </div>
     </div>
     <hr class="featurette-divider">
@@ -83,22 +83,24 @@
     <div class="row featurette">
         <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading text-success">Elektromechanika</h2>
-            <p class="lead">Jeśli w Twoim samochodzie szwankuje elektronika lub zaświeci się czerwona kontrolka błędu, możesz polegać na naszych fachowcach
+            <p class="lead" align="justify">Współczesne samochody osobowe i użytkowe są wypełnione układami elektronicznymi,
+                których sprawne działanie przekłada się na komfort i bezpieczeństwo jazdy.
+                <br>Jeśli w Twoim samochodzie szwankuje elektronika lub zaświeci się czerwona kontrolka błędu, możesz polegać na naszych fachowcach
                 którzy szybko zlokalizują i rozwiążą problem.</p>
         </div>
         <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" src="startpage/img/elektro.jpg">
+            <img class="img-fluid mx-auto" src="startpage/img/elektro.jpg">
         </div>
     </div>
     <hr class="featurette-divider">
     <div class="row featurette">
         <div class="col-md-7">
             <h2 class="featurette-heading text-success">Wulkanizacja</h2>
-            <p class="lead">Nasz serwis wyposażony jest w najnowszej generacji urządzenia do wymiany oraz wyważania opon. <br>Współpracujemy z najbardziej prestiżowymi producentami opon, 
+            <p class="lead" align="justify">Nasz serwis wyposażony jest w najnowszej generacji urządzenia do wymiany oraz wyważania opon. <br>Współpracujemy z najbardziej prestiżowymi producentami opon, 
                 felg stalowych, aluminiowych dzięki czemu jesteśmy w stanie zapewnić naszym klientom najwyższą jakość świadczonych usług oraz pełną gamę produktów.</p>
         </div>
         <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="startpage/img/wulkanizacja.jpg">
+            <img class="img-fluid mx-auto" src="startpage/img/wulkanizacja.jpg">
         </div>
     </div>
 </div>
