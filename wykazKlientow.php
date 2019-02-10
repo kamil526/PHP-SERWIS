@@ -6,25 +6,21 @@
         //nie wykonuj kodu poniżej
         exit();
     }
-
     if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==2)){
-        echo '<br> <div class="alert alert-danger" role="alert">
-            <center>Nie masz odpowiednich uprawnień!</center>
-            </div>';
+        echo '<br><div class="alert alert-danger" role="alert">
+                <center>Nie masz odpowiednich uprawnień!</center>
+              </div>';
         include 'bottomPage.php';
         exit();
     }
-
     otworzPoloczenie();
 ?>
-
 
 <div class="container">
     <h1 class="w3-green" style="padding:10px;">Wykaz klientów</h1>
     <div class="row">
         <div class="col-md-12">
                 <?php
-                //$sql="SELECT idKlienta, login, imie, nazwisko, nazwaFirmy FROM Klienci";
                 $sql='SELECT Klienci.idKlienta, login, imie, nazwisko, nazwaFirmy, round(sum(Zlecenia.wartoscZlecenia),2) as wartoscZlecen 
                 FROM Klienci left join Zlecenia on Zlecenia.idKlienta=Klienci.idKlienta GROUP BY Klienci.idKlienta';
                 $result = mysqli_query($polaczenie, $sql);
@@ -44,7 +40,6 @@
                         </tr>
                     </thead>
                     <tbody>';
-
                 while($query=mysqli_fetch_array($result))
                 {
                     echo "<form name='submit' action='wykazKlientow.php' method='POST' id='modal-form3'>";
@@ -56,9 +51,7 @@
                     echo "<td>".$query['wartoscZlecen']." zł</td>";
                     echo "<td><a href='wykazKlientow.php?idKlienta=".$query['idKlienta']."' class='w3-btn w3-green'>Wyświetl zlec. </a></td>";
                 }
-                
                 ?>
-
                 </tr>
                 </tbody>
                 </table>
@@ -69,10 +62,9 @@
         <div class="row">
             <div class="col">
                 <a href="panelPracownika.php" class="w3-btn w3-green"> Powrót </a>
-                </div>
+            </div>
         </div>
     </center>
-
 </div>
 </div>
 </div>

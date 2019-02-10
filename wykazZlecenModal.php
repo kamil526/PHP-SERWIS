@@ -7,16 +7,13 @@
     }
     if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==2)){
         echo '<br> <div class="alert alert-danger" role="alert">
-            <center>Nie masz odpowiednich uprawnień!</center>
+                <center>Nie masz odpowiednich uprawnień!</center>
             </div>';
         include 'bottomPage.php';
         exit();
     }
 
 ?>
-
-
-
 
 <div class="modal fade bd-example3-modal-lg" tabindex="-1" role="dialog" id="modal3"
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -28,19 +25,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
             <div class="modal-body">
-                <!-- Zawartosc modala -->
                 <form id="modal-formm"> 
                     <div class="container-fluid">    
                         <?php
-
-                        $idKlienta=$_GET['idKlienta'];
-                        $sql="SELECT idZlecenia, dataDodania, markaPojazdu, modelPojazdu, statusZlecenia, round(wartoscZlecenia,2) as wartoscZlecenia 
-                                FROM Zlecenia WHERE idKlienta=$idKlienta";
+                            $idKlienta=$_GET['idKlienta'];
+                            $sql="SELECT idZlecenia, dataDodania, markaPojazdu, modelPojazdu, statusZlecenia, round(wartoscZlecenia,2) as wartoscZlecenia 
+                            FROM Zlecenia WHERE idKlienta=$idKlienta";
                         $result=mysqli_query($polaczenie, $sql);
                         echo'<div class="container">
-                        
                                 <div class="row">
                                     <table class="table">
                                         <thead class="thead-light">
@@ -62,21 +55,16 @@
                                                 echo "<td>".$query['modelPojazdu']."</td>";
                                                 echo "<td>".$query['statusZlecenia']."</td>";
                                                 echo "<td>".$query['wartoscZlecenia']." zł</td></tr>";
-                                            }
-                
+                                            }       
                                             ?>
-
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                     </div>
-
                     <div class="modal-footer">
-                        <button type="button" class="w3-btn w3-red" data-dismiss="modal">Zamknij</button>
-                        
+                        <button type="button" class="w3-btn w3-red" data-dismiss="modal">Zamknij</button>                      
                     </div>
-
                </form> 
             </div>
         </div>

@@ -66,7 +66,7 @@
                     jQuery('#modal3').modal('show');
                     });
                 })(jQuery);
-<?php       }
+    <?php       }
     ?>
 
 </script>
