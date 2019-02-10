@@ -1,7 +1,7 @@
 <?php
     include 'topPage.php';
     
-    //jezeli uzytkownik jest zalogowany, przekieruj go na index.php
+    //jezeli uzytkownik jest zalogowany, przekieruj go na panelKlienta.php
     if ((isset($_SESSION['logged'])) && ($_SESSION['logged']==true)){
         header('Location: panelKlienta.php');
         //nie wykonuj kodu poniżej
@@ -23,26 +23,22 @@
                     <input type="text" class="form-control" name="login" placeholder="login"
                      required data-validation>
                 </div>
-
                 <div class="form-group">
                     <label class="w3-text-green"><b>Hasło</b></label>
                     <input type="password" class="form-control" name="password" placeholder="hasło"
                      required data-validation>
                 </div>
-
                 <button type="submit" class="w3-btn w3-green">Zaloguj się</button>
-
                 <p> 
                     [<a href="registerKlient.php">Nie posiadasz konta? Zarejestruj się!</a>]
                 </p>
             </form>
         
             <?php
-                // jeśli zostanie naciśnięty przycisk "Zaloguj"
+                // jeśli zostanie naciśnięty przycisk Zaloguj się, i zmienna login będzie zainicjowana
                 if(isset($_POST['login'])) {
                     // filtrujemy dane...
                     $login = $_POST['login'] ?? '';
-                    //$_POST['password'] = $_POST['password'];
                     $password = hashHaslo($_POST['password']) ?? '';
                     $sql="SELECT idKlienta FROM Klienci WHERE login = '$login' AND haslo = '$password' LIMIT 1";
                     // sprawdzamy prostym zapytaniem sql czy podane dane są prawidłowe
