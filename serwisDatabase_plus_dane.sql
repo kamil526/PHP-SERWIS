@@ -20,6 +20,7 @@ CREATE TABLE `Klienci` (
 INSERT INTO `Klienci` (`idKlienta`, `login`, `haslo`, `imie`, `nazwisko`, `nazwaFirmy`, `nip`, `email`, `ulica`, `nrDomu`, `miasto`, `kodPocztowy`, `telefon`) VALUES
 (1, 'kamil', 'f3fb2d647acdb15c380e83d84a2ab19e522dae6e', 'Kamil', 'Poręba', 'COMP S.A.', '522-00-01-694', 'kporeba526@gmail.com', 'Kamionka Wielka', '123', 'Kamionka Wielka', '33-3334', '98765324'),
 (2, 'michal', '823cf077628b6a5c3f995cb7045ba445e8767bb5', 'Michał', 'Sierotowicz', '', '', 'ms@gmail.com', 'Nawojowska', '44', 'Nowy Sącz', '33-300', '123431232');
+(3, 'test', '30563efa0a3e89f8528509eaa048a5d82a9d9a4b', 'Jan', 'Kowalski', 'Kowalski Sp. j.', '7778899444', 'jkowal@op.pl', 'Szeroka', '1', 'Nowy Sącz', '33-300', '666777888');
 
 
 
@@ -38,6 +39,7 @@ INSERT INTO `Pracownicy` (`idPracownika`, `login`, `haslo`, `imie`, `nazwisko`, 
 (2, 'Mechanik', '63a215e5cec4a4475599c977081b08ea98fbb5df', 'Jan', 'Kowalski', '', 0),
 (3, 'Lakiernik', '07bfcb51b3bc0e012957143b4db62dc815726531', 'Tadeusz', 'Morański', '', 0),
 (4, 'Elektryk', 'c786a248973598a4e692fb0b8a7b7fde5b41ead5', 'Wacław', 'Wolak', '', 0);
+(5, 'test', '30563efa0a3e89f8528509eaa048a5d82a9d9a4b', 'Jan', 'Kowalski', 'jkowal@op.pl', 0);
 
 
 
