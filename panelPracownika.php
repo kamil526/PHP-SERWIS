@@ -17,7 +17,6 @@ if(($_SESSION['logged']==true)&&($_SESSION['typUsera']==2)){
 otworzPoloczenie();
 ?>
 
-<!-- Wyciagniecie danych z tabeli Klienci i przypisanie ich do options -->
 <?php
     $selectKlient = "SELECT idKlienta, imie, nazwisko FROM Klienci";
     $resultKlient = mysqli_query($polaczenie, $selectKlient);
@@ -109,7 +108,6 @@ otworzPoloczenie();
         </div>
     </div>
 </div>
-<!-- MODAL NOWE ZLECENIE -->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="modalNoweZlecenie"
       aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="dialog">
@@ -138,18 +136,15 @@ otworzPoloczenie();
                     $modelPojazdu = $_POST['modelPojazdu'] ?? '';
                     $wartoscZlecenia = $_POST['wartoscZlecenia'] ?? NULL;
                     $idKlienta = $_POST['idKlienta'] ?? '';
-                    
-
 
                     $sql="INSERT INTO Zlecenia (idPracownika, idKlienta, dataDodania, dataPrzekazania, dataZakonczenia, 
                     statusZlecenia, rodzajZlecenia, opisZlecenia, opisUsterki, komentarzPracownika, 
                     markaPojazdu, modelPojazdu, wartoscZlecenia)
-                    VALUES ('$idPracownika', '$idKlienta', '$dataDodania', '$dataPrzekazania', '$dataZakonczenia', '$statusZlecenia','$rodzajZlecenia', '$opisZlecenia'
-                    , '$opisUsterki', '$komentarzPracownika', '$markaPojazdu', '$modelPojazdu', '$wartoscZlecenia')";
+                    VALUES ('$idPracownika', '$idKlienta', '$dataDodania', '$dataPrzekazania', '$dataZakonczenia',
+                    '$statusZlecenia','$rodzajZlecenia', '$opisZlecenia', '$opisUsterki', '$komentarzPracownika',
+                    '$markaPojazdu','$modelPojazdu', '$wartoscZlecenia')";
                     mysqli_query($polaczenie, $sql);
-
                 }
-            
             ?>
 
             <form method="post" action="panelPracownika.php" id="modal-form">
@@ -194,7 +189,7 @@ otworzPoloczenie();
                         <select class="form-control" name="statusZlecenia" list="exampleList">
                             <option value=""></<option>
                             <option value="Wycena">Wycena</<option>
-                            <option value="Oczekujące">Oczekujące</<option>
+                            <option value="Oczekujące">Oczekiwanie</<option>
                             <option value="W trakcie">Rozpoczęte</<option>
                             <option value="Zakończone">Zakończone</<option>
                         </select>
