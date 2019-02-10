@@ -13,12 +13,8 @@
         include 'bottomPage.php';    
         exit();
     }
-
     otworzPoloczenie();
 ?>
-
-
-
 
 <div class="container">
     <h1 class="w3-green" style="padding:10px;">Moje Zlecenia</h1>
@@ -50,7 +46,6 @@
                 //       or exit("Błąd w zapytaniu: ".$rozkaz);
                 //    }
         -->
-       
 
                 <?php
                 $idKlienta =$_SESSION['idKlienta'] ?? '';
@@ -86,11 +81,9 @@
                     echo "<td>".$query['wartoscZlecenia']." zł</td>";
                     echo "<td><a href='panelKlienta.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-green'>Edytuj </a></td>";
                     //echo "<td><a href='deleteZlecenie.php?idZlecenia=".$query['idZlecenia']."' class='w3-btn w3-red'>Usuń </a></td></form>";
- 
                 }
-                
-                ?>
 
+                ?>
                 </tr>
                 </tbody>
                 </table>

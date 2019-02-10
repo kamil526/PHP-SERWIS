@@ -8,12 +8,14 @@
             $modelPojazdu = $_POST['modelPojazdu'] ?? '';
             $opisUsterki = $_POST['opisUsterki'] ?? '';
             $opisZlecenia = $_POST['opisZlecenia'] ?? '';
+            $dataDodania = $_POST['dataDodania'] ?? NULL;
             $dataPrzekazania = $_POST['dataPrzekazania'] ?? NULL;
             $dataZakonczenia = $_POST['dataZakonczenia'] ?? NULL;
             $statusZlecenia = $_POST['statusZlecenia'] ?? '';
 
             $sql="UPDATE Zlecenia SET markaPojazdu='$markaPojazdu', modelPojazdu='$modelPojazdu', opisUsterki='$opisUsterki', 
-            opisZlecenia='$opisZlecenia', dataPrzekazania='$dataPrzekazania', dataZakonczenia='$dataZakonczenia' ,statusZlecenia='$statusZlecenia'
+            opisZlecenia='$opisZlecenia', dataDodania='$dataDodania', dataPrzekazania='$dataPrzekazania', 
+            dataZakonczenia='$dataZakonczenia' ,statusZlecenia='$statusZlecenia'
             WHERE idZlecenia='$idZlecenia'";
             
 
@@ -88,8 +90,10 @@
                                 <textarea class="form-control" name="opisZlecenia" rows=5 required data-validation><?php echo $query2['opisZlecenia'];?></textarea>
                             </div>
                             <div class="col-md-4">
+                                <label class="w3-text-green" ><b>Data dodania zlecenia:</b></label>
+                                <input type="date" class="form-control" name="dataDodania" class="form-control" value="<?php echo $query2['dataDodania']; ?>" readonly>
                                 <label class="w3-text-green" ><b>Data Przekazania Pojazdu:</b></label>
-                                <input type="date" class="form-control" name="dataPrzekazania" class="form-control" min="<?php echo $query2['dataPrzekazania'];  ?>" max="2100-12-01"
+                                <input type="date" class="form-control" name="dataPrzekazania" class="form-control" min="<?php echo $query2['dataPrzekazania']; ?>" max="2100-12-01"
                                 value="<?php echo $query2['dataPrzekazania']; ?>">
                             </div>
                             <div class="col-md-4">
@@ -104,6 +108,10 @@
                                 <input type="text" class="form-control" name="wartoscZlecenia" readonly
                                     value="<?php echo number_format((float)$query2['wartoscZlecenia'],2,'.',''); ?>">
                             </div> 
+                            <div class="col-md-4">  
+                                <label class="w3-text-green" ><b>Data zakonczenia zlecenia:</b></label>
+                                <input type="date" class="form-control" name="dataZakonczenia" class="form-control" value="<?php echo $query2['dataZakonczenia']; ?>" readonly>
+                            </div>
                         </div>
 
                         <div class="row">
