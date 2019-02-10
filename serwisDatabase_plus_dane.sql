@@ -1,4 +1,4 @@
-
+﻿
 -- Database: `serwisDatabase`
 
 CREATE TABLE `Klienci` (
@@ -64,7 +64,7 @@ CREATE TABLE `Zlecenia` (
 INSERT INTO `Zlecenia` (`idZlecenia`, `idPracownika`, `idKlienta`, `dataDodania`, `dataPrzekazania`, `dataZakonczenia`, `statusZlecenia`, `rodzajZlecenia`, `opisZlecenia`, `opisUsterki`, `komentarzPracownika`, `markaPojazdu`, `modelPojazdu`, `wartoscZlecenia`) VALUES
 (1, 1, 1, '2019-02-08', '2019-02-08', '2019-02-08', 'Zakończone', 'Przegląd okresowy', 'Przegląd okresowy 20. tyś km', 'Brak usterek', 'Wymieniono olej silnikowy, oraz komplet filtrów', 'Ford', 'Kuga', '199.9900'),
 (2, 1, 2, '2019-02-08', '2019-02-15', '2019-02-16', 'Oczekuje', ' Naprawa Gwarancyjna', 'Weryfikacja turbo', 'Spadek mocy', ' Oczekiwanie na części', 'Ford', 'Focus', '0.0000'),
-(3, 1, 2, '2019-02-08', '2019-02-09', '0001-01-01', 'Oczekuje', ' ', 'Stuki w przednim zawieszeniu', 'Wybite zawieszenie', ' ', 'Toyota', 'CRV', '0.0000'),
+(3, 1, 2, '2019-02-08', '2019-02-09', '2019-02-10', 'Oczekuje', ' ', 'Stuki w przednim zawieszeniu', 'Wybite zawieszenie', ' ', 'Toyota', 'CRV', '0.0000'),
 (4, 1, 1, '2019-02-08', '2019-02-08', '2019-02-08', 'Wycena', 'Usługa pogwarancyjna', 'Wymiana rozrządu', 'Brak', '', 'Mazda', 'cx6', '0.0000');
 
 

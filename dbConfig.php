@@ -25,7 +25,7 @@
             `typUzytkownika` int(11) DEFAULT NULL
             )";
         mysqli_query($polaczenie, $rozkaz)
-            or exit("Błąd w zapytaniu: ".$rozkaz);
+        or exit("Błąd w zapytaniu: ".$rozkaz);
         
         $rozkaz = "CREATE TABLE `Klienci` (
             `idKlienta` int(11) NOT NULL,
@@ -105,7 +105,6 @@
         VALUES (2, 'test', '30563efa0a3e89f8528509eaa048a5d82a9d9a4b', 'Jan', 'Kowalski', 'jkowal@op.pl', 0)";
         mysqli_query($polaczenie, $rozkaz)
         or exit("Błąd w zapytaniu: ".$rozkaz);
-
         
         $rozkaz = "INSERT INTO `Zlecenia` (`idZlecenia`, `idPracownika`, `idKlienta`, `dataDodania`, `dataPrzekazania`, `dataZakonczenia`, `statusZlecenia`, `rodzajZlecenia`, `opisZlecenia`, `opisUsterki`, `komentarzPracownika`, `markaPojazdu`, `modelPojazdu`, `wartoscZlecenia`) 
         VALUES (1, 1, 1, '2019-02-08', '2019-02-08', '2019-02-08', 'Zakończone', 'Przegląd okresowy', 'Przegląd okresowy 20. tyś km', 'Brak usterek', 'Wymieniono olej silnikowy, oraz komplet filtrów', 'Ford', 'Kuga', '199.9900')";
