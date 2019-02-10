@@ -2,37 +2,8 @@
     include 'topPage.php';
 ?>
 
-<div class="container marketing">
-<br><br>
-    <div class="row text-center">
-        <div class="col-lg-4">
-            <img class="rounded-circle" src="startpage/img/olej.jpg" alt="Wymiana Oleju" width="200" height="200">
-            <h2 class=" text-success">Wymiana Oleju</h2>
-            <p>Oferujemy wymianę oleju silnikowego przy zastosowaniu naszych olejów oraz dostarczonych przez klienta.</p>
-            <p>
-                <a class="btn btn-secondary" href="startpage/data/construction.php" role="button">Dowiedz się więcej &raquo;</a>
-            </p>
-        </div>
-        <div class="col-lg-4">
-            <img class="rounded-circle" src="startpage/img/przeglad.jpg" alt="Druk cyfrowy" width="200" height="200">
-            <h2 class=" text-success">Przegląd techniczny</h2>
-            <p>Wykonujemy przegląd techniczny okresowy oraz przed pierwszą rejestracją pojazdu.</p>
-            <p>
-                <a class="btn btn-secondary" href="startpage/data/construction.php" role="button">Dowiedz się więcej &raquo;</a>
-            </p>
-        </div>
-        <div class="col-lg-4">
-            <img class="rounded-circle" src="startpage/img/naprawy.jpg" alt="Introligatornia" width="200" height="200">
-            <h2 class=" text-success">Naprawy</h2>
-            <p>Nasi doświadczeni pracownicy wykonają dla Państwa dowolną naprawę z zakresu mechaniki pojazdowej.</p>
-            <p>
-                <a class="btn btn-secondary" href="startpage/data/construction.php" role="button">Dowiedz się więcej &raquo;</a>
-            </p>
-        </div>
-    </div>
-
 <div class="container" md-14>
-    <br><br>
+
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -61,6 +32,34 @@
         </a>
     </div>
 </div>
+
+<div class="container marketing">
+    <div class="row text-center">
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="startpage/img/olej.jpg" alt="Wymiana Oleju" width="200" height="200">
+            <h2 class=" text-success">Wymiana Oleju</h2>
+            <p>Oferujemy wymianę oleju silnikowego przy zastosowaniu naszych olejów oraz dostarczonych przez klienta.</p>
+            <p>
+                <a class="btn btn-secondary" href="startpage/data/construction.php" role="button">Dowiedz się więcej &raquo;</a>
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="startpage/img/przeglad.jpg" alt="Druk cyfrowy" width="200" height="200">
+            <h2 class=" text-success">Przegląd techniczny</h2>
+            <p>Wykonujemy przegląd techniczny okresowy oraz przed pierwszą rejestracją pojazdu.</p>
+            <p>
+                <a class="btn btn-secondary" href="startpage/data/construction.php" role="button">Dowiedz się więcej &raquo;</a>
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="startpage/img/naprawy.jpg" alt="Introligatornia" width="200" height="200">
+            <h2 class=" text-success">Naprawy</h2>
+            <p>Nasi doświadczeni pracownicy wykonają dla Państwa dowolną naprawę z zakresu mechaniki pojazdowej.</p>
+            <p>
+                <a class="btn btn-secondary" href="startpage/data/construction.php" role="button">Dowiedz się więcej &raquo;</a>
+            </p>
+        </div>
+    </div>
 
     <hr class="featurette-divider">
     <div class="row featurette">
